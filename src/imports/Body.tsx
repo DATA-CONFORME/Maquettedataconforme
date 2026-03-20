@@ -2,6 +2,7 @@ import svgPaths from "./svg-i8kieuh3a0";
 import imgAb6AXuD98JlvqNfCfyuWXwrVQdrWcvuMh25X5IMy3Qb62ISujdV8FTnffCTn5LsuCy925Y6OZ0Pl0XmTlPzMobzuZsLt76BhIVq3PoAZpXq0XJlVepqSjxKq2SoGo0UNRvMeUghSoDkeAo3Ob151CqvP75TsAdEQJgdGPxneH8W92TBm3R8KjmZ1LlInEVox0PFwKa3WZy2QHHK4Iplu2Q6FKoNnv1S06KmMzvaKl7Gdn6PKdEaVc1EkflCaXtQ87YVaf6Fw0Kfd from "figma:asset/7392f8b3b61e96fbe303b47d5114e5733048d044.png";
 import imgAb6AXuACvmAb4CuwAcLo9C3IiniJfObBnRu9FaSbrEl6WrWpp5PCqx1Ex3EkdQ32X73XAoUCtrCionZwJpDwpToFdsoAd2AjmYjNlmB1LrEs2XPdS19BtDhEoXg8DjgiQjqIzxEa8OXvnBLzpYfksxT1ZdSe9UXhQxPerz24XzLuckv80RdbqkkY42Da8Gjd1RhDy7JOfJ5K2LucFwvQo2Na9EjZGae7Lu2IrN3Bck92KDqNsxvF9KOc8JnNdy3SkLvBQbgVSrdKc from "figma:asset/c5c2f8856c9587e1dd4fc86bf142b767a7688869.png";
 import imgAb6AXuDOorDx1Wro25LQl7J3QHSnrf37IngPFeuygFweXgIbYd1Fd7J4LwoixqKnDfKVaxhxIlEltpYndBDmKW6Fgm2CjbPnODmnLfQ1Il5Gq6RDzn5AelMn0HvCrBhHcuS5EzLx9NKdZxRbtm5JxQ9M2SlFRkTpgQvZQqn00Mehhhktrn4MypuXv7SPRfcjc7NwIXugQfvZD3GeezqxVo1Y0RwWCdbzyZqMrGpN0Vp8WcCcZghmRYsEyWt7Dt2MEBsg2ChVhLa from "figma:asset/a11876f7d3057f15bc8bd0297044283048bb32c5.png";
+import fabrik01Logo from "../assets/fabrik01-logo.png";
 
 function Ab6AXuD98JlvqNfCfyuWXwrVQdrWcvuMh25X5IMy3Qb62ISujdV8FTnffCTn5LsuCy925Y6OZ0Pl0XmTlPzMobzuZsLt76BhIVq3PoAZpXq0XJlVepqSjxKq2SoGo0UNRvMeUghSoDkeAo3Ob151CqvP75TsAdEQJgdGPxneH8W92TBm3R8KjmZ1LlInEVox0PFwKa3WZy2QHHK4Iplu2Q6FKoNnv1S06KmMzvaKl7Gdn6PKdEaVc1EkflCaXtQ87YVaf6Fw0Kfd() {
   return (
@@ -15,10 +16,8 @@ function Ab6AXuD98JlvqNfCfyuWXwrVQdrWcvuMh25X5IMy3Qb62ISujdV8FTnffCTn5LsuCy925Y6
 
 function Overlay() {
   return (
-    <div className="bg-[rgba(29,99,143,0.2)] content-stretch flex items-start px-[16px] py-[6px] relative rounded-[12px] shrink-0" data-name="Overlay">
-      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[#90cdfe] text-[12px] tracking-[1.2px] uppercase w-[193.08px]">
-        <p className="leading-[16px]">{`L'excellence de Fabrik01`}</p>
-      </div>
+    <div className="content-stretch flex items-start relative shrink-0" data-name="Overlay">
+      <img src={fabrik01Logo} alt="Fabrik01" className="h-[48px] w-auto object-contain" />
     </div>
   );
 }
@@ -111,7 +110,7 @@ function Container() {
 
 function HeaderHeroSection() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 overflow-clip pb-[80px] pl-[32px] pr-[480px] pt-[80px] right-0 top-0" data-name="Header - Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
+    <div className="absolute content-stretch flex flex-col items-center left-0 overflow-clip pb-[80px] pl-[32px] pr-[480px] pt-[80px] right-0 top-0" data-name="Header - Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
       <Ab6AXuD98JlvqNfCfyuWXwrVQdrWcvuMh25X5IMy3Qb62ISujdV8FTnffCTn5LsuCy925Y6OZ0Pl0XmTlPzMobzuZsLt76BhIVq3PoAZpXq0XJlVepqSjxKq2SoGo0UNRvMeUghSoDkeAo3Ob151CqvP75TsAdEQJgdGPxneH8W92TBm3R8KjmZ1LlInEVox0PFwKa3WZy2QHHK4Iplu2Q6FKoNnv1S06KmMzvaKl7Gdn6PKdEaVc1EkflCaXtQ87YVaf6Fw0Kfd />
       <Container />
     </div>
@@ -861,7 +860,7 @@ function Container22() {
 
 function SecurityTrustSection() {
   return (
-    <div className="absolute bg-white content-stretch flex flex-col items-start left-0 overflow-clip px-[32px] py-[96px] right-0 top-[1973px]" data-name="Security & Trust Section">
+    <div className="absolute bg-white content-stretch flex flex-col items-center left-0 overflow-clip px-[32px] py-[96px] right-0 top-[1973px]" data-name="Security & Trust Section">
       <Container22 />
     </div>
   );
@@ -869,10 +868,8 @@ function SecurityTrustSection() {
 
 function Ab6AXuDOorDx1Wro25LQl7J3QHSnrf37IngPFeuygFweXgIbYd1Fd7J4LwoixqKnDfKVaxhxIlEltpYndBDmKW6Fgm2CjbPnODmnLfQ1Il5Gq6RDzn5AelMn0HvCrBhHcuS5EzLx9NKdZxRbtm5JxQ9M2SlFRkTpgQvZQqn00Mehhhktrn4MypuXv7SPRfcjc7NwIXugQfvZD3GeezqxVo1Y0RwWCdbzyZqMrGpN0Vp8WcCcZghmRYsEyWt7Dt2MEBsg2ChVhLa() {
   return (
-    <div className="-translate-x-1/2 absolute left-1/2 size-[120px] top-0 flex items-center justify-center" data-name="Fabrik01 Logo">
-      <div className="text-white font-['Manrope:Extra_Bold',sans-serif] text-[42px] tracking-tight">
-        Fabrik01
-      </div>
+    <div className="-translate-x-1/2 absolute left-1/2 w-full max-w-[300px] h-[80px] top-[-16px] flex items-center justify-center" data-name="Fabrik01 Logo">
+      <img src={fabrik01Logo} alt="Fabrik01" className="max-h-[70px] w-auto object-contain" />
     </div>
   );
 }
@@ -1038,7 +1035,7 @@ function Container39() {
 
 function BrandSynergySection() {
   return (
-    <div className="absolute bg-[#001e40] content-stretch flex flex-col items-start left-0 px-[192px] py-[96px] right-0 top-[2603px]" data-name="Brand Synergy Section">
+    <div className="absolute bg-[#001e40] content-stretch flex flex-col items-center left-0 px-[192px] py-[96px] right-0 top-[2603px]" data-name="Brand Synergy Section">
       <Container39 />
     </div>
   );
@@ -1350,7 +1347,7 @@ function Container56() {
 
 function SectionFinalCta() {
   return (
-    <div className="absolute bg-[#dee8ff] content-stretch flex flex-col items-start left-0 overflow-clip px-[192px] py-[96px] right-0 top-[3338.5px]" data-name="Section - Final CTA">
+    <div className="absolute bg-[#dee8ff] content-stretch flex flex-col items-center left-0 overflow-clip px-[192px] py-[96px] right-0 top-[3338.5px]" data-name="Section - Final CTA">
       <div className="absolute inset-0" data-name="Gradient" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 1280 544\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(69.54 0 0 69.54 640 272)\\'><stop stop-color=\\'rgba(29,99,143,0.1)\\' offset=\\'0\\'/><stop stop-color=\\'rgba(29,99,143,0)\\' offset=\\'1\\'/></radialGradient></defs></svg>')" }} />
       <Container56 />
     </div>

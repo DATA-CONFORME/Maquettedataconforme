@@ -249,7 +249,7 @@ function Container1() {
 
 function HeroSection() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 overflow-clip px-[32px] py-[128px] right-0 top-[80px]" data-name="Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
+    <div className="absolute content-stretch flex flex-col items-center left-0 overflow-clip px-[32px] py-[128px] right-0 top-[80px]" data-name="Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
       <Container />
       <Container1 />
     </div>
@@ -417,7 +417,7 @@ function Container16() {
 
 function SectionCoreMessagingAsymmetricBentoGrid() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[80px] items-start left-0 max-w-[1280px] px-[32px] py-[96px] right-0 top-[871.5px]" data-name="Section - Core Messaging: Asymmetric Bento Grid">
+    <div className="absolute content-stretch flex flex-col gap-[80px] items-center left-0 max-w-[1280px] mx-auto px-[32px] py-[96px] right-0 top-[871.5px]" data-name="Section - Core Messaging: Asymmetric Bento Grid">
       <Container14 />
       <Container16 />
     </div>
@@ -1333,7 +1333,7 @@ function Container22() {
 
 function SectionServicesGrid() {
   return (
-    <div className="absolute bg-[#f0f3ff] content-stretch flex flex-col items-start left-0 px-[32px] py-[96px] right-0 top-[680px]" data-name="Section - Services Grid">
+    <div className="absolute bg-[#f0f3ff] content-stretch flex flex-col items-center left-0 px-[32px] py-[96px] right-0 top-[680px]" data-name="Section - Services Grid">
       <Container22 />
     </div>
   );

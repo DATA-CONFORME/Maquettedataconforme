@@ -1,4 +1,5 @@
 import teamImage from "figma:asset/f4ce6425b714fa3a43b2bdce4c81882315e6fe05.png";
+import { SectionRGPD, SectionSecteurs, SectionOffres, SectionEcosystem } from "../app/components/OldSiteSections";
 import heroIllustration from "figma:asset/53e0a23a3adb6c4bc33708448daf06ff9a49f921.png";
 import svgPaths from "./svg-2sqwfkv5kr";
 import imgCybersecurityInterface from "figma:asset/15bdec7e0b0fb784d49f88bf54bf7523e1051e4f.png";
@@ -14,8 +15,8 @@ import imgServerInfrastructure from "figma:asset/ee3de47921ca488ba9f51b39e9b3214
 function Heading1() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading 2">
-      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] h-[48px] justify-center leading-[0] not-italic relative shrink-0 text-[#0A192F] text-[48px] text-center w-[720.97px]">
-        <p className="leading-[48px]">Expertise Multidimensionnelle</p>
+      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] justify-center not-italic relative shrink-0 text-[#0A192F] text-[48px] text-center w-full max-w-[720px] mx-auto">
+        <p className="leading-[48px] text-center w-full">Expertise Multidimensionnelle</p>
       </div>
     </div>
   );
@@ -24,9 +25,8 @@ function Heading1() {
 function Container2() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[56px] justify-center leading-[28px] not-italic relative shrink-0 text-[#3d494c] text-[18px] text-center w-[718.05px]">
-        <p className="mb-0">{`Nos pôles d'excellence répondent aux exigences les plus strictes de la gouvernance`}</p>
-        <p>moderne des données.</p>
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[28px] not-italic relative shrink-0 text-[#3d494c] text-[18px] text-center w-full max-w-[718px] mx-auto">
+        <p className="mb-0 w-full text-center text-balance">Nos pôles d'excellence répondent aux exigences les plus strictes de la gouvernance moderne des données.</p>
       </div>
     </div>
   );
@@ -34,7 +34,7 @@ function Container2() {
 
 function Container1() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start max-w-[768px] relative shrink-0 w-[768px]" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[24px] items-center max-w-[768px] relative shrink-0 w-full mx-auto" data-name="Container">
       <Heading1 />
       <Container2 />
     </div>
@@ -338,7 +338,7 @@ function Container() {
 function SectionBentoGridServices() {
   return (
     /* Light accent background (#ECF0FF) instead of old #f0f3ff */
-    <div className="absolute bg-[#ECF0FF] content-stretch flex flex-col items-start left-0 py-[96px] right-0 top-[788px]" data-name="Section - Bento Grid Services">
+    <div className="relative bg-[#ECF0FF] content-stretch flex flex-col items-center w-full py-[48px]" data-name="Section - Bento Grid Services">
       <Container />
     </div>
   );
@@ -395,7 +395,7 @@ function Container15() {
 
 function SectionCtAsSocialProof() {
   return (
-    <div className="absolute content-stretch flex items-center justify-between left-0 max-w-[1280px] px-[24px] right-0 top-[3550px]" data-name="Section - CTAs / Social Proof">
+    <div className="relative content-stretch flex items-center justify-between w-full max-w-[1280px] mx-auto px-[24px] py-[48px]" data-name="Section - CTAs / Social Proof">
       <Container13 />
       <Container15 />
     </div>
@@ -504,7 +504,6 @@ function Container21() {
 function Container18() {
   return (
     <div className="col-1 content-stretch flex flex-col gap-[32px] items-start justify-self-stretch relative row-1 self-center shrink-0" data-name="Container">
-      <BackgroundBorder />
       <Heading />
       <Container20 />
       <Container21 />
@@ -612,7 +611,7 @@ function Container17() {
 
 function HeroSection() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 overflow-clip pb-[128px] pt-[80px] right-0 top-[96px]" data-name="Hero Section">
+    <div className="relative content-stretch flex flex-col items-center w-full overflow-clip pb-[48px] pt-[140px]" data-name="Hero Section">
       <Container16 />
       <Container17 />
     </div>
@@ -645,9 +644,10 @@ function PillarCard({ emoji, label }: { emoji: string; label: string }) {
   );
 }
 
+
 function SectionStats() {
   return (
-    <div className="absolute content-stretch flex flex-col items-center left-0 py-[96px] right-0 top-[1650px]" data-name="Section - Stats">
+    <div className="relative content-stretch flex flex-col items-center w-full py-[48px]" data-name="Section - Stats">
       <div className="max-w-[1280px] w-full px-[24px]">
         {/* Introduction text */}
         <div className="mb-[64px] max-w-[900px] mx-auto">
@@ -842,7 +842,7 @@ function Background1() {
 
 function Fabrik01BrandingSection() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 overflow-clip px-[24px] py-[96px] right-0 top-[2750px]" data-name="Fabrik01 Branding Section">
+    <div className="relative content-stretch flex flex-col items-center w-full overflow-clip px-[24px] py-[48px]" data-name="Fabrik01 Branding Section">
       <Background1 />
     </div>
   );
@@ -850,7 +850,7 @@ function Fabrik01BrandingSection() {
 
 function Footer() {
   return (
-    <footer className="absolute left-0 right-0 top-[3800px] bg-[#0A192F] py-[64px] px-[24px]" data-name="Footer">
+    <footer className="relative w-full bg-[#0A192F] py-[48px] px-[24px]" data-name="Footer">
       <div className="max-w-[1280px] mx-auto">
         {/* Main footer content */}
         <div className="grid grid-cols-4 gap-[64px] mb-[48px]">
@@ -935,12 +935,19 @@ function Footer() {
 
 export default function Main() {
   return (
-    <div className="relative size-full" data-name="Main">
-      <SectionBentoGridServices />
-      <SectionCtAsSocialProof />
+    <div className="relative w-full flex flex-col" data-name="Main">
       <HeroSection />
+      <SectionBentoGridServices />
       <SectionStats />
+      
+      {/* Old Site Injected Sections */}
+      <SectionRGPD />
+      <SectionSecteurs />
+      <SectionOffres />
+      <SectionEcosystem />
+
       <Fabrik01BrandingSection />
+      <SectionCtAsSocialProof />
       <Footer />
     </div>
   );

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import logoDataConforme from "figma:asset/07c17c7232d99abc0af4188f598c07a94904988c.png";
+import { useState, useEffect } from "react";
+import logoDataConforme from "../assets/logo.png";
 import jeromeFicatImage from "figma:asset/e4d81823abce74b8f71e2af748f5902b137d5ec7.png";
 import brainImage from "figma:asset/32941527829b6439a6a0192b836d7968d7d083e6.png";
 import formationHeroImage from "figma:asset/b0ce91a4ba3d2da757a976c89d84d80c675c3772.png";
@@ -27,7 +27,7 @@ function Navbar({ currentPage, onNavigate }: { currentPage: string; onNavigate: 
       <div className="flex items-center gap-12">
         <button
           onClick={() => onNavigate("home")}
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] transition-colors duration-200 whitespace-nowrap ${
+          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 whitespace-nowrap ${
             currentPage === "home" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
           }`}
         >
@@ -35,7 +35,7 @@ function Navbar({ currentPage, onNavigate }: { currentPage: string; onNavigate: 
         </button>
         <button
           onClick={() => onNavigate("formation")}
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] transition-colors duration-200 ${
+          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 ${
             currentPage === "formation" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
           }`}
         >
@@ -44,7 +44,7 @@ function Navbar({ currentPage, onNavigate }: { currentPage: string; onNavigate: 
         <div className="relative group">
           <button
             onClick={() => onNavigate("ia-conforme")}
-            className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] transition-colors duration-200 whitespace-nowrap ${
+            className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 whitespace-nowrap ${
               currentPage === "ia-conforme" || currentPage === "fabrik01" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
             }`}
           >
@@ -55,7 +55,7 @@ function Navbar({ currentPage, onNavigate }: { currentPage: string; onNavigate: 
             <div className="bg-white rounded-lg shadow-lg border border-[rgba(0,71,186,0.1)] py-2 min-w-[200px]">
               <button
                 onClick={() => onNavigate("fabrik01")}
-                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[14px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200"
+                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200"
               >
                 Fabrik01
               </button>
@@ -64,7 +64,7 @@ function Navbar({ currentPage, onNavigate }: { currentPage: string; onNavigate: 
         </div>
         <button
           onClick={() => onNavigate("about")}
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] transition-colors duration-200 ${
+          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 ${
             currentPage === "about" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
           }`}
         >
@@ -72,13 +72,13 @@ function Navbar({ currentPage, onNavigate }: { currentPage: string; onNavigate: 
         </button>
         <a
           href="#"
-          className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:text-[#00A9C1] transition-colors duration-200"
+          className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[16px] hover:text-[#00A9C1] transition-colors duration-200"
         >
           News
         </a>
         <a
           href="#"
-          className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:text-[#00A9C1] transition-colors duration-200"
+          className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[16px] hover:text-[#00A9C1] transition-colors duration-200"
         >
           Contact
         </a>
@@ -90,7 +90,7 @@ function Navbar({ currentPage, onNavigate }: { currentPage: string; onNavigate: 
           className="px-5 py-[10px] rounded-[8px] cursor-pointer shadow-md hover:opacity-90 transition-opacity duration-200"
           style={{ backgroundImage: "linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)" }}
         >
-          <span className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[15px]">
+          <span className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px]">
             Démarrer
           </span>
         </button>
@@ -389,6 +389,36 @@ function AboutPage({ onNavigate }: { onNavigate: (page: string) => void }) {
   );
 }
 
+function HorizontalAntiGravityStrip() {
+  const stats = [
+    { value: "500+", label: "Professionnels formés" },
+    { value: "98%", label: "Taux de satisfaction" },
+    { value: "15+", label: "Années d'expérience" },
+    { value: "100%", label: "Certifié Qualiopi" },
+  ];
+
+  return (
+    <section className="w-full py-12 bg-white border-y border-[#E5E9F0] overflow-hidden relative">
+      <div className="flex animate-horizontal-scroll whitespace-nowrap">
+        {/* Two sets of items for seamless loop */}
+        {[...stats, ...stats, ...stats, ...stats].map((stat, i) => (
+          <div key={i} className="flex flex-col items-center justify-center min-w-[350px] animate-float px-12">
+            <div className="text-[52px] font-['Manrope:Extra_Bold',sans-serif] text-[#0047BA] leading-none mb-2 drop-shadow-[0_0_15px_rgba(0,71,186,0.15)]">
+              {stat.value}
+            </div>
+            <div className="text-[14px] font-['Inter:Semi_Bold',sans-serif] text-[#5A6C7D] uppercase tracking-[3px] text-center">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* Side gradients for smooth fade in/out */}
+      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+    </section>
+  );
+}
+
 function FormationPage({ onNavigate }: { onNavigate: (page: string) => void }) {
   return (
     <div className="relative w-full min-h-screen bg-white">
@@ -421,48 +451,8 @@ function FormationPage({ onNavigate }: { onNavigate: (page: string) => void }) {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="w-full py-12 px-8 bg-white border-y border-[#E5E9F0]">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="font-['Manrope:Bold',sans-serif] font-bold text-[#0047BA] text-[48px] mb-2">
-                500+
-              </div>
-              <div className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px]">
-                Professionnels formés
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <div className="font-['Manrope:Bold',sans-serif] font-bold text-[#0047BA] text-[48px] mb-2">
-                98%
-              </div>
-              <div className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px]">
-                Taux de satisfaction
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <div className="font-['Manrope:Bold',sans-serif] font-bold text-[#0047BA] text-[48px] mb-2">
-                15+
-              </div>
-              <div className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px]">
-                Années d'expérience
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <div className="font-['Manrope:Bold',sans-serif] font-bold text-[#0047BA] text-[48px] mb-2">
-                100%
-              </div>
-              <div className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px]">
-                Certifié Qualiopi
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Stats Bar replaced with Anti-Gravity Marquee */}
+      <HorizontalAntiGravityStrip />
 
       {/* Programs Section */}
       <section className="w-full py-24 px-8 bg-[#F8FAFB]">
@@ -720,7 +710,7 @@ function HomePage({ onNavigate }: { onNavigate: (page: string) => void }) {
   return (
     <div className="relative w-full min-h-screen bg-white">
       <Navbar currentPage="home" onNavigate={onNavigate} />
-      <div className="relative w-full" style={{ minHeight: "4200px" }}>
+      <div className="relative w-full flex flex-col">
         <Main />
       </div>
     </div>
@@ -741,6 +731,52 @@ function Fabrik01Page({ onNavigate }: { onNavigate: (page: string) => void }) {
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
+
+  // Global Scroll Animation Observer
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            // Optional: observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    const timeoutId = setTimeout(() => {
+      const elements = document.querySelectorAll(
+        '[data-name$="Section"], [data-name$="Card"], [data-name$="Grid"], [data-name="Container"]'
+      );
+      elements.forEach((el) => {
+        const hasStaticOpacity = Array.from(el.classList).some(
+          (c) => c.startsWith("opacity-") && c !== "opacity-0" && c !== "opacity-100"
+        );
+        if (!el.classList.contains("scroll-animated") && !hasStaticOpacity) {
+          // Add Tailwind transition classes. Using transforming vars prevents overriding layout transforms.
+          el.classList.add(
+            "scroll-animated",
+            "transition-all",
+            "duration-1000",
+            "ease-out",
+            "opacity-0",
+            "translate-y-10"
+          );
+          observer.observe(el);
+        }
+      });
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      observer.disconnect();
+    };
+  }, [currentPage]);
 
   return currentPage === "about" ? (
     <AboutPage onNavigate={setCurrentPage} />
