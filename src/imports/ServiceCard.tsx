@@ -32,7 +32,7 @@ export function ServiceCard({ icon, title, description, features }: ServiceCardP
       {/* Bouton chevron en bas à droite */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[24px] bottom-[20px] w-[32px] h-[32px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors z-10"
+        className="absolute right-[24px] bottom-[20px] w-[32px] h-[32px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors z-10 cursor-pointer"
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg

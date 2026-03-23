@@ -79,12 +79,18 @@ function Button() {
 
 function Button1() {
   return (
-    <div className="content-stretch flex items-center justify-center px-[33px] py-[17px] relative rounded-[12px] shrink-0" data-name="Button">
+    <a 
+      href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="content-stretch flex items-center justify-center px-[33px] py-[17px] relative rounded-[12px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.1)] transition-colors" 
+      data-name="Button"
+    >
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[12px]" />
       <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[28px] justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-center text-white w-[206.23px]">
         <p className="leading-[28px]">Découvrir nos solutions</p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -1314,12 +1320,17 @@ function Container57() {
 
 function Button2() {
   return (
-    <div className="bg-[#001e40] content-stretch flex flex-col items-center justify-center px-[40px] py-[20px] relative rounded-[12px] shrink-0" data-name="Button">
-      <div className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[12px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]" data-name="Button:shadow" />
+    <a 
+      href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-[#001e40] content-stretch flex flex-col items-center justify-center px-[40px] py-[20px] relative rounded-[12px] shrink-0 no-underline hover:opacity-90 transition-opacity shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]" 
+      data-name="Button"
+    >
       <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[28px] justify-center leading-[0] not-italic relative shrink-0 text-[20px] text-center text-white w-[253.39px]">
         <p className="leading-[28px]">Réserver une consultation</p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -1476,7 +1487,6 @@ export default function Body() {
       <ExpertiseSectionBentoGrid />
       <SecurityTrustSection />
       <BrandSynergySection />
-      <Footer />
       <SectionFinalCta />
     </div>
   );

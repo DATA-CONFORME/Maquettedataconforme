@@ -21,10 +21,10 @@ export default function IAConformePage({ onNavigate }: { onNavigate: (page: stri
             padding-top: 64px !important;
           }
         `}</style>
-        <Body />
+        <Body onNavigate={onNavigate} />
       </div>
       
-      <Footer />
+      <Footer onNavigate={onNavigate} />
     </div>
   );
 }

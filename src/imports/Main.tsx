@@ -1,9 +1,14 @@
 import teamImage from "figma:asset/f4ce6425b714fa3a43b2bdce4c81882315e6fe05.png";
 import { SectionRGPD, SectionSecteurs, SectionOffres, SectionEcosystem } from "../app/components/OldSiteSections";
+import { Footer } from "../app/App";
+import ServicesCarousel from "../app/components/ServicesCarousel";
 import heroIllustration from "figma:asset/53e0a23a3adb6c4bc33708448daf06ff9a49f921.png";
 import svgPaths from "./svg-2sqwfkv5kr";
 import imgCybersecurityInterface from "figma:asset/15bdec7e0b0fb784d49f88bf54bf7523e1051e4f.png";
 import imgServerInfrastructure from "figma:asset/ee3de47921ca488ba9f51b39e9b32147fee48add.png";
+import { ChevronRight } from "lucide-react";
+import logoFabrik01 from "../assets/logo-fabrik01-blanc.png";
+import TestimonialsSection from "../app/components/TestimonialsSection";
 
 /* ─── Design Tokens (palette Data Conforme) ──────────────────────────────
    Primary   : #00A9C1  (teal / cyan)
@@ -359,7 +364,7 @@ function Heading6() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[32px] justify-center leading-[0] not-italic relative shrink-0 text-[#0A192F] text-[32px]">
-        <p className="leading-[32px]">Prêt pour la mutation digitale ?</p>
+        <p className="leading-[32px] whitespace-nowrap">Prêt pour la mutation digitale ?</p>
       </div>
     </div>
   );
@@ -468,8 +473,9 @@ function Container20() {
 function Button2() {
   return (
     /* Primary hero CTA : Tertiary → Primary gradient */
-    <div
-      className="content-stretch flex flex-col items-center justify-center px-[32px] py-[18px] relative rounded-[8px] shrink-0"
+    <a
+      href="#offres-pricing"
+      className="content-stretch flex flex-col items-center justify-center px-[32px] py-[18px] relative rounded-[8px] shrink-0 hover:opacity-90 transition-opacity cursor-pointer no-underline"
       data-name="Button"
       style={{ backgroundImage: "linear-gradient(166.782deg, #0047BA 0%, #00A9C1 100%)" }}
     >
@@ -477,18 +483,24 @@ function Button2() {
       <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[18px] text-center text-white w-[208.48px]">
         <p className="leading-[28px]">Découvrir nos Solutions</p>
       </div>
-    </div>
+    </a>
   );
 }
 
 function Button3() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center px-[34px] py-[18px] relative rounded-[8px] shrink-0" data-name="Button">
+    <a 
+      href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="content-stretch flex flex-col items-center justify-center px-[34px] py-[18px] relative rounded-[8px] shrink-0 hover:bg-gray-50 transition-colors cursor-pointer no-underline" 
+      data-name="Button"
+    >
       <div aria-hidden="true" className="absolute border-2 border-[rgba(0,71,186,0.25)] border-solid inset-0 pointer-events-none rounded-[8px]" />
       <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[#0A192F] text-[18px] text-center w-[160px]">
         <p className="leading-[28px]">Prendre un RDV</p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -647,47 +659,67 @@ function PillarCard({ emoji, label }: { emoji: string; label: string }) {
 
 function SectionStats() {
   return (
-    <div className="relative content-stretch flex flex-col items-center w-full py-[48px]" data-name="Section - Stats">
-      <div className="max-w-[1280px] w-full px-[24px]">
-        {/* Introduction text */}
-        <div className="mb-[64px] max-w-[900px] mx-auto">
-          <div className="font-['Inter:Regular',sans-serif] text-[18px] leading-[32px] text-[#3d494c] text-center">
-            <p className="mb-4">
-              Vos clients sont plus exigeants. Vos partenaires scrutent vos pratiques : l'IA Act et le RGPD imposent des due diligences strictes sur toute la chaîne de valeur, incluant la localisation et la sécurité des données. La pression "privacy" est aussi visible côté entreprises : 94% déclarent que leurs clients n'achèteraient pas si les données n'étaient pas correctement protégées.
+    <div className="relative bg-[#f8fafc] w-full py-[48px]" data-name="Section - Stats">
+      <div className="max-w-[1200px] mx-auto px-[24px]">
+        
+        {/* Main Stats Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[48px] items-center mb-[48px]">
+          {/* Left: Intro Text */}
+          <div className="lg:col-span-5">
+            <h3 className="font-['Manrope:Bold',sans-serif] text-[24px] text-[#0A192F] mb-[20px] leading-tight">
+              Une exigence marché en pleine mutation
+            </h3>
+            <p className="font-['Inter:Regular',sans-serif] text-[16px] leading-[26px] text-[#5A6A7A]">
+              Vos clients sont plus exigeants. Vos partenaires scrutent vos pratiques : l'IA Act et le RGPD imposent des due diligences strictes sur toute la chaîne de valeur. La pression "privacy" est réelle : 94% des entreprises déclarent que leurs clients n'achèteraient pas si les données n'étaient pas protégées.
             </p>
+          </div>
+
+          {/* Right: Stats Grid */}
+          <div className="lg:col-span-7 grid grid-cols-3 gap-[24px]">
+            <div className="flex flex-col gap-[8px]">
+              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[42px] text-[#0047BA] leading-none">76%</span>
+              <p className="text-[13px] leading-[18px] text-[#5A6A7A]">Rupture de confiance si données non protégées</p>
+            </div>
+            <div className="flex flex-col gap-[8px]">
+              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[42px] text-[#00A9C1] leading-none">72%</span>
+              <p className="text-[13px] leading-[18px] text-[#5A6A7A]">Inquiétudes sur la localisation hors UE</p>
+            </div>
+            <div className="flex flex-col gap-[8px]">
+              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[42px] text-[#82E600] leading-none">94%</span>
+              <p className="text-[13px] leading-[18px] text-[#5A6A7A]">Clients perdus sans garantie privacy</p>
+            </div>
           </div>
         </div>
 
-        {/* Stats grid */}
-        <div className="grid grid-cols-3 gap-[32px] mb-[64px]">
-          <StatCard
-            percentage="76%"
-            description="n'achèteraient pas auprès d'une entreprise qu'ils ne jugent pas fiable sur l'usage/protection des données"
-          />
-          <StatCard
-            percentage="72%"
-            description="des PME européennes expriment une forte inquiétude sur la localisation des données (stockage hors UE / USA)"
-          />
-          <StatCard
-            percentage="75%"
-            description="des salariés veulent travailler pour une organisation qui a un impact positif sur la société"
-          />
-        </div>
+        {/* Pillars & Conclusion Row */}
+        <div className="bg-white rounded-[24px] p-[32px] border border-[rgba(0,71,186,0.08)] shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[40px] items-center">
+            {/* Left: Pillars grid */}
+            <div className="grid grid-cols-2 gap-[16px]">
+              <div className="flex items-center gap-[12px] p-[16px] bg-[#f8fafc] rounded-[12px]">
+                <span className="text-[24px]">🛡️</span>
+                <span className="font-['Inter:Semi_Bold',sans-serif] text-[14px] text-[#0A192F]">Conformité</span>
+              </div>
+              <div className="flex items-center gap-[12px] p-[16px] bg-[#f8fafc] rounded-[12px]">
+                <span className="text-[24px]">🇫🇷</span>
+                <span className="font-['Inter:Semi_Bold',sans-serif] text-[14px] text-[#0A192F]">Souveraineté</span>
+              </div>
+              <div className="flex items-center gap-[12px] p-[16px] bg-[#f8fafc] rounded-[12px]">
+                <span className="text-[24px]">💎</span>
+                <span className="font-['Inter:Semi_Bold',sans-serif] text-[14px] text-[#0A192F]">Éthique</span>
+              </div>
+              <div className="flex items-center gap-[12px] p-[16px] bg-[#f8fafc] rounded-[12px]">
+                <span className="text-[24px]">🤖</span>
+                <span className="font-['Inter:Semi_Bold',sans-serif] text-[14px] text-[#0A192F]">IA Responsable</span>
+              </div>
+            </div>
 
-        {/* Pillars grid */}
-        <div className="grid grid-cols-4 gap-[24px] mb-[64px]">
-          <PillarCard emoji="🛡️" label="Conformité réglementaire" />
-          <PillarCard emoji="🇫🇷" label="Recherche de souveraineté" />
-          <PillarCard emoji="💎" label="Éthique revendiquée" />
-          <PillarCard emoji="🤖" label="IA Responsable" />
-        </div>
-
-        {/* Conclusion text */}
-        <div className="max-w-[900px] mx-auto">
-          <div className="font-['Inter:Regular',sans-serif] text-[18px] leading-[32px] text-[#3d494c] text-center">
-            <p>
-              Face à ces enjeux, afficher votre engagement pour une conformité robuste n'est plus optionnel : c'est un <span className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#0047BA]">différenciateur stratégique</span> qui rassure, fidélise et attire. Surtout dans un écosystème où le "cloud de confiance" et l'IA responsable européenne deviennent des critères de choix déterminants.
-            </p>
+            {/* Right: Conclusion */}
+            <div>
+              <p className="font-['Inter:Regular',sans-serif] text-[16px] leading-[26px] text-[#344155]">
+                Afficher votre engagement pour une conformité robuste est un <span className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#0047BA]">différenciateur stratégique</span>. Dans un écosystème où le "cloud de confiance" devient un critère de choix, c'est ce qui rassure et fidélise vos partenaires.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -826,129 +858,57 @@ function Container28() {
   );
 }
 
-function Background1() {
+function Fabrik01BrandingSection({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    /* Neutral dark navy background for the Fabrik01 branding section */
-    <div className="bg-[#0A192F] relative rounded-[32px] shrink-0 w-full" data-name="Background">
-      <div className="overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col items-start p-[80px] relative w-full">
-          <Container27 />
-          <Container28 />
+    <div className="relative content-stretch flex flex-col items-center w-full overflow-clip px-[24px] py-[48px] md:py-[80px]" data-name="Fabrik01 Branding Section">
+      <div className="bg-[#0A192F] relative rounded-[32px] shrink-0 w-full max-w-[1200px] overflow-hidden flex flex-col items-center justify-center p-[40px] md:p-[80px] group border border-[#1A293F] text-center shadow-2xl">
+      
+        <div className="flex flex-col items-center max-w-[800px] relative z-10">
+          <img src={logoFabrik01} alt="Fabrik01" className="h-[64px] w-auto mb-8" />
+          <h2 className="font-['Manrope:Bold',sans-serif] text-[36px] md:text-[48px] text-white leading-tight mb-10">
+            Le Cœur de notre Excellence Technique.
+          </h2>
+          <button 
+            onClick={() => onNavigate && onNavigate('fabrik01')}
+            className="px-10 py-5 rounded-[12px] cursor-pointer shadow-[0_8px_30px_rgba(130,230,0,0.2)] hover:shadow-[0_8px_30px_rgba(130,230,0,0.4)] hover:-translate-y-1 transition-all duration-300 flex items-center gap-3"
+            style={{ backgroundColor: "#82E600" }}
+          >
+            <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[18px]">
+              En savoir plus
+            </span>
+            <ChevronRight className="w-6 h-6 text-[#0A192F]" />
+          </button>
         </div>
+        
+        {/* Subtle decorative background elements */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(0,169,193,0.1)_0%,transparent_70%)] pointer-events-none mix-blend-screen" />
+        <div className="absolute left-0 bottom-0 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(130,230,0,0.05)_0%,transparent_70%)] pointer-events-none mix-blend-screen" />
       </div>
     </div>
   );
 }
 
-function Fabrik01BrandingSection() {
-  return (
-    <div className="relative content-stretch flex flex-col items-center w-full overflow-clip px-[24px] py-[48px]" data-name="Fabrik01 Branding Section">
-      <Background1 />
-    </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="relative w-full bg-[#0A192F] py-[48px] px-[24px]" data-name="Footer">
-      <div className="max-w-[1280px] mx-auto">
-        {/* Main footer content */}
-        <div className="grid grid-cols-4 gap-[64px] mb-[48px]">
-          {/* Brand column */}
-          <div>
-            <h3 className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[20px] mb-[16px]">
-              Data Conforme
-            </h3>
-            <p className="font-['Inter:Regular',sans-serif] text-[14px] leading-[24px] text-[rgba(236,240,255,0.6)]">
-              Solutions avancées de conformité et de cybersécurité pour les entreprises innovantes.
-            </p>
-          </div>
-
-          {/* Services column */}
-          <div>
-            <h4 className="font-['Manrope:Bold',sans-serif] font-bold text-[#82E600] text-[12px] tracking-[1.2px] uppercase mb-[24px]">
-              Services
-            </h4>
-            <div className="flex flex-col gap-[12px]">
-              <a href="#" className="font-['Inter:Regular',sans-serif] text-[14px] text-[rgba(236,240,255,0.8)] hover:text-[#00A9C1] transition-colors duration-200 underline">
-                Audit Systèmes
-              </a>
-              <a href="#" className="font-['Inter:Regular',sans-serif] text-[14px] text-[rgba(236,240,255,0.8)] hover:text-[#00A9C1] transition-colors duration-200 underline">
-                Conseil RGPD
-              </a>
-              <a href="#" className="font-['Inter:Regular',sans-serif] text-[14px] text-[rgba(236,240,255,0.8)] hover:text-[#00A9C1] transition-colors duration-200 underline">
-                Formation Sécurité
-              </a>
-            </div>
-          </div>
-
-          {/* Resources column */}
-          <div>
-            <h4 className="font-['Manrope:Bold',sans-serif] font-bold text-[#82E600] text-[12px] tracking-[1.2px] uppercase mb-[24px]">
-              Ressources
-            </h4>
-            <div className="flex flex-col gap-[12px]">
-              <a href="#" className="font-['Inter:Regular',sans-serif] text-[14px] text-[rgba(236,240,255,0.8)] hover:text-[#00A9C1] transition-colors duration-200 underline">
-                AI Act Guide
-              </a>
-              <a href="#" className="font-['Inter:Regular',sans-serif] text-[14px] text-[rgba(236,240,255,0.8)] hover:text-[#00A9C1] transition-colors duration-200 underline">
-                Documentation
-              </a>
-              <a href="#" className="font-['Inter:Regular',sans-serif] text-[14px] text-[rgba(236,240,255,0.8)] hover:text-[#00A9C1] transition-colors duration-200 underline">
-                Centre d'aide
-              </a>
-            </div>
-          </div>
-
-          {/* Legal column */}
-          <div>
-            <h4 className="font-['Manrope:Bold',sans-serif] font-bold text-[#82E600] text-[12px] tracking-[1.2px] uppercase mb-[24px]">
-              Légal
-            </h4>
-            <div className="flex flex-col gap-[12px]">
-              <a href="#" className="font-['Inter:Regular',sans-serif] text-[14px] text-[rgba(236,240,255,0.8)] hover:text-[#00A9C1] transition-colors duration-200 underline">
-                Privacy Policy
-              </a>
-              <a href="#" className="font-['Inter:Regular',sans-serif] text-[14px] text-[rgba(236,240,255,0.8)] hover:text-[#00A9C1] transition-colors duration-200 underline">
-                Terms of Service
-              </a>
-              <a href="#" className="font-['Inter:Regular',sans-serif] text-[14px] text-[rgba(236,240,255,0.8)] hover:text-[#00A9C1] transition-colors duration-200 underline">
-                Cookie Settings
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="pt-[32px] border-t border-[rgba(236,240,255,0.1)] flex items-center justify-between">
-          <p className="font-['Inter:Regular',sans-serif] text-[14px] text-[rgba(236,240,255,0.6)]">
-            © 2024 Data Conforme. All rights reserved.
-          </p>
-          <p className="font-['Inter:Regular',sans-serif] text-[14px] text-[rgba(236,240,255,0.6)]">
-            Fabrik01 is a brand of Data Conforme
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-export default function Main() {
+export default function Main({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
     <div className="relative w-full flex flex-col" data-name="Main">
       <HeroSection />
+      
+      {/* New Services Carousel injected here */}
+      <ServicesCarousel />
+      
       <SectionBentoGridServices />
       <SectionStats />
       
       {/* Old Site Injected Sections */}
-      <SectionRGPD />
-      <SectionSecteurs />
       <SectionOffres />
+      <SectionSecteurs />
+      <SectionRGPD />
       <SectionEcosystem />
 
-      <Fabrik01BrandingSection />
+      <Fabrik01BrandingSection onNavigate={onNavigate} />
+      <TestimonialsSection />
       <SectionCtAsSocialProof />
-      <Footer />
+      <Footer onNavigate={onNavigate} />
     </div>
   );
 }

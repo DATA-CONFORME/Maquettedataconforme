@@ -61,23 +61,34 @@ function Container5() {
 
 function Button() {
   return (
-    <div className="bg-[#8dfd52] content-stretch flex gap-[8px] items-center px-[32px] py-[17px] relative rounded-[12px] shrink-0" data-name="Button">
+    <a 
+      href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/30min"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-[#8dfd52] content-stretch flex items-center justify-center px-[32px] py-[17px] relative rounded-[12px] shrink-0 no-underline hover:opacity-90 transition-opacity cursor-pointer" 
+      data-name="Button"
+    >
       <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[#082100] text-[18px] text-center w-[175.81px]">
         <p className="leading-[28px]">Réserver un Audit IA</p>
       </div>
-      <Container5 />
-    </div>
+    </a>
   );
 }
 
 function Button1() {
   return (
-    <div className="backdrop-blur-[6px] bg-[rgba(255,255,255,0.1)] content-stretch flex flex-col items-center justify-center px-[33px] py-[17px] relative rounded-[12px] shrink-0" data-name="Button">
+    <a 
+      href="/plan_audit_ia.pdf" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="backdrop-blur-[6px] bg-[rgba(255,255,255,0.1)] content-stretch flex flex-col items-center justify-center px-[33px] py-[17px] relative rounded-[12px] shrink-0 hover:bg-[rgba(255,255,255,0.15)] transition-colors cursor-pointer no-underline" 
+      data-name="Button"
+    >
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[12px]" />
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[18px] text-center text-white w-[121.42px]">
-        <p className="leading-[28px]">Nos Solutions</p>
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[18px] text-center text-white min-w-[150px]">
+        <p className="leading-[28px]">L'Audit Fabrik01</p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -93,7 +104,6 @@ function Container4() {
 function Container2() {
   return (
     <div className="col-1 content-stretch flex flex-col gap-[32px] items-start justify-self-stretch relative row-1 self-center shrink-0" data-name="Container">
-      <Background />
       <Heading />
       <Container3 />
       <Container4 />
@@ -603,10 +613,9 @@ function Card() {
         </h3>
       </div>
       
-      {/* Bouton toggle */}
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors"
+        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors cursor-pointer"
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg 
@@ -785,7 +794,7 @@ function Card1() {
       
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors"
+        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors cursor-pointer"
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg 
@@ -963,7 +972,7 @@ function Card2() {
       
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors"
+        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors cursor-pointer"
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg 
@@ -1055,7 +1064,7 @@ function Card3() {
       
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors"
+        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors cursor-pointer"
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg 
@@ -1120,7 +1129,7 @@ function Card4() {
       
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors"
+        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors cursor-pointer"
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg 
@@ -1185,7 +1194,7 @@ function Card5() {
       
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors"
+        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors cursor-pointer"
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg 
@@ -1446,7 +1455,7 @@ function Heading10() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 5">
       <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[28px] justify-center leading-[0] not-italic relative shrink-0 text-[20px] text-white w-[254px]">
-        <p className="leading-[28px]">Responsabilité Numérique</p>
+        <p className="leading-[28px]">Souveraineté & Éthique</p>
       </div>
     </div>
   );
@@ -1456,8 +1465,8 @@ function Container51() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[40px] justify-center leading-[20px] not-italic relative shrink-0 text-[14px] text-[rgba(167,200,255,0.8)] w-[420.14px]">
-        <p className="mb-0">{`Réduire l'empreinte carbone de vos modèles et promouvoir une`}</p>
-        <p>IA durable.</p>
+        <p className="mb-0">{`Garantir le contrôle de vos données et l'intégrité`}</p>
+        <p>éthique de vos systèmes IA.</p>
       </div>
     </div>
   );
@@ -1601,12 +1610,14 @@ function Container40() {
   );
 }
 
-function SecurityTrustSection() {
+function SovereigntySection() {
   return (
-    <div className="absolute bg-[#001e40] content-stretch flex flex-col items-start left-[32px] overflow-clip p-[80px] right-[32px] rounded-[40px] top-[1650px]" data-name="Security & Trust Section">
+    <div className="absolute bg-[#001e40] content-stretch flex flex-col items-center left-[32px] overflow-clip px-[80px] py-[100px] right-[32px] rounded-[40px] top-[1650px]" data-name="Sovereignty & Ethics Section">
       <div className="absolute bg-[rgba(29,99,143,0.2)] blur-[50px] right-[-80px] rounded-[12px] size-[320px] top-[-80px]" data-name="Overlay+Blur" />
       <div className="absolute bg-[rgba(141,253,82,0.1)] blur-[50px] bottom-[-80px] left-[-80px] rounded-[12px] size-[320px]" data-name="Overlay+Blur" />
-      <Container40 />
+      <div className="max-w-[1000px] w-full relative z-10">
+        <Container41 />
+      </div>
     </div>
   );
 }
@@ -1632,14 +1643,18 @@ function Container55() {
   );
 }
 
-function Button4() {
+function Button4({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    <div className="bg-[#001e40] content-stretch flex flex-col items-center justify-center px-[48px] py-[20px] relative rounded-[12px] shrink-0" data-name="Button">
+    <button 
+      onClick={() => onNavigate && onNavigate('contact')}
+      className="bg-[#001e40] content-stretch flex flex-col items-center justify-center px-[48px] py-[20px] relative rounded-[12px] shrink-0 no-underline hover:opacity-90 transition-opacity cursor-pointer border-none" 
+      data-name="Button"
+    >
       <div className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[12px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]" data-name="Button:shadow" />
       <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] h-[28px] justify-center leading-[0] not-italic relative shrink-0 text-[20px] text-center text-white w-[221.38px]">
-        <p className="leading-[28px]">Démarrer mon Audit IA</p>
+        <p className="leading-[28px]">Contacter un Expert</p>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -1653,32 +1668,31 @@ function Button5() {
   );
 }
 
-function Container56() {
+function Container56({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
     <div className="content-stretch flex gap-[15.99px] items-start justify-center pt-[24px] relative shrink-0 w-full" data-name="Container">
-      <Button4 />
-      <Button5 />
+      <Button4 onNavigate={onNavigate} />
     </div>
   );
 }
 
-function CtaSection() {
+function CtaSection({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    <div className="absolute bg-[#f9f9ff] content-stretch flex flex-col gap-[24px] items-center left-0 px-[32px] py-[96px] right-0 top-[2350px]" data-name="CTA Section">
+    <div className="absolute bg-[#f9f9ff] content-stretch flex flex-col gap-[24px] items-center left-0 px-[32px] py-[96px] right-0 top-[2250px]" data-name="CTA Section">
       <Heading12 />
       <Container55 />
-      <Container56 />
+      <Container56 onNavigate={onNavigate} />
     </div>
   );
 }
 
-function Main() {
+function Main({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    <div className="h-[2800px] relative shrink-0 w-full" data-name="Main">
+    <div className="h-[2700px] relative shrink-0 w-full" data-name="Main">
       <HeroSection />
       <SectionServicesGrid />
-      <SecurityTrustSection />
-      <CtaSection />
+      <SovereigntySection />
+      <CtaSection onNavigate={onNavigate} />
     </div>
   );
 }
@@ -1945,11 +1959,10 @@ function HeaderTopAppBar() {
   );
 }
 
-export default function Body() {
+export default function Body({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
     <div className="bg-[#f9f9ff] content-stretch flex flex-col items-start pb-[2.5px] relative size-full" data-name="Body">
-      <Main />
-      <Footer />
+      <Main onNavigate={onNavigate} />
       <HeaderTopAppBar />
     </div>
   );
