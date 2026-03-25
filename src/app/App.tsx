@@ -9,6 +9,7 @@ import Main from "../imports/Main";
 import Body from "../imports/Body";
 import IAConformePage from "./components/IAConformePage";
 import ContactPage from "./components/ContactPage";
+import TarifsPage from "./components/TarifsPage";
 import { BookOpen, Clock, Award, Users, FileCheck, Shield, Download, ChevronRight, Building2, HardDrive, CheckCircle2, GraduationCap, ShieldCheck, ScrollText, Lock, Scale } from "lucide-react";
 import isoLogo from '../assets/iso27001-logo.png';
 import nis2Logo from '../assets/nis2-logo.png';
@@ -147,36 +148,36 @@ function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
             </h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#"
+                <button
+                  onClick={() => onNavigate && onNavigate('home')}
                   className="font-['Inter:Regular',sans-serif] font-normal text-white/80 text-[14px] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
                 >
                   Conformité RGPD
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#"
+                <button
+                  onClick={() => onNavigate && onNavigate('ia-conforme')}
                   className="font-['Inter:Regular',sans-serif] font-normal text-white/80 text-[14px] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
                 >
                   IA Responsable
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#"
+                <button
+                  onClick={() => onNavigate && onNavigate('formation')}
                   className="font-['Inter:Regular',sans-serif] font-normal text-white/80 text-[14px] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
                 >
                   Formation
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#"
+                <button
+                  onClick={() => onNavigate && onNavigate('fabrik01')}
                   className="font-['Inter:Regular',sans-serif] font-normal text-white/80 text-[14px] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
                 >
                   Fabrik01
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -242,11 +243,34 @@ function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
               © 2026. Tous droits réservés. Reproduction interdite. Fabrik01 est une marque déposée de Data Conforme
             </p>
           </div>
-          <div className="flex gap-4">
-             {/* Social icons placeholder */}
-             <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center cursor-pointer hover:bg-[#0047BA] transition-colors"></div>
-             <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center cursor-pointer hover:bg-[#0047BA] transition-colors"></div>
-          </div>
+           <div className="flex gap-3 items-center">
+             {/* LinkedIn Data Conforme */}
+             <a
+               href="https://www.linkedin.com/company/dataconforme/"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="LinkedIn Data Conforme"
+               className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-[#0077B5] transition-colors cursor-pointer text-white/70 hover:text-white text-[13px]"
+             >
+               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+               </svg>
+               <span className="font-['Inter:Semi_Bold',sans-serif]">Data Conforme</span>
+             </a>
+             {/* LinkedIn Jérôme Ficat */}
+             <a
+               href="https://www.linkedin.com/in/jerome-ficat/"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="LinkedIn Jérôme Ficat"
+               className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-[#0077B5] transition-colors cursor-pointer text-white/70 hover:text-white text-[13px]"
+             >
+               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+               </svg>
+               <span className="font-['Inter:Semi_Bold',sans-serif]">Jérôme Ficat</span>
+             </a>
+           </div>
         </div>
       </div>
     </footer>
@@ -357,16 +381,29 @@ function AboutPage({ onNavigate }: { onNavigate: (page: string) => void }) {
               "Après 20 ans d'expérience dans le digital et 5 ans en tant que DPO, j'ai créé Data Conforme par passion pour aider mes clients à maîtriser leurs risques juridiques et cybersécurité. Notre plus grand défi aujourd'hui ? L'intelligence artificielle qu'il faut pouvoir encadrer pour innover de manière éthique et souveraine."
             </p>
             
-            <button
-              onClick={() => onNavigate("contact")}
-              className="px-8 py-4 rounded-[8px] cursor-pointer shadow-[0_8px_30px_rgba(130,230,0,0.2)] hover:-translate-y-1 transition-all duration-300 mt-4 flex items-center gap-2"
-              style={{ backgroundColor: "#82E600" }}
-            >
-              <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[16px]">
-                Prendre rendez-vous
-              </span>
-              <ChevronRight className="w-5 h-5 text-[#0A192F]" />
-            </button>
+            <div className="flex flex-wrap gap-3 mt-4">
+              <button
+                onClick={() => onNavigate('contact')}
+                className="px-8 py-4 rounded-[8px] cursor-pointer shadow-[0_8px_30px_rgba(130,230,0,0.2)] hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
+                style={{ backgroundColor: '#82E600' }}
+              >
+                <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[16px]">
+                  Prendre rendez-vous
+                </span>
+                <ChevronRight className="w-5 h-5 text-[#0A192F]" />
+              </button>
+              <a
+                href="https://www.linkedin.com/in/jerome-ficat/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-4 rounded-[8px] cursor-pointer hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 border-2 border-[#0077B5] text-[#0077B5] hover:bg-[#0077B5] hover:text-white"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                <span className="font-['Manrope:Bold',sans-serif] font-bold text-[16px]">Jérôme Ficat</span>
+              </a>
+            </div>
           </div>
           <div className="flex-shrink-0 relative">
             <div className="absolute inset-0 bg-[#00A9C1] rounded-2xl rotate-6 opacity-20"></div>
@@ -1343,6 +1380,8 @@ export default function App() {
     <TrustCenterPage onNavigate={setCurrentPage} />
   ) : currentPage === "contact" ? (
     <ContactPage onNavigate={setCurrentPage} />
+  ) : currentPage === "tarifs" ? (
+    <TarifsPage />
   ) : (
     <HomePage onNavigate={setCurrentPage} />
   );

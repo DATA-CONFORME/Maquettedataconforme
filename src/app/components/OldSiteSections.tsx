@@ -107,254 +107,240 @@ export function SectionSecteurs() {
 }
 
 export function SectionOffres() {
-  const plans = [
-    {
-      title: "Conformité TPE ou Solo",
-      subtitle: "PME/PMI moins de 5 salariés",
-      highlight: false,
-      features: [
-        "Sensibilisation cybersécurité et RGPD",
-        "Analyse de votre système d'information",
-        "Identification des risques & non-conformités",
-        "Établissement du registre des activités",
-        "Analyse des contrats sous-traitants",
-        "Autonomie après initiation"
-      ]
-    },
-    {
-      title: "Audit initial de conformité",
-      subtitle: "PME/PMI au-delà de 5 salariés",
-      highlight: true,
-      features: [
-        "Sensibilisation du comité de direction",
-        "Accompagnement et formation du relai interne RGPD",
-        "Analyse de votre SI et organisation physique",
-        "Interview des différents services métiers",
-        "Analyse, ajout et modification de la documentation",
-        "Audit de votre site internet et/ou intranet",
-        "Analyse & avenants de sous-traitance",
-        "Établissement du registre des activités",
-        "Analyse des vulnérabilités informatiques",
-        "Mise en place des registres (incidents, preuves...)",
-        "Sensibilisation des salariés à la cybersécurité",
-        "Plan d'actions priorisé",
-        "Rapport d’audit clair et synthétique"
-      ]
-    },
-    {
-      title: "Suivi DPD / PME",
-      subtitle: "Confiez votre RGPD à un DPD nommé à la CNIL",
-      highlight: false,
-      desc: "Un DPO certifié, c'est mieux.",
-      features: [
-        "Nomination en tant que DPD auprès de la CNIL",
-        "Mise à jour mensuelle par le DPO",
-        "Environnement collaboratif inter-services",
-        "Hotline RGPD et juridique dédiée",
-        "Gestion de la conformité via logiciel dédié",
-        "Mise à jour des registres activités & sous-traitants",
-        "Rédaction documentation (politique, clauses, chartes...)",
-        "Assistance violation de données & demandes de droits",
-        "Rédaction de PIA (analyses d'impacts)",
-        "Aide à l'analyse des sous-traitants",
-        "Bilan intermédiaire et annuel"
-      ]
-    }
+  const [isDpoExpanded, setIsDpoExpanded] = useState(false);
+  const auditFeatures = [
+    "Sensibilisation du comité de direction",
+    "Accompagnement et formation du relai interne RGPD",
+    "Analyse de votre système d'information",
+    "Analyse de votre organisation physique",
+    "Interview des services",
+    "Analyse de votre documentation, ajout et modification",
+    "Audit de votre site internet et/ou intranet",
+    "Analyse de vos sous-traitants et mise en place d'avenants de sous-traitance",
+    "Établissement de votre registre des activités de traitement",
+    "Mise en place des autres registres : incidents, sous-traitants, suivi des demandes de droits, recueil des preuves de consentement",
+    "Sensibilisation des salariés à la cybersécurité et au RGPD",
+    "Rapport d'audit clair et synthétique",
   ];
 
   return (
     <div id="offres-pricing" className="w-full py-[64px] bg-[#f5f7ff]" data-name="Section - Offers Pricing">
       <div className="max-w-[1280px] mx-auto px-[32px]">
-        <div className="text-center mb-[80px]">
-          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[48px] text-[#0A192F] tracking-tight mb-[24px]">
+        <div className="text-center mb-[56px]">
+          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[48px] text-[#0A192F] tracking-tight mb-[16px]">
             Un budget compliance adapté
           </h2>
           <p className="font-['Inter:Regular',sans-serif] text-[18px] text-[#5A6A7A]">
-            Découvrez nos accompagnements sur-mesure pour initier votre conformité ou nommer un DPO à la demande.
+            Découvrez notre accompagnement sur-mesure pour initier votre conformité.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px] items-stretch">
-          {plans.map((plan, idx) => (
-            <div key={idx} className={`relative flex flex-col p-[40px] rounded-[24px] ${plan.highlight ? "bg-[#0A192F] text-white shadow-2xl transform scale-105" : "bg-white text-[#0A192F] shadow-lg"}`}>
-              {plan.highlight && (
-                <div className="absolute top-[-16px] left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#00A9C1] to-[#82E600] text-white font-['Inter:Bold',sans-serif] px-[24px] py-[8px] rounded-full text-[14px]">
-                  Le plus complet
-                </div>
-              )}
-              
-              <h3 className={`font-['Manrope:Bold',sans-serif] text-[24px] mb-[4px] ${plan.highlight ? "text-white" : "text-[#0A192F]"}`}>
-                {plan.title}
+        {/* Two-column layout: audit card + visio CTA */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+          {/* Left: Dark audit card */}
+          <div className="lg:col-span-7 relative rounded-[24px] overflow-hidden shadow-2xl" style={{ background: "linear-gradient(160deg, #0A192F 0%, #0E2844 100%)" }}>
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A9C1] to-[#82E600]" />
+
+            <div className="px-10 pt-10 pb-6 border-b border-white/10">
+              <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[26px]">
+                Audit initial de conformité
               </h3>
-              {plan.subtitle && (
-                <p className={`font-['Inter:Semi_Bold',sans-serif] text-[13px] uppercase tracking-wider mb-[16px] ${plan.highlight ? "text-[#82E600]" : "text-[#00A9C1]"}`}>
-                  {plan.subtitle}
-                </p>
-              )}
-              {plan.desc && <p className="mb-[24px] font-['Inter:Regular',sans-serif] opacity-80">{plan.desc}</p>}
-              
-              <div className="my-[32px] h-[1px] w-full" style={{ backgroundColor: plan.highlight ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)" }} />
-              
-              <ul className="flex flex-col gap-[16px] flex-1 mb-[40px]">
-                {/* Render the first 6 features */}
-                {plan.features.slice(0, 6).map((f, i) => (
-                  <li key={i} className="flex items-start gap-[12px] font-['Inter:Regular',sans-serif] text-[15px]">
-                    <CheckCircle2 className={`shrink-0 w-6 h-6 ${plan.highlight ? "text-[#82E600]" : "text-[#00A9C1]"}`} />
-                    <span className={plan.highlight ? "text-[rgba(255,255,255,0.9)]" : "text-[#5A6A7A]"}>{f}</span>
+            </div>
+
+            <div className="px-10 py-8">
+              <ul className="space-y-4">
+                {auditFeatures.map((f, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-[#82E600] mt-[7px]" />
+                    <span className="font-['Inter:Regular',sans-serif] text-[15px] text-white/85 leading-snug">{f}</span>
                   </li>
                 ))}
-                
-                {/* Expandable part if features > 6 */}
-                {plan.features.length > 6 && (
-                  <ExpandableFeatures features={plan.features.slice(6)} isHighlight={plan.highlight} />
-                )}
               </ul>
-              
-              <a 
+            </div>
+
+            <div className="px-10 pb-10">
+              <a
                 href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-full py-[16px] rounded-[12px] font-['Inter:Semi_Bold',sans-serif] text-[16px] transition-colors flex items-center justify-center no-underline ${
-                  plan.highlight 
-                    ? "bg-[#00A9C1] hover:bg-[#82E600] text-white hover:text-[#0A192F]" 
-                    : "bg-[#f5f7ff] hover:bg-[#0A192F] hover:text-white text-[#0A192F]"
-                }`}
+                className="inline-block w-full py-[14px] rounded-[12px] font-['Manrope:Bold',sans-serif] text-[15px] uppercase tracking-widest text-white text-center no-underline cursor-pointer transition-all duration-200 hover:bg-[#82E600] hover:text-[#0A192F]"
+                style={{ backgroundColor: "#00A9C1" }}
               >
                 Nous consulter
               </a>
             </div>
-          ))}
-        </div>
+          </div>
 
-        <div className="mt-[64px] flex justify-center" data-name="CTA - Free Consultation">
-          <a 
-            href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-[12px] bg-white px-[32px] py-[20px] rounded-[24px] shadow-sm border border-[rgba(0,169,193,0.15)] hover:shadow-md transition-shadow duration-300 no-underline"
-          >
-            <div className="w-[48px] h-[48px] rounded-full bg-[#E6F6F9] flex items-center justify-center text-[24px]">
-              📞
+          {/* Right column: DPO & Visio */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            {/* DPO Externalisé Card (Collapsible) */}
+            <div 
+              id="dpo-pricing-card"
+              className="bg-white border border-[rgba(0,169,193,0.15)] rounded-[24px] overflow-hidden shadow-sm flex flex-col transition-all duration-300 scroll-mt-24"
+            >
+              <div 
+                className="p-5 text-white text-center relative"
+                style={{ background: "linear-gradient(135deg, #0A192F 0%, #1A2340 100%)" }}
+              >
+                <div className="flex flex-col items-center">
+                  <div className="w-14 h-14 rounded-full border-2 border-[#82E600] mb-2 overflow-hidden shadow-lg bg-white/10 ring-4 ring-white/5">
+                    <img src="/jerome-ficat.png" alt="Jérôme Ficat" className="w-full h-full object-cover" />
+                  </div>
+                  <h4 className="font-['Manrope:Bold',sans-serif] text-[17px] mb-0.5">DPO externalisé</h4>
+                  <p className="font-['Inter:Medium',sans-serif] text-[10px] text-[#82E600]/80 uppercase tracking-widest">Accompagnement Expert</p>
+                </div>
+              </div>
+
+              <div className="p-5">
+                <button 
+                  onClick={() => setIsDpoExpanded(!isDpoExpanded)}
+                  className="w-full flex items-center justify-between p-3 rounded-xl bg-[#E6F6F9]/50 border border-[rgba(0,169,193,0.1)] hover:bg-[#E6F6F9] transition-colors duration-200"
+                >
+                  <span className="font-['Manrope:Bold',sans-serif] text-[#0A192F] text-[14px]">
+                    {isDpoExpanded ? "Masquer les services" : "Voir les services inclus"}
+                  </span>
+                  {isDpoExpanded ? <ChevronUp size={18} className="text-[#00A9C1]" /> : <ChevronDown size={18} className="text-[#00A9C1]" />}
+                </button>
+
+                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isDpoExpanded ? "max-h-[800px] opacity-100 mt-5 mb-5" : "max-h-0 opacity-0"}`}>
+                  <ul className="space-y-2">
+                    {[
+                      "Nomination DPD auprès de la CNIL",
+                      "Hotline RGPD et juridique dédiée",
+                      "Gestion via logiciel de conformité",
+                      "Suivi et mise à jour des registres",
+                      "Rédaction documentation obligatoire",
+                      "Assistance violations de données",
+                      "Gestion des demandes de droits",
+                      "Analyse des sous-traitants",
+                      "Rédaction de PIA (impacts)",
+                      "Bilans intermédiaires & annuels"
+                    ].map((service, i) => (
+                      <li key={i} className="flex items-start gap-2.5">
+                        <CheckCircle2 size={14} className="text-[#00A9C1] mt-1 shrink-0" />
+                        <span className="font-['Inter:Regular',sans-serif] text-[12px] text-[#0A192F] leading-tight">{service}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {!isDpoExpanded && <p className="text-center font-['Inter:Medium',sans-serif] text-[12px] text-[#0A192F]/40 my-3">Contactez-nous pour les tarifs</p>}
+
+                <a
+                  href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center w-full py-3 rounded-xl font-['Manrope:Bold',sans-serif] text-[14px] bg-[#00A9C1] text-white hover:bg-[#008CA1] transition-all duration-300 no-underline"
+                >
+                  <span className="mr-2">Demander un devis</span>
+                  <span>→</span>
+                </a>
+              </div>
             </div>
-            <div className="text-left">
-              <p className="font-['Manrope:Bold',sans-serif] text-[#0A192F] text-[18px]">
-                Premier entretien visio de 30 min offert
-              </p>
-              <p className="font-['Inter:Regular',sans-serif] text-[#5A6A7A] text-[14px]">
-                Discutez de vos enjeux avec un DPO certifié sans engagement.
-              </p>
-            </div>
-          </a>
+
+            {/* Visio Promo Card (Below DPO) */}
+            <a
+              href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block rounded-[24px] overflow-hidden no-underline cursor-pointer shadow-md hover:shadow-lg transition-all duration-300"
+              style={{ background: "linear-gradient(135deg, #00A9C1 0%, #0076A8 100%)" }}
+            >
+              <div className="p-5 px-6 flex items-center gap-5">
+                <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0 text-[20px]">
+                  📞
+                </div>
+                <div className="flex-1">
+                  <p className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[16px] leading-tight">30 min de visio offertes</p>
+                  <p className="font-['Inter:Regular',sans-serif] text-white/70 text-[11px] leading-tight">Accompagnement gratuit & sans engagement</p>
+                </div>
+                <div className="text-white">→</div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-// Subcomponent to handle the expandable list state
-function ExpandableFeatures({ features, isHighlight }: { features: string[], isHighlight?: boolean }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  return (
-    <>
-      {isExpanded && features.map((f, i) => (
-        <li key={i} className="flex items-start gap-[12px] font-['Inter:Regular',sans-serif] text-[15px] animate-fadeIn">
-          <CheckCircle2 className={`shrink-0 w-6 h-6 ${isHighlight ? "text-[#82E600]" : "text-[#00A9C1]"}`} />
-          <span className={isHighlight ? "text-[rgba(255,255,255,0.9)]" : "text-[#5A6A7A]"}>{f}</span>
-        </li>
-      ))}
-      <button 
-        onClick={() => setIsExpanded(!isExpanded)}
-        className={`flex items-center gap-[4px] font-['Inter:Semi_Bold',sans-serif] text-[14px] transition-colors mt-[8px] cursor-pointer bg-transparent border-none ${isHighlight ? "text-[rgba(255,255,255,0.6)] hover:text-white" : "text-[#00A9C1] hover:text-[#0A192F]"}`}
-      >
-        {isExpanded ? "Voir moins" : `Voir ${features.length} points supplémentaires`}
-        {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-      </button>
-    </>
-  );
-}
-
 export function SectionEcosystem() {
-  const partners = [
-    { title: "Cabinets Informatiques", role: "Conseil & Intégration", icon: "🏢" },
-    { title: "Ingénieurs Cyber", role: "Audit technique & Sécurité", icon: "🛡️" },
-    { title: "Hackers Éthiques", role: "Tests d'intrusion (Pentest)", icon: "💻" }
-  ];
-
   return (
     <div className="w-full py-[100px] bg-white relative overflow-hidden" data-name="Section - Ecosystem">
       <div className="max-w-[1280px] mx-auto px-[32px]">
         <div className="text-center mb-[64px]">
           <div className="inline-block px-[16px] py-[6px] rounded-full bg-[#E6F6F9] text-[#00A9C1] font-['Inter:Semi_Bold',sans-serif] text-[14px] mb-[20px]">
-            Notre Écosystème
+            Pilotage Digital
           </div>
           <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[#0A192F] text-[48px] tracking-tight">
-            Réseau d'experts & Pilotage Logiciel
+            Un pilotage de votre conformité simplifié
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[24px] items-stretch">
-          {/* Partners Column (Bento Card 1) */}
-          <div className="lg:col-span-5 bg-[#f8fafc] rounded-[32px] p-[40px] border border-[rgba(0,71,186,0.08)] flex flex-col">
-            <h3 className="font-['Manrope:Bold',sans-serif] text-[26px] text-[#0047BA] mb-[24px]">Nos Partenaires Experts</h3>
-            <p className="font-['Inter:Regular',sans-serif] text-[16px] text-[#5A6A7A] leading-[1.7] mb-[40px]">
-              Nous activons une synergie étroite avec les acteurs majeurs de la tech pour couvrir 100% de vos besoins critiques.
-            </p>
-            
-            <div className="flex flex-col gap-[20px] mt-auto">
-              {partners.map((p, i) => (
-                <div key={i} className="flex items-center gap-[20px] bg-white p-[20px] rounded-[20px] shadow-sm border border-[rgba(0,71,186,0.04)] hover:shadow-md transition-shadow">
-                  <div className="text-[32px]">{p.icon}</div>
-                  <div>
-                    <div className="font-['Manrope:Bold',sans-serif] text-[#1A2340] text-[17px]">{p.title}</div>
-                    <div className="font-['Inter:Regular',sans-serif] text-[14px] text-[#00A9C1]">{p.role}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Software Pilotage (Bento Card 2) */}
-          <div className="lg:col-span-7 bg-[#0A192F] rounded-[32px] p-[40px] relative overflow-hidden flex flex-col">
-            <div className="relative z-10 max-w-[480px]">
-              <h3 className="font-['Manrope:Bold',sans-serif] text-[26px] text-[#82E600] mb-[24px]">Pilotage Digital</h3>
-              <p className="font-['Inter:Regular',sans-serif] text-[16px] text-[rgba(255,255,255,0.7)] leading-[1.7] mb-[40px]">
-                Le respect de "l'accountability" simplifié via notre plateforme dédiée. Suivez votre avancement en temps réel avec une clarté absolue.
+          {/* Software Pilotage (Bento Card - Full Width) */}
+          <div className="lg:col-span-12 bg-[#0A192F] rounded-[32px] p-[60px] pb-16 relative flex flex-col items-center text-center lg:text-left lg:items-start">
+            <div className="relative z-10 max-w-[800px] w-full">
+              <h3 className="font-['Manrope:Bold',sans-serif] text-[32px] text-[#82E600] mb-[24px]">Pilotage Digital & Accountability</h3>
+              <p className="font-['Inter:Regular',sans-serif] text-[18px] text-[rgba(255,255,255,0.7)] leading-[1.7] mb-[48px]">
+                Le respect de "l'accountability" simplifié via notre plateforme dédiée. Suivez votre avancement en temps réel avec une clarté absolue et gérez l'ensemble de vos registres en quelques clics.
               </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-[16px] mb-[40px]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[16px] mb-[40px] w-full">
                 {[
                   "Registres automatisés", 
                   "Score de protection en réel", 
                   "Reporting DG & CODIR", 
                   "Espace collaboratif"
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-[12px] bg-[rgba(255,255,255,0.05)] p-[16px] rounded-[16px] border border-[rgba(255,255,255,0.1)]">
-                    <CheckCircle2 size={18} className="text-[#82E600]" />
-                    <span className="font-['Inter:Medium',sans-serif] text-white text-[14px]">{item}</span>
+                  <div key={i} className="flex items-center gap-[10px] bg-[rgba(255,255,255,0.05)] p-[12px] px-[18px] rounded-[12px] border border-[rgba(255,255,255,0.1)] justify-center lg:justify-start">
+                    <CheckCircle2 size={18} className="text-[#82E600] shrink-0" />
+                    <span className="font-['Inter:Medium',sans-serif] text-white text-[13.5px]">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Abstract UI Representation */}
-            <div className="mt-auto relative h-[240px] w-full flex items-end justify-center">
-              <div className="w-[85%] h-full bg-[rgba(255,255,255,0.03)] rounded-t-[20px] border-x border-t border-[rgba(255,255,255,0.1)] p-6 overflow-hidden">
-                <div className="flex gap-4 mb-8">
-                  <div className="w-1/4 h-8 bg-[#82E600] rounded-full opacity-40" />
-                  <div className="w-1/2 h-8 bg-[#00A9C1] rounded-full opacity-20" />
+            {/* App Demo Video - Browser Frame Design (Maximized) */}
+            <div className="-mt-4 lg:-mt-8 relative w-full flex items-end justify-center perspective-1000">
+              <div className="w-full lg:w-[115%] lg:left-1/2 lg:-translate-x-1/2 relative bg-[#1A2340] rounded-t-[32px] border-x border-t border-[rgba(255,255,255,0.15)] p-3 pb-0 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] transform transition-all hover:scale-[1.01] duration-700">
+                {/* Browser Header Bar */}
+                <div className="flex items-center gap-2 px-4 py-3 bg-[#1A2340] rounded-t-[18px]">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
+                  </div>
+                  <div className="mx-auto bg-white/5 rounded-md px-12 py-1 flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-[#82E600] opacity-50" />
+                    <span className="text-[10px] text-white/30 font-['Inter:Medium',sans-serif] tracking-wider uppercase">app.dataconforme.com</span>
+                  </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="h-32 bg-[rgba(255,255,255,0.05)] rounded-xl border border-[rgba(255,255,255,0.1)] animate-pulse" />
-                  <div className="h-40 bg-[rgba(130,230,0,0.1)] rounded-xl border border-[#82E600]/20" />
-                  <div className="h-32 bg-[rgba(255,255,255,0.05)] rounded-xl border border-[rgba(255,255,255,0.1)]" />
+                
+                {/* Video Container */}
+                <div className="relative w-full aspect-video rounded-t-[4px] overflow-hidden bg-[#0A192F]">
+                  <video 
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline 
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/app-demo.mov" type="video/quicktime" />
+                    <source src="/app-demo.mov" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  
+                  {/* Subtle overlay gradient to blend with the frame */}
+                  <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_40px_rgba(0,0,0,0.3)]" />
                 </div>
               </div>
             </div>
             
             {/* Ambient glows */}
-            <div className="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] bg-[#00A9C1] blur-[120px] opacity-10" />
-            <div className="absolute bottom-[-50px] left-[-50px] w-[200px] h-[200px] bg-[#82E600] blur-[100px] opacity-10" />
+            <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] bg-[#00A9C1] blur-[150px] opacity-10" />
+            <div className="absolute bottom-[-50px] left-[-50px] w-[300px] h-[300px] bg-[#82E600] blur-[120px] opacity-10" />
           </div>
         </div>
       </div>

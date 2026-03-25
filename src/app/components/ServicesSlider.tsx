@@ -6,7 +6,25 @@ import {
   Award, Landmark, Network 
 } from 'lucide-react';
 
-const SLIDES = [
+interface ServiceCardData {
+  icon: any;
+  title: string;
+  text: string;
+  button: string;
+  link?: string;
+}
+
+interface SlideData {
+  id: number;
+  theme: string;
+  accent: string;
+  title: string;
+  subtitle: string;
+  isDark?: boolean;
+  cards: ServiceCardData[];
+}
+
+const SLIDES: SlideData[] = [
   {
     id: 1,
     theme: '#E6F1FB',
@@ -78,7 +96,8 @@ const SLIDES = [
         icon: UserCheck,
         title: "Nomination à la CNIL",
         text: "Data Conforme est nommé Délégué à la Protection des Données auprès de la CNIL. Vous bénéficiez d'une hotline juridique et RGPD dédiée, d'une assistance en cas de violation de données ou de demande de droits.",
-        button: "En savoir plus"
+        button: "En savoir plus",
+        link: "#dpo-pricing-card"
       },
       {
         icon: LayoutDashboard,
@@ -307,7 +326,7 @@ export default function ServicesSlider() {
                           {card.text}
                         </p>
                         <a 
-                          href="#" 
+                          href={card.link || "#"} 
                           className="group/link flex items-center gap-2 font-['Inter:Semi_Bold',sans-serif] text-[13px] font-semibold mt-auto"
                           style={{ color: slide.isDark ? '#00A9C1' : '#2563EB' }}
                         >

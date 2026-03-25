@@ -9,6 +9,7 @@ import imgServerInfrastructure from "figma:asset/ee3de47921ca488ba9f51b39e9b3214
 import { ChevronRight } from "lucide-react";
 import logoFabrik01 from "../assets/logo-fabrik01-blanc.png";
 import TestimonialsSection from "../app/components/TestimonialsSection";
+import { LogoBand } from "../app/components/LogoBand";
 
 /* ─── Design Tokens (palette Data Conforme) ──────────────────────────────
    Primary   : #00A9C1  (teal / cyan)
@@ -207,24 +208,12 @@ function Container10() {
   );
 }
 
-function Button() {
-  return (
-    /* Secondary (#82E600) CTA button */
-    <div className="bg-[#82E600] content-stretch flex gap-[8px] items-center px-[24px] py-[12px] relative rounded-[8px] shrink-0" data-name="Button">
-      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[24px] justify-center leading-[0] not-italic relative shrink-0 text-[#0A192F] text-[16px] text-center w-[107.39px]">
-        <p className="leading-[24px]">En savoir plus</p>
-      </div>
-      <Container10 />
-    </div>
-  );
-}
 
 function Container8() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start max-w-[448px] relative shrink-0 w-[448px]" data-name="Container">
       <Heading3 />
       <Container9 />
-      <Button />
     </div>
   );
 }
@@ -267,7 +256,7 @@ function Container11() {
 function SmallCard() {
   return (
     /* Tertiary light (#D4E3FF) small card */
-    <div className="bg-[#D4E3FF] col-2 h-[194px] justify-self-stretch relative row-2 shrink-0" data-name="Small Card 1">
+    <div className="bg-[#D4E3FF] col-[2/span_2] h-[194px] justify-self-stretch relative row-2 shrink-0" data-name="Small Card 1">
       <div aria-hidden="true" className="absolute border border-[rgba(0,71,186,0.1)] border-solid inset-0 pointer-events-none" />
       <div className="absolute left-[35.5px] size-[25px] top-[37.25px]" data-name="Icon">
         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 25 25">
@@ -280,41 +269,7 @@ function SmallCard() {
   );
 }
 
-function Heading5() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-[33px] right-[32.99px] top-[85px]" data-name="Heading 4">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[#0A192F] text-[20px] w-[159.69px]">
-        <p className="leading-[28px]">Cloud Souverain</p>
-      </div>
-    </div>
-  );
-}
 
-function Container12() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-[33px] right-[32.99px] top-[121px]" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[40px] justify-center leading-[20px] not-italic relative shrink-0 text-[#3d494c] text-[14px] w-[266.47px]">
-        <p className="mb-0">{`Solutions d'hébergement garantissant la`}</p>
-        <p>souveraineté.</p>
-      </div>
-    </div>
-  );
-}
-
-function SmallCard1() {
-  return (
-    <div className="bg-[#D4E3FF] col-3 h-[194px] justify-self-stretch relative row-2 shrink-0" data-name="Small Card 2">
-      <div aria-hidden="true" className="absolute border border-[rgba(0,71,186,0.1)] border-solid inset-0 pointer-events-none" />
-      <div className="absolute h-[20px] left-[34.25px] top-[41px] w-[27.5px]" data-name="Icon">
-        <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 27.5 20">
-          <path d={svgPaths.p1f146080} fill="var(--fill-0, #0047BA)" id="Icon" />
-        </svg>
-      </div>
-      <Heading5 />
-      <Container12 />
-    </div>
-  );
-}
 
 function Container3() {
   return (
@@ -322,7 +277,6 @@ function Container3() {
       <HighCard />
       <WideCard />
       <SmallCard />
-      <SmallCard1 />
     </div>
   );
 }
@@ -414,7 +368,7 @@ function Container16() {
       <div className="absolute bg-[#00A9C1] blur-[60px] right-0 rounded-[12px] size-[800px] top-0" data-name="Background+Blur" />
       {/* Secondary dark green blur */}
       <div className="absolute bg-[#3D7000] blur-[50px] bottom-0 left-0 rounded-[12px] size-[600px]" data-name="Background+Blur" />
-      <div className="-translate-y-1/2 absolute flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[960px] justify-center leading-[0] left-[173.13px] not-italic opacity-10 text-[#0A192F] text-[640px] top-[346px] w-[933.75px]">
+      <div className="-translate-y-1/2 absolute flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[960px] justify-center leading-[0] left-[173.13px] not-italic opacity-[0.03] text-white text-[640px] top-[346px] w-[933.75px]">
         <p className="leading-[960px]">DC</p>
       </div>
     </div>
@@ -448,10 +402,8 @@ function BackgroundBorder() {
 function Heading() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 1">
-      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] justify-center leading-[72px] not-italic relative shrink-0 text-[#0A192F] text-[72px] tracking-[-1.8px] w-full">
-        <p className="mb-0">{`L'Architecture du`}</p>
-        {/* Primary → Secondary gradient on hero text */}
-        <p className="bg-clip-text bg-gradient-to-r from-[#00A9C1] text-[transparent] to-[#82E600]">Futur Conforme</p>
+      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] justify-center leading-[72px] not-italic relative shrink-0 text-white text-[72px] tracking-[-1.8px] w-full">
+        <p>Protégez vos données et valeurs</p>
       </div>
     </div>
   );
@@ -460,11 +412,9 @@ function Heading() {
 function Container20() {
   return (
     <div className="content-stretch flex flex-col items-start max-w-[576px] relative shrink-0 w-[576px]" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[130px] justify-center leading-[32.5px] not-italic relative shrink-0 text-[#3d494c] text-[20px] w-[574.69px]">
-        <p className="mb-0">Data Conforme fusionne la solidité architecturale et la</p>
-        <p className="mb-0">précision technique pour sécuriser vos actifs numériques les</p>
-        <p className="mb-0">plus précieux. Une clarté absolue pour une conformité sans</p>
-        <p>compromis.</p>
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[130px] justify-center leading-[32.5px] not-italic relative shrink-0 text-white/90 text-[20px] w-[574.69px]">
+        <p className="mb-0">Data conforme sécurise vos actifs numériques et aide votre</p>
+        <p className="mb-0">organisation à progresser en maturiré cyber.</p>
       </div>
     </div>
   );
@@ -472,16 +422,14 @@ function Container20() {
 
 function Button2() {
   return (
-    /* Primary hero CTA : Tertiary → Primary gradient */
+    /* Secondary (#82E600) CTA button to match IA page */
     <a
       href="#offres-pricing"
-      className="content-stretch flex flex-col items-center justify-center px-[32px] py-[18px] relative rounded-[8px] shrink-0 hover:opacity-90 transition-opacity cursor-pointer no-underline"
+      className="bg-[#82E600] content-stretch flex flex-col items-center justify-center px-[32px] py-[18px] relative rounded-[8px] shrink-0 hover:opacity-90 transition-opacity cursor-pointer no-underline"
       data-name="Button"
-      style={{ backgroundImage: "linear-gradient(166.782deg, #0047BA 0%, #00A9C1 100%)" }}
     >
-      <div className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[8px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]" data-name="Button:shadow" />
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[18px] text-center text-white w-[208.48px]">
-        <p className="leading-[28px]">Découvrir nos Solutions</p>
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[#082100] text-[18px] text-center w-[208.48px]">
+        <p className="leading-[28px]">Notre accompagnement</p>
       </div>
     </a>
   );
@@ -493,11 +441,11 @@ function Button3() {
       href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
       target="_blank"
       rel="noopener noreferrer"
-      className="content-stretch flex flex-col items-center justify-center px-[34px] py-[18px] relative rounded-[8px] shrink-0 hover:bg-gray-50 transition-colors cursor-pointer no-underline" 
+      className="content-stretch flex flex-col items-center justify-center px-[34px] py-[18px] relative rounded-[8px] shrink-0 hover:bg-white/10 transition-colors cursor-pointer no-underline" 
       data-name="Button"
     >
-      <div aria-hidden="true" className="absolute border-2 border-[rgba(0,71,186,0.25)] border-solid inset-0 pointer-events-none rounded-[8px]" />
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[#0A192F] text-[18px] text-center w-[160px]">
+      <div aria-hidden="true" className="absolute border-2 border-white/30 border-solid inset-0 pointer-events-none rounded-[8px]" />
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-white text-[18px] text-center w-[160px]">
         <p className="leading-[28px]">Prendre un RDV</p>
       </div>
     </a>
@@ -623,7 +571,11 @@ function Container17() {
 
 function HeroSection() {
   return (
-    <div className="relative content-stretch flex flex-col items-center w-full overflow-clip pb-[48px] pt-[140px]" data-name="Hero Section">
+    <div 
+      className="relative content-stretch flex flex-col items-center w-full overflow-clip pb-[48px] pt-[140px]" 
+      data-name="Hero Section"
+      style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}
+    >
       <Container16 />
       <Container17 />
     </div>
@@ -894,7 +846,8 @@ export default function Main({ onNavigate }: { onNavigate?: (page: string) => vo
       <HeroSection />
       
       {/* New Services Carousel injected here */}
-      <ServicesCarousel />
+      <LogoBand />
+      <ServicesCarousel onNavigate={onNavigate} />
       
       <SectionBentoGridServices />
       <SectionStats />
