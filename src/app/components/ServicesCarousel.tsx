@@ -8,6 +8,11 @@ import dpoMockup from "../../assets/dpo-externalise-mockup-v2.png";
 import formationsMockup from "../../assets/formations-mockup.png";
 import nis2Logo from "../../assets/nis2-logo.png";
 import isoLogo from "../../assets/iso27001-logo.png";
+import iaEquipeMockup from "../../assets/ia-equipe-mockup.png";
+
+export interface ServicesCarouselProps {
+  onNavigate?: (page: string) => void;
+}
 
 const CARDS = [
   {
@@ -22,7 +27,7 @@ const CARDS = [
     coverImage: true,
     customScale: 1.05,
     isDark: false,
-    link: "https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
+    link: "#offres-pricing"
   },
   {
     id: 2,
@@ -39,8 +44,22 @@ const CARDS = [
     link: "https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
   },
   {
+    id: 5,
+    title: "Votre IA Conforme & Souveraine",
+    description: "Conformité AI Act, audit RGPD de vos outils IA, éthique algorithmique et souveraineté des données. Déployez l'IA en toute confiance.",
+    button: "Découvrir",
+    bg: "#FAECE7",
+    iconColor: "#E06B4D",
+    icon: Bot,
+    image: iaEquipeMockup,
+    coverImage: true,
+    customScale: 1.05,
+    isDark: false,
+    link: "ia-conforme"
+  },
+  {
     id: 3,
-    title: "Formations & Sensibilisations",
+    title: "Formations & Sensibilisation",
     description: "RGPD, AI Act, cybersécurité, IA responsable. Certifié Qualiopi. Votre formation peut être financée jusqu'à 50% par votre OPCO. Présentiel et e-learning.",
     button: "Voir les formations",
     bg: "#D1FAE5",
@@ -49,7 +68,8 @@ const CARDS = [
     image: formationsMockup,
     coverImage: true,
     customScale: 1.05,
-    isDark: false
+    isDark: false,
+    link: "formation"
   },
   {
     id: 4,
@@ -63,18 +83,8 @@ const CARDS = [
     coverImage: true,
     customScale: 1.05,
     isDark: true,
-    isFabrik: true
-  },
-  {
-    id: 5,
-    title: "Votre IA Conforme & Souveraine",
-    description: "Conformité AI Act, audit RGPD de vos outils IA, éthique algorithmique et souveraineté des données. Déployez l'IA en toute confiance.",
-    button: "Découvrir",
-    bg: "#FAECE7",
-    iconColor: "#E06B4D",
-    icon: Bot,
-    isDark: false,
-    link: "https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/30min"
+    isFabrik: true,
+    link: "fabrik01"
   },
   {
     id: 6,
@@ -93,11 +103,13 @@ const CARDS = [
   },
 ];
 
-export default function ServicesCarousel() {
+export default function ServicesCarousel({ onNavigate }: ServicesCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(3);
   const containerRef = useRef<HTMLDivElement>(null);
   
+  const isHovered = useRef(false);
+  const autoScrollRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
@@ -118,14 +130,29 @@ export default function ServicesCarousel() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Auto-scroll: advance every 3s, pause on hover
+  useEffect(() => {
+    autoScrollRef.current = setInterval(() => {
+      if (!isHovered.current) {
+        setCurrentIndex((prev) => {
+          const total = CARDS.length - cardsPerView;
+          return prev >= total ? 0 : prev + 1;
+        });
+      }
+    }, 3000);
+    return () => {
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+    };
+  }, [cardsPerView]);
+
   const totalSlides = Math.max(0, CARDS.length - cardsPerView);
 
   const prev = () => {
-    if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
+    setCurrentIndex((i) => (i > 0 ? i - 1 : CARDS.length - cardsPerView));
   };
 
   const next = () => {
-    if (currentIndex < totalSlides) setCurrentIndex(currentIndex + 1);
+    setCurrentIndex((i) => (i < totalSlides ? i + 1 : 0));
   };
 
   const handleTouchStart = (e: TouchEvent) => {
@@ -147,7 +174,11 @@ export default function ServicesCarousel() {
   };
 
   return (
-    <section className="w-full bg-[#F8FAFC] py-24 relative overflow-hidden">
+    <section
+      className="w-full bg-[#F8FAFC] pt-12 pb-24 relative overflow-hidden"
+      onMouseEnter={() => { isHovered.current = true; }}
+      onMouseLeave={() => { isHovered.current = false; }}
+    >
       <div className="max-w-[1400px] mx-auto px-16 relative">
         <h2 className="font-['Manrope:Bold',sans-serif] text-[36px] text-[#0A192F] mb-12 text-center md:text-left md:ml-4">
           Nos Services & Formations
@@ -185,7 +216,16 @@ export default function ServicesCarousel() {
                 return (
                   <div 
                     key={card.id} 
-                    className="flex-shrink-0 group/card bg-white rounded-[16px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden flex flex-col"
+                    className="flex-shrink-0 group/card bg-white rounded-[16px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden flex flex-col cursor-pointer"
+                    onClick={(e) => {
+                      if (card.link?.startsWith('http')) {
+                        window.open(card.link, '_blank', 'noopener,noreferrer');
+                      } else if (card.link?.startsWith('#')) {
+                        window.location.hash = card.link;
+                      } else if (card.link) {
+                        onNavigate?.(card.link);
+                      }
+                    }}
                     style={{ 
                       width: containerRef.current 
                         ? `${(containerRef.current.offsetWidth - (cardsPerView - 1) * 20) / cardsPerView}px` 
@@ -249,9 +289,15 @@ export default function ServicesCarousel() {
                       </p>
                       
                       <a 
-                        href={card.link || (card.isFabrik ? "/fabrik01" : "#")} 
-                        target={card.link ? "_blank" : "_self"}
-                        rel={card.link ? "noopener noreferrer" : ""}
+                        href={card.link?.startsWith('http') || card.link?.startsWith('#') ? card.link : '#'} 
+                        target={card.link?.startsWith('http') ? "_blank" : "_self"}
+                        rel={card.link?.startsWith('http') ? "noopener noreferrer" : ""}
+                        onClick={(e) => {
+                          if (card.link && !card.link.startsWith('http') && !card.link.startsWith('#')) {
+                            e.preventDefault();
+                            onNavigate?.(card.link);
+                          }
+                        }}
                         className="group/link flex items-center gap-1 font-['Inter:Semi_Bold',sans-serif] text-[13px] font-semibold mt-auto no-underline cursor-pointer"
                         style={{ color: card.isDark ? '#0047BA' : card.iconColor }}
                       >
