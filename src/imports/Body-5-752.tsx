@@ -78,7 +78,7 @@ function Button() {
 function Button1() {
   return (
     <a 
-      href="/plan_audit_ia.pdf" 
+      href={`${import.meta.env.BASE_URL}plan_audit_ia.pdf`}
       target="_blank" 
       rel="noopener noreferrer"
       className="backdrop-blur-[6px] bg-[rgba(255,255,255,0.1)] content-stretch flex flex-col items-center justify-center px-[33px] py-[17px] relative rounded-[12px] shrink-0 hover:bg-[rgba(255,255,255,0.15)] transition-colors cursor-pointer no-underline" 

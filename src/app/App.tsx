@@ -682,7 +682,7 @@ function FormationPage({ onNavigate }: { onNavigate: (page: string) => void }) {
               
               <div className="flex flex-col gap-3 w-full">
                 <a 
-                  href="/programme_formation_ia.pdf" 
+                  href={`${import.meta.env.BASE_URL}programme_formation_ia.pdf`}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full py-3 px-6 rounded-lg transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center no-underline cursor-pointer"
@@ -694,7 +694,7 @@ function FormationPage({ onNavigate }: { onNavigate: (page: string) => void }) {
                 </a>
                 
                 <a 
-                  href="/Fiche_Produit_IA_Qualiopi.pdf" 
+                  href={`${import.meta.env.BASE_URL}Fiche_Produit_IA_Qualiopi.pdf`}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full py-3 px-6 rounded-lg border-2 border-[#0047BA] hover:bg-[#F8FAFB] transition-colors duration-200 flex items-center justify-center text-center no-underline cursor-pointer"
