@@ -109,7 +109,6 @@ export function SectionSecteurs() {
 }
 
 export function SectionOffres() {
-  const [isDpoExpanded, setIsDpoExpanded] = useState(false);
   const auditFeatures = [
     "Sensibilisation du comité de direction",
     "Accompagnement et formation du relai interne RGPD",
@@ -195,17 +194,10 @@ export function SectionOffres() {
               </div>
 
               <div className="p-5">
-                <button 
-                  onClick={() => setIsDpoExpanded(!isDpoExpanded)}
-                  className="w-full flex items-center justify-between p-3 rounded-xl bg-[#E6F6F9]/50 border border-[rgba(0,169,193,0.1)] hover:bg-[#E6F6F9] transition-colors duration-200"
-                >
-                  <span className="font-['Manrope:Bold',sans-serif] text-[#0A192F] text-[14px]">
-                    {isDpoExpanded ? "Masquer les services" : "Voir les services inclus"}
-                  </span>
-                  {isDpoExpanded ? <ChevronUp size={18} className="text-[#00A9C1]" /> : <ChevronDown size={18} className="text-[#00A9C1]" />}
-                </button>
-
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isDpoExpanded ? "max-h-[800px] opacity-100 mt-5 mb-5" : "max-h-0 opacity-0"}`}>
+                <div className="mb-5">
+                  <p className="font-['Manrope:Bold',sans-serif] text-[14px] text-[#00A9C1] uppercase tracking-[1px] mb-4 border-b border-[#E6F6F9] pb-2">
+                    Services inclus
+                  </p>
                   <ul className="space-y-2">
                     {[
                       "Nomination DPD auprès de la CNIL",
@@ -226,8 +218,6 @@ export function SectionOffres() {
                     ))}
                   </ul>
                 </div>
-
-                {!isDpoExpanded && <p className="text-center font-['Inter:Medium',sans-serif] text-[12px] text-[#0A192F]/40 my-3">Contactez-nous pour les tarifs</p>}
 
                 <a
                   href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
