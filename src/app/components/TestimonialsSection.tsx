@@ -4,7 +4,7 @@ import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 const TESTIMONIALS = [
   {
     id: 1,
-    content: "L’agence d’urbanisme du Pays d’Aix est accompagnée par M.FICAT dans sa démarche de protection des données depuis un mois. Nous avons déjà pu apprécier son professionnalisme dans le diagnostic rapide et précis porté sur notre structure. Sa sensibilisation et les préconisations apportées à l’ensemble de mes collaborateurs ont été claires et comprises. Le programme d’action qui a été établi à l’issue de son séjour à l’agence est bien hiérarchisé en terme de priorité et dans le temps. Nous sommes pleinement satisfait de cette collaboration qui va s’inscrire dans le long terme.",
+    content: "L’agence d’urbanisme du Pays d’Aix est accompagnée par M.FICAT dans sa démarche de protection des données depuis un mois. Nous avons déjà pu apprécier son professionnalisme dans le diagnostic rapide et précis porté sur notre structure. Sa sensibilisation et les préconisations apportées à l’ensemble de mes collaborateurs ont été claires et comprises. Le programme d’action qui a été établi à l’issue de son séjour à l’agence est bien hiérarchisé en termes de priorité et dans le temps. Nous sommes pleinement satisfaits de cette collaboration qui va s’inscrire dans le long terme.",
     author: "Serge LERDA",
     role: "Directeur général, Agence d'Urbanisme du Pays d'Aix"
   },
@@ -16,7 +16,7 @@ const TESTIMONIALS = [
   },
   {
     id: 3,
-    content: "J’ai rencontré Jérôme FICAT et Data conforme, il y a 2 ans dans le cadre de la mise en place de notre solution RGPD. Ce qui m’a frappé chez Jérôme au-delà de ses compétences techniques évidentes, c’est son implication pour s’adapter aux besoins et aux capacités de son client. J’ai eu l’opportunité d’assister à une sensibilisation qu’il animait et malgré le faible intérêt initial du public, il a su captiver et faire participer l’ensemble de l’auditoire. On ressent réellement sa conviction sur le domaine de la RGPD.",
+    content: "J’ai rencontré Jérôme FICAT et Data Conforme, il y a 2 ans dans le cadre de la mise en place de notre solution RGPD. Ce qui m’a frappé chez Jérôme au-delà de ses compétences techniques évidentes, c’est son implication pour s’adapter aux besoins et aux capacités de son client. J’ai eu l’opportunité d’assister à une sensibilisation qu’il animait et malgré le faible intérêt initial du public, il a su captiver et faire participer l’ensemble de l’auditoire. On ressent réellement sa conviction sur le domaine du RGPD.",
     author: "Stéphane BLANCHARD",
     role: "Responsable administratif, financier et RH, Compagnons du Tour de France"
   },
@@ -34,13 +34,13 @@ const TESTIMONIALS = [
   },
   {
     id: 6,
-    content: "Data Conforme a réalisé un audit RGPD de mon organisme 2A Qualité. Étant indépendante, seule à bord de mon navire, Jérôme FICAT a su s’adapter à ma structure et me proposer une journée complète. En effet, la journée a débuté par une formation au RGPD et une sensibilisation à la cybersécurité. Où j’ai pu découvrir un monde pratiquement inconnu. La seconde partie de la journée, il a réalisé un audit de mon organisme et son environnement. En fin de journée, je suis reparti avec un plan d’action et des documents, afin de me permettre de mettre en conformité au RGPD mon système, mais également des astuces pour renforcer ma sécurité, pour mes clients et moi-même.",
+    content: "Data Conforme a réalisé un audit RGPD de mon organisme 2A Qualité. Étant indépendante, seule à bord de mon navire, Jérôme FICAT a su s’adapter à ma structure et me proposer une journée complète. En effet, la journée a débuté par une formation au RGPD et une sensibilisation à la cybersécurité. J’ai ainsi pu découvrir un monde pratiquement inconnu. La seconde partie de la journée, il a réalisé un audit de mon organisme et de son environnement. En fin de journée, je suis repartie avec un plan d’action et des documents, afin de me permettre de mettre en conformité au RGPD mon système, mais également des astuces pour renforcer ma sécurité, pour mes clients et moi-même.",
     author: "Fabienne SANTALUCIA",
     role: "Consultante et auditeur qualité certifiée, 2A QUALITÉ"
   },
   {
     id: 7,
-    content: "Data conforme et M. FICAT est intervenu durant deux journées à la MFR pour accompagner l’équipe aux enjeux de la RGPD. Un accompagnement de qualité, à l’écoute de l’équipe et adapté aux exigences de l’entreprise.",
+    content: "Data Conforme et M. FICAT sont intervenus durant deux journées à la MFR pour accompagner l’équipe aux enjeux du RGPD. Un accompagnement de qualité, à l’écoute de l’équipe et adapté aux exigences de l’entreprise.",
     author: "Gaëlle DAVID",
     role: "Directrice, MFR La Catie"
   }

@@ -255,7 +255,7 @@ export default function ContactPage({ onNavigate }: { onNavigate: (page: string)
                     <CheckCircle2 className="absolute top-0 left-0 w-6 h-6 text-white scale-0 transition-transform duration-200 peer-checked:scale-100 p-1" />
                   </div>
                   <span className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] text-[14px] leading-relaxed">
-                    Je consens au traitement de mes données et confirme que j'ai bien pris connaissance de la <button type="button" onClick={() => onNavigate('privacy')} className="text-[#00A9C1] hover:underline font-semibold cursor-pointer">politique de confidentialité</button> de Data conforme (en aucun cas vos données ne seront revendues ou cédées à des tiers).
+                    Je consens au traitement de mes données et confirme que j’ai bien pris connaissance de la <button type="button" onClick={() => onNavigate('privacy')} className="text-[#00A9C1] hover:underline font-semibold cursor-pointer">politique de confidentialité</button> de Data Conforme (en aucun cas vos données ne seront revendues ou cédées à des tiers).
                   </span>
                 </label>
                 {errors.consent && <p className="text-red-500 text-[12px] font-['Inter:Medium',sans-serif]">{errors.consent}</p>}

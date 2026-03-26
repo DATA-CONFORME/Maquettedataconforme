@@ -18,7 +18,7 @@ const CARDS = [
   {
     id: 1,
     title: "Audit & Conformité RGPD",
-    description: "Audit de votre SI, registres obligatoires, analyse de vos process et plan d'action priorisé. Pour les TPE, PME et tout type d'organisation.",
+    description: "Audit de votre SI, registres obligatoires, analyse de vos processus et plan d'action priorisé. Pour les TPE, PME et tout type d'organisation.",
     button: "Découvrir l'audit",
     bg: "#DBEAFE",
     iconColor: "#2563EB",

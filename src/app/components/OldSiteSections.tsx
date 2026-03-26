@@ -10,9 +10,9 @@ export function SectionRGPD() {
     { title: "Une mise aux normes obligatoire", desc: "Le RGPD est obligatoire pour tout type de structure. Nous vous aidons à protéger votre « trésor de guerre » et à limiter les risques.", icon: <ShieldCheck className="w-8 h-8 text-[#00A9C1]" /> },
     { title: "Analyse de votre SI", desc: "Un regard neuf sur vos failles de sécurité. Le DPO vous aide à prévenir les non-conformités informatiques.", icon: <HardDrive className="w-8 h-8 text-[#00A9C1]" /> },
     { title: "ISO 27001", desc: "Mise en place d’un système de management de la sécurité de l’information (SMSI) selon les normes internationales.", icon: <img src={isoLogo} alt="ISO 27001" className="w-10 h-auto object-contain" /> },
-    { title: "Analyse de vos process", desc: "Chaque service de votre entreprise a ses pratiques. Sécuriser vos données en adaptant vos usages aux exigences cyber.", icon: <Search className="w-8 h-8 text-[#00A9C1]" /> },
+    { title: "Analyse de vos processus", desc: "Chaque service de votre entreprise a ses pratiques. Nous sécurisons vos données en adaptant vos usages aux exigences cyber.", icon: <Search className="w-8 h-8 text-[#00A9C1]" /> },
     { title: "Une assistance nécessaire", desc: "Le RGPD exige des connaissances spécialisées. Un Délégué à la Protection des Données (DPO) vous soulage de cette contrainte.", icon: <UserCheck className="w-8 h-8 text-[#00A9C1]" /> },
-    { title: "NIS 2 : nouvelle règlementation", desc: "Changement de paradigme pour apporter davantage de protection face aux acteurs malveillants toujours plus performants.", icon: <img src={nis2Logo} alt="NIS 2" className="w-12 h-12 rounded-lg object-cover" /> }
+    { title: "NIS 2 : nouvelle réglementation", desc: "Changement de paradigme pour apporter davantage de protection face aux acteurs malveillants toujours plus performants.", icon: <img src={nis2Logo} alt="NIS 2" className="w-12 h-12 rounded-lg object-cover" /> }
   ];
 
   return (
@@ -111,7 +111,7 @@ export function SectionSecteurs() {
 export function SectionOffres() {
   const auditFeatures = [
     "Sensibilisation du comité de direction",
-    "Accompagnement et formation du relai interne RGPD",
+    "Accompagnement et formation du relais interne RGPD",
     "Analyse de votre système d'information",
     "Analyse de votre organisation physique",
     "Interview des services",
@@ -200,16 +200,16 @@ export function SectionOffres() {
                   </p>
                   <ul className="space-y-2">
                     {[
-                      "Nomination DPD auprès de la CNIL",
-                      "Hotline RGPD et juridique dédiée",
-                      "Gestion via logiciel de conformité",
-                      "Suivi et mise à jour des registres",
-                      "Rédaction documentation obligatoire",
-                      "Assistance violations de données",
-                      "Gestion des demandes de droits",
-                      "Analyse des sous-traitants",
-                      "Rédaction de PIA (impacts)",
-                      "Bilans intermédiaires & annuels"
+                    "Nomination DPO auprès de la CNIL",
+                    "Hotline RGPD et juridique dédiée",
+                    "Gestion via logiciel de conformité",
+                    "Suivi et mise à jour des registres",
+                    "Rédaction de la documentation obligatoire",
+                    "Assistance en cas de violations de données",
+                    "Gestion des demandes de droits",
+                    "Analyse des sous-traitants",
+                    "Rédaction de PIA (impacts)",
+                    "Bilans intermédiaires & annuels"
                     ].map((service, i) => (
                       <li key={i} className="flex items-start gap-2.5">
                         <CheckCircle2 size={14} className="text-[#00A9C1] mt-1 shrink-0" />
@@ -282,7 +282,7 @@ export function SectionEcosystem() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[16px] mb-[40px] w-full">
                 {[
                   "Registres automatisés", 
-                  "Score de protection en réel", 
+                  "Score de protection en temps réel", 
                   "Reporting DG & CODIR", 
                   "Espace collaboratif"
                 ].map((item, i) => (

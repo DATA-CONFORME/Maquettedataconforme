@@ -428,7 +428,7 @@ function AboutPage({ onNavigate }: { onNavigate: (page: string) => void }) {
           </div>
           
           <h2 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0047BA] text-[36px] text-center mb-12">
-            Spécificité de Data conforme : Des juristes qui parlent "TECH"
+            Spécificité de Data Conforme : Des juristes qui parlent "TECH"
           </h2>
 
           <div className="bg-white rounded-2xl shadow-lg p-12 border border-gray-100">
@@ -1088,7 +1088,7 @@ function PrivacyPolicyPage({ onNavigate }: { onNavigate: (page: string) => void 
               <h2 className="font-['Manrope:Bold',sans-serif] text-[24px] text-[#0A192F]">I – Objectifs de notre politique de confidentialité</h2>
             </div>
             <div className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] leading-relaxed space-y-4">
-              <p>Cette Politique de Confidentialité s’applique à tous les services, produits, et applications, proposés par Data conforme.</p>
+              <p>Cette Politique de Confidentialité s’applique à tous les services, produits, et applications, proposés par Data Conforme.</p>
               <div className="bg-[#F8FAFB] p-6 rounded-xl border border-[#E5E9F0]">
                 <p className="font-['Manrope:Bold',sans-serif] text-[#0A192F] mb-2 uppercase text-[12px] tracking-wider">Nos coordonnées</p>
                 <p><strong>DATA CONFORME :</strong> Société par Actions Simplifiée (SAS)<br />
