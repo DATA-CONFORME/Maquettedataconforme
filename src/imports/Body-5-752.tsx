@@ -463,34 +463,10 @@ function Container24() {
   );
 }
 
-function Container26() {
-  return (
-    <div className="h-[9px] relative shrink-0 w-[19px]" data-name="Container">
-      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19 9">
-        <g id="Container">
-          <path d={svgPaths.p19756be0} fill="var(--fill-0, #1D638F)" id="Icon" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Button2() {
-  return (
-    <div className="content-stretch flex gap-[7.99px] items-center relative shrink-0" data-name="Button">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[24px] justify-center leading-[0] relative shrink-0 text-[#1d638f] text-[16px] text-center w-[162.77px]">
-        <p className="leading-[24px]">Voir tous les services</p>
-      </div>
-      <Container26 />
-    </div>
-  );
-}
-
 function Container23() {
   return (
     <div className="content-stretch flex items-end justify-between relative shrink-0 w-full" data-name="Container">
       <Container24 />
-      <Button2 />
     </div>
   );
 }
