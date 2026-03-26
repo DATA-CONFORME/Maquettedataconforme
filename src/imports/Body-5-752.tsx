@@ -258,7 +258,7 @@ function Container1() {
 
 function HeroSection() {
   return (
-    <div className="absolute content-stretch flex flex-col items-center left-0 overflow-clip px-[32px] py-[128px] right-0 top-[80px]" data-name="Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
+    <div className="relative content-stretch flex flex-col items-center overflow-clip px-[32px] pt-[180px] pb-[128px] w-full" data-name="Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
       <Container />
       <Container1 />
     </div>
@@ -1056,7 +1056,7 @@ function Card3() {
       <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className="absolute left-[32px] right-[32px] top-[164px]">
           <p className="font-['Inter:Regular',sans-serif] font-normal text-[#43474f] text-[16px] leading-[24px]">
-            Une démarche utile si elle est prouvable. Nous produisons des livrables exploitables en interne et présentables en audit.
+            Une démarche de conformité est utile si elle est étayée par des preuves. Nous produisons des livrables exploitables en interne et documentés
           </p>
         </div>
         <div className="absolute border-[rgba(195,198,209,0.2)] border-solid border-t h-px left-[32px] right-[32px] top-[290px]" />
@@ -1267,7 +1267,7 @@ function Container27() {
           </svg>
         }
         title="Livrables & preuves (audit-ready)"
-        description="Une démarche utile si elle est prouvable. Nous produisons des livrables exploitables en interne et présentables en audit."
+        description="Une démarche de conformité est utile si elle est étayée par des preuves. Nous produisons des livrables exploitables en interne et documentés"
         features={[
           "Cartographie IA + registres associés",
           "Rapport d'analyse de risques + plan d'actions",
@@ -1317,7 +1317,7 @@ function Container22() {
 
 function SectionServicesGrid() {
   return (
-    <div className="absolute bg-[#f0f3ff] content-stretch flex flex-col items-center left-0 px-[32px] py-[96px] right-0 top-[680px]" data-name="Section - Services Grid">
+    <div className="relative bg-[#f0f3ff] content-stretch flex flex-col items-center px-[32px] py-[96px] w-full" data-name="Section - Services Grid">
       <Container22 />
     </div>
   );
@@ -1587,7 +1587,7 @@ function Container40() {
 
 function SovereigntySection() {
   return (
-    <div className="absolute bg-[#001e40] content-stretch flex flex-col items-center left-[32px] overflow-clip px-[80px] py-[100px] right-[32px] rounded-[40px] top-[1650px]" data-name="Sovereignty & Ethics Section">
+    <div className="relative bg-[#001e40] content-stretch flex flex-col items-center mx-[32px] my-[96px] overflow-clip px-[80px] py-[100px] rounded-[40px]" data-name="Sovereignty & Ethics Section">
       <div className="absolute bg-[rgba(29,99,143,0.2)] blur-[50px] right-[-80px] rounded-[12px] size-[320px] top-[-80px]" data-name="Overlay+Blur" />
       <div className="absolute bg-[rgba(141,253,82,0.1)] blur-[50px] bottom-[-80px] left-[-80px] rounded-[12px] size-[320px]" data-name="Overlay+Blur" />
       <div className="max-w-[1000px] w-full relative z-10">
@@ -1653,7 +1653,7 @@ function Container56({ onNavigate }: { onNavigate?: (page: string) => void }) {
 
 function CtaSection({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    <div className="absolute bg-[#f9f9ff] content-stretch flex flex-col gap-[24px] items-center left-0 px-[32px] py-[96px] right-0 top-[2250px]" data-name="CTA Section">
+    <div className="relative bg-[#f9f9ff] content-stretch flex flex-col gap-[24px] items-center px-[32px] py-[96px] w-full" data-name="CTA Section">
       <Heading12 />
       <Container55 />
       <Container56 onNavigate={onNavigate} />
@@ -1663,7 +1663,7 @@ function CtaSection({ onNavigate }: { onNavigate?: (page: string) => void }) {
 
 function Main({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    <div className="h-[2700px] relative shrink-0 w-full" data-name="Main">
+    <div className="flex flex-col shrink-0 w-full" data-name="Main">
       <HeroSection />
       <SectionServicesGrid />
       <SovereigntySection />
