@@ -2,6 +2,16 @@
 @import './tailwind.css';
 @import './theme.css';
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 @keyframes vertical-scroll {
   from {
     transform: translateY(0);

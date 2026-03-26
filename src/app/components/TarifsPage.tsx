@@ -71,19 +71,19 @@ export default function TarifsPage({ onNavigate }: { onNavigate?: (page: string)
     >
       <Navbar currentPage="tarifs" onNavigate={onNavigate || (() => {})} />
       {/* Header */}
-      <div className="text-center pt-[140px] pb-16 px-8">
+      <div className="text-center pt-[100px] md:pt-[140px] pb-8 md:pb-16 px-6 md:px-8">
         {/* Logo / brand badge */}
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full mb-8">
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 md:px-5 py-2 rounded-full mb-6 md:mb-8">
           <div className="w-2 h-2 rounded-full bg-[#82E600]" />
-          <span className="font-['Inter:Semi_Bold',sans-serif] text-white/80 text-[13px] uppercase tracking-widest">
+          <span className="font-['Inter:Semi_Bold',sans-serif] text-white/80 text-[11px] md:text-[13px] uppercase tracking-widest">
             Data Conforme — Tarifs DPO
           </span>
         </div>
 
-        <h1 className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[52px] leading-tight mb-4">
+        <h1 className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[32px] md:text-[52px] leading-tight mb-4 tracking-tight">
           Choisissez votre offre
         </h1>
-        <p className="font-['Inter:Regular',sans-serif] text-white/60 text-[18px] max-w-[580px] mx-auto">
+        <p className="font-['Inter:Regular',sans-serif] text-white/60 text-[16px] md:text-[18px] max-w-[580px] mx-auto leading-relaxed">
           Des accompagnements conformité sur-mesure pour toutes les structures,
           avec un DPO certifié dédié.
         </p>
@@ -123,8 +123,8 @@ export default function TarifsPage({ onNavigate }: { onNavigate?: (page: string)
       </div>
 
       {/* Plans */}
-      <div className="max-w-[1200px] mx-auto px-8 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] items-start">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8 pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[24px] items-start">
           {plans.map((plan) => {
             const price =
               billing === "monthly" ? plan.monthlyPrice : plan.annualPrice;
@@ -174,13 +174,13 @@ export default function TarifsPage({ onNavigate }: { onNavigate?: (page: string)
                   {/* Price */}
                   <div className="flex items-end gap-2 mb-2">
                     <span
-                      className={`font-['Manrope:Extra_Bold',sans-serif] text-[56px] leading-none ${
+                      className={`font-['Manrope:Extra_Bold',sans-serif] text-[48px] md:text-[56px] leading-none ${
                         plan.highlight ? "text-white" : "text-white/80"
                       }`}
                     >
                       {price}€
                     </span>
-                    <span className="text-white/40 font-['Inter:Regular',sans-serif] text-[15px] mb-2">
+                    <span className="text-white/40 font-['Inter:Regular',sans-serif] text-[14px] md:text-[15px] mb-2">
                       / mois
                     </span>
                   </div>
@@ -236,19 +236,19 @@ export default function TarifsPage({ onNavigate }: { onNavigate?: (page: string)
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-12 md:mt-16">
           <a
             href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-2xl text-white no-underline hover:bg-white/20 transition-all duration-200 cursor-pointer"
+            className="inline-flex flex-col md:flex-row items-center gap-4 md:gap-6 bg-white/10 backdrop-blur-md border border-white/20 px-6 md:px-8 py-6 md:py-4 rounded-3xl md:rounded-2xl text-white no-underline hover:bg-white/20 transition-all duration-200 cursor-pointer"
           >
-            <span className="text-2xl">📞</span>
-            <div className="text-left">
-              <p className="font-['Manrope:Bold',sans-serif] text-white text-[16px]">
+            <span className="text-4xl md:text-2xl">📞</span>
+            <div className="text-center md:text-left">
+              <p className="font-['Manrope:Bold',sans-serif] text-white text-[18px] md:text-[16px] mb-1 md:mb-0">
                 Premier entretien visio de 30 min offert
               </p>
-              <p className="font-['Inter:Regular',sans-serif] text-white/50 text-[13px]">
+              <p className="font-['Inter:Regular',sans-serif] text-white/50 text-[14px] md:text-[13px]">
                 Discutez de vos enjeux avec un DPO certifié sans engagement.
               </p>
             </div>

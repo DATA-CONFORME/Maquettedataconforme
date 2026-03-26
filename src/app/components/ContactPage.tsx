@@ -6,6 +6,7 @@ export default function ContactPage({ onNavigate }: { onNavigate: (page: string)
   const [formData, setFormData] = useState({
     prenom: "",
     nom: "",
+    societe: "",
     email: "",
     pays: "France",
     tel: "",
@@ -32,6 +33,7 @@ export default function ContactPage({ onNavigate }: { onNavigate: (page: string)
     const newErrors: Record<string, string> = {};
     if (!formData.prenom) newErrors.prenom = "Veuillez remplir ce champ obligatoire.";
     if (!formData.nom) newErrors.nom = "Veuillez remplir ce champ obligatoire.";
+    if (!formData.societe) newErrors.societe = "Veuillez préciser le nom de votre entreprise.";
     if (!formData.email) newErrors.email = "L'e-mail est obligatoire.";
     if (!formData.fonction) newErrors.fonction = "Veuillez préciser votre fonction.";
     if (!formData.secteur) newErrors.secteur = "Veuillez préciser votre secteur d'activité.";
@@ -50,25 +52,25 @@ export default function ContactPage({ onNavigate }: { onNavigate: (page: string)
       <Navbar currentPage="contact" onNavigate={onNavigate} />
 
       {/* Header Section */}
-      <section className="relative w-full pt-[140px] pb-12 px-8">
+      <section className="relative w-full pt-[100px] md:pt-[140px] pb-8 md:pb-12 px-6 md:px-8">
         <div className="max-w-[1200px] mx-auto text-center">
-          <h1 className="font-['Manrope:Extra_Bold',sans-serif] text-[#0A192F] text-[56px] tracking-tight mb-4">
+          <h1 className="font-['Manrope:Extra_Bold',sans-serif] text-[#0A192F] text-[32px] md:text-[56px] tracking-tight mb-4">
             Contactez-nous
           </h1>
-          <p className="font-['Inter:Regular',sans-serif] text-[18px] text-[#5A6C7D] max-w-[600px] mx-auto">
+          <p className="font-['Inter:Regular',sans-serif] text-[16px] md:text-[18px] text-[#5A6C7D] max-w-[600px] mx-auto">
             Une question sur le RGPD ou l'IA ? Notre équipe d'experts est à votre écoute pour vous accompagner.
           </p>
         </div>
       </section>
 
       {/* Main Content: Form + Info */}
-      <section className="w-full pb-24 px-8">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <section className="w-full pb-24 px-6 md:px-8">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
           {/* Form Side */}
-          <div className="lg:col-span-8 bg-white rounded-[32px] p-10 shadow-xl border border-[rgba(0,169,193,0.05)]">
+          <div className="lg:col-span-8 bg-white rounded-[32px] p-6 md:p-10 shadow-xl border border-[rgba(0,169,193,0.05)]">
             <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 {/* Prénom */}
                 <div className="space-y-2">
                   <label className="font-['Inter:Semi_Bold',sans-serif] text-[#0A192F] text-[14px]">Votre prénom*</label>
@@ -99,6 +101,22 @@ export default function ContactPage({ onNavigate }: { onNavigate: (page: string)
                     }`}
                   />
                   {errors.nom && <p className="text-red-500 text-[12px] font-['Inter:Medium',sans-serif]">{errors.nom}</p>}
+                </div>
+
+                {/* Société */}
+                <div className="space-y-2">
+                  <label className="font-['Inter:Semi_Bold',sans-serif] text-[#0A192F] text-[14px]">Société*</label>
+                  <input
+                    type="text"
+                    name="societe"
+                    value={formData.societe}
+                    onChange={handleChange}
+                    placeholder="Nom de l'entreprise"
+                    className={`w-full px-5 py-4 rounded-xl bg-[#F8FAFB] border-[1.5px] outline-none transition-all duration-200 font-['Inter:Regular',sans-serif] ${
+                      errors.societe ? 'border-red-400 focus:border-red-500' : 'border-[#E5E9F0] focus:border-[#00A9C1]'
+                    }`}
+                  />
+                  {errors.societe && <p className="text-red-500 text-[12px] font-['Inter:Medium',sans-serif]">{errors.societe}</p>}
                 </div>
               </div>
 

@@ -18,28 +18,28 @@ export function SectionRGPD() {
   return (
     <div className="w-full py-[64px] bg-white relative" data-name="Section - RGPD Features">
       <div className="max-w-[1280px] mx-auto px-[32px] relative z-10">
-        <div className="text-center mb-[80px]">
-          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[#0A192F] text-[48px] tracking-tight mb-[24px]">
+        <div className="text-center mb-[40px] md:mb-[80px]">
+          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[#0A192F] text-[32px] md:text-[48px] tracking-tight mb-[16px] md:mb-[24px]">
             Le RGPD et les normes de Cybersécurité
           </h2>
-          <p className="font-['Inter:Regular',sans-serif] text-[18px] text-[#5A6A7A] max-w-[800px] mx-auto">
+          <p className="font-['Inter:Regular',sans-serif] text-[16px] md:text-[18px] text-[#5A6A7A] max-w-[800px] mx-auto px-4">
             Devenez résilient face aux risques grâce à un écosystème de conformité complet.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
           {features.map((feat, idx) => (
-            <div key={idx} className="group relative bg-[#f8fafc] rounded-[24px] p-[32px] flex flex-col items-start border border-[rgba(0,169,193,0.08)] hover:border-[#00A9C1] hover:shadow-[0_8px_30px_rgb(0,169,193,0.1)] transition-all duration-500 overflow-hidden">
+            <div key={idx} className="group relative bg-[#f8fafc] rounded-[24px] p-[24px] md:p-[32px] flex flex-col items-start border border-[rgba(0,169,193,0.08)] hover:border-[#00A9C1] hover:shadow-[0_8px_30px_rgb(0,169,193,0.1)] transition-all duration-500 overflow-hidden">
               <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-500 transform group-hover:scale-110">
                 {feat.icon}
               </div>
-              <div className="w-[56px] h-[56px] rounded-[16px] bg-white flex items-center justify-center shadow-sm mb-[28px] group-hover:bg-[#E6F6F9] transition-colors duration-500">
+              <div className="w-[48px] h-[48px] md:w-[56px] md:h-[56px] rounded-[16px] bg-white flex items-center justify-center shadow-sm mb-[20px] md:mb-[28px] group-hover:bg-[#E6F6F9] transition-colors duration-500">
                 {feat.icon}
               </div>
-              <h3 className="font-['Manrope:Bold',sans-serif] text-[20px] text-[#0A192F] mb-[16px] group-hover:text-[#0047BA] transition-colors duration-500">
+              <h3 className="font-['Manrope:Bold',sans-serif] text-[18px] md:text-[20px] text-[#0A192F] mb-[12px] md:mb-[16px] group-hover:text-[#0047BA] transition-colors duration-500">
                 {feat.title}
               </h3>
-              <p className="font-['Inter:Regular',sans-serif] text-[15px] text-[#5A6A7A] leading-[1.65]">
+              <p className="font-['Inter:Regular',sans-serif] text-[14px] md:text-[15px] text-[#5A6A7A] leading-[1.65]">
                 {feat.desc}
               </p>
             </div>
@@ -66,12 +66,12 @@ export function SectionSecteurs() {
 
   return (
     <div className="w-full py-[80px] bg-[#0A192F] overflow-hidden" data-name="Section - Sectors">
-      <div className="max-w-[1280px] mx-auto px-[32px] mb-12">
+      <div className="max-w-[1280px] mx-auto px-[24px] md:px-[32px] mb-8 md:mb-12 text-center md:text-left">
         <div className="max-w-[800px]">
-          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[42px] leading-tight mb-[24px]">
+          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[28px] md:text-[42px] leading-tight mb-[16px] md:mb-[24px]">
             Tous les secteurs sont concernés.
           </h2>
-          <p className="font-['Inter:Regular',sans-serif] text-[18px] text-[rgba(255,255,255,0.7)]">
+          <p className="font-['Inter:Regular',sans-serif] text-[16px] md:text-[18px] text-[rgba(255,255,255,0.7)]">
             Toutes les sociétés, associations, établissements publics ou privés sont concernés par le RGPD. 
             Notre expertise multisectorielle nous permet de diffuser les meilleures pratiques cyber à travers tous les domaines.
           </p>
@@ -127,11 +127,11 @@ export function SectionOffres() {
   return (
     <div id="offres-pricing" className="w-full py-[64px] bg-[#f5f7ff]" data-name="Section - Offers Pricing">
       <div className="max-w-[1280px] mx-auto px-[32px]">
-        <div className="text-center mb-[56px]">
-          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[48px] text-[#0A192F] tracking-tight mb-[16px]">
+        <div className="text-center mb-[40px] md:mb-[56px]">
+          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[32px] md:text-[48px] text-[#0A192F] tracking-tight mb-[16px]">
             Un budget compliance adapté
           </h2>
-          <p className="font-['Inter:Regular',sans-serif] text-[18px] text-[#5A6A7A]">
+          <p className="font-['Inter:Regular',sans-serif] text-[16px] md:text-[18px] text-[#5A6A7A] px-4">
             Découvrez notre accompagnement sur-mesure pour initier votre conformité.
           </p>
         </div>
@@ -143,29 +143,29 @@ export function SectionOffres() {
           <div className="lg:col-span-7 relative rounded-[24px] overflow-hidden shadow-2xl" style={{ background: "linear-gradient(160deg, #0A192F 0%, #0E2844 100%)" }}>
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A9C1] to-[#82E600]" />
 
-            <div className="px-10 pt-10 pb-6 border-b border-white/10">
-              <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[26px]">
+            <div className="px-6 md:px-10 pt-8 md:pt-10 pb-6 border-b border-white/10">
+              <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[22px] md:text-[26px]">
                 Audit initial de conformité
               </h3>
             </div>
 
-            <div className="px-10 py-8">
-              <ul className="space-y-4">
+            <div className="px-6 md:px-10 py-6 md:py-8">
+              <ul className="space-y-3 md:space-y-4">
                 {auditFeatures.map((f, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span className="shrink-0 w-2 h-2 rounded-full bg-[#82E600] mt-[7px]" />
-                    <span className="font-['Inter:Regular',sans-serif] text-[15px] text-white/85 leading-snug">{f}</span>
+                    <span className="font-['Inter:Regular',sans-serif] text-[14px] md:text-[15px] text-white/85 leading-snug">{f}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="px-10 pb-10">
+            <div className="px-6 md:px-10 pb-8 md:pb-10">
               <a
                 href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full py-[14px] rounded-[12px] font-['Manrope:Bold',sans-serif] text-[15px] uppercase tracking-widest text-white text-center no-underline cursor-pointer transition-all duration-200 hover:bg-[#82E600] hover:text-[#0A192F]"
+                className="inline-block w-full py-[14px] rounded-[12px] font-['Manrope:Bold',sans-serif] text-[14px] md:text-[15px] uppercase tracking-widest text-white text-center no-underline cursor-pointer transition-all duration-200 hover:bg-[#82E600] hover:text-[#0A192F]"
                 style={{ backgroundColor: "#00A9C1" }}
               >
                 Nous consulter
@@ -261,21 +261,21 @@ export function SectionEcosystem() {
   return (
     <div className="w-full py-[100px] bg-white relative overflow-hidden" data-name="Section - Ecosystem">
       <div className="max-w-[1280px] mx-auto px-[32px]">
-        <div className="text-center mb-[64px]">
+        <div className="text-center mb-[40px] md:mb-[64px]">
           <div className="inline-block px-[16px] py-[6px] rounded-full bg-[#E6F6F9] text-[#00A9C1] font-['Inter:Semi_Bold',sans-serif] text-[14px] mb-[20px]">
             Pilotage Digital
           </div>
-          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[#0A192F] text-[48px] tracking-tight">
+          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[#0A192F] text-[32px] md:text-[48px] tracking-tight leading-tight px-4 px-4">
             Un pilotage de votre conformité simplifié
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[24px] items-stretch">
           {/* Software Pilotage (Bento Card - Full Width) */}
-          <div className="lg:col-span-12 bg-[#0A192F] rounded-[32px] p-[60px] pb-16 relative flex flex-col items-center text-center lg:text-left lg:items-start">
+          <div className="lg:col-span-12 bg-[#0A192F] rounded-[32px] p-[24px] md:p-[60px] pb-12 md:pb-16 relative flex flex-col items-center text-center lg:text-left lg:items-start overflow-hidden">
             <div className="relative z-10 max-w-[800px] w-full">
-              <h3 className="font-['Manrope:Bold',sans-serif] text-[32px] text-[#82E600] mb-[24px]">Pilotage Digital & Accountability</h3>
-              <p className="font-['Inter:Regular',sans-serif] text-[18px] text-[rgba(255,255,255,0.7)] leading-[1.7] mb-[48px]">
+              <h3 className="font-['Manrope:Bold',sans-serif] text-[24px] md:text-[32px] text-[#82E600] mb-[16px] md:mb-[24px]">Pilotage Digital & Accountability</h3>
+              <p className="font-['Inter:Regular',sans-serif] text-[16px] md:text-[18px] text-[rgba(255,255,255,0.7)] leading-[1.6] md:leading-[1.7] mb-[32px] md:mb-[48px]">
                 Le respect de "l'accountability" simplifié via notre plateforme dédiée. Suivez votre avancement en temps réel avec une clarté absolue et gérez l'ensemble de vos registres en quelques clics.
               </p>
               

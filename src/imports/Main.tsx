@@ -21,8 +21,8 @@ import { LogoBand } from "../app/components/LogoBand";
 function Heading1() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading 2">
-      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] justify-center not-italic relative shrink-0 text-[#0A192F] text-[48px] text-center w-full max-w-[720px] mx-auto">
-        <p className="leading-[48px] text-center w-full">Expertise Multidimensionnelle</p>
+    <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] justify-center not-italic relative shrink-0 text-[#0A192F] text-[32px] md:text-[48px] text-center w-full max-w-[720px] mx-auto">
+        <p className="leading-tight md:leading-[48px] text-center w-full">Expertise Multidimensionnelle</p>
       </div>
     </div>
   );
@@ -163,9 +163,9 @@ function Margin() {
 
 function HighCard() {
   return (
-    <div className="bg-white col-1 justify-self-stretch relative row-[1/span_2] self-start shrink-0" data-name="High Card">
+    <div className="bg-white col-span-1 lg:row-span-2 justify-self-stretch relative self-start shrink-0 w-full" data-name="High Card">
       <div aria-hidden="true" className="absolute border border-[rgba(0,71,186,0.1)] border-solid inset-0 pointer-events-none" />
-      <div className="content-stretch flex flex-col items-start justify-between p-[41px] relative w-full">
+      <div className="content-stretch flex flex-col items-start justify-between p-[30px] md:p-[41px] relative w-full">
         <Container4 />
         <Margin />
       </div>
@@ -222,11 +222,11 @@ function WideCard() {
   return (
     /* Tertiary → Primary gradient card */
     <div
-      className="col-[2/span_2] justify-self-stretch relative row-1 self-start shrink-0"
+      className="col-span-1 lg:col-span-2 justify-self-stretch relative self-start shrink-0 w-full"
       data-name="Wide Card"
       style={{ backgroundImage: "linear-gradient(159.692deg, #0047BA 0%, #00A9C1 100%)" }}
     >
-      <div className="content-stretch flex flex-col items-start p-[40px] relative w-full">
+      <div className="content-stretch flex flex-col items-start p-[30px] md:p-[40px] relative w-full">
         <Container8 />
       </div>
     </div>
@@ -256,9 +256,9 @@ function Container11() {
 function SmallCard() {
   return (
     /* Tertiary light (#D4E3FF) small card */
-    <div className="bg-[#D4E3FF] col-[2/span_2] h-[194px] justify-self-stretch relative row-2 shrink-0" data-name="Small Card 1">
+    <div className="bg-[#D4E3FF] col-span-1 lg:col-span-2 min-h-[194px] justify-self-stretch relative shrink-0 w-full" data-name="Small Card 1">
       <div aria-hidden="true" className="absolute border border-[rgba(0,71,186,0.1)] border-solid inset-0 pointer-events-none" />
-      <div className="absolute left-[35.5px] size-[25px] top-[37.25px]" data-name="Icon">
+      <div className="absolute left-[30px] md:left-[35.5px] size-[25px] top-[30px] md:top-[37.25px]" data-name="Icon">
         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 25 25">
           <path d={svgPaths.p34a70300} fill="var(--fill-0, #0047BA)" id="Icon" />
         </svg>
@@ -273,7 +273,7 @@ function SmallCard() {
 
 function Container3() {
   return (
-    <div className="gap-x-[32px] gap-y-[32px] grid grid-cols-[repeat(3,minmax(0,1fr))] grid-rows-[__299.75px_194px] relative shrink-0 w-full" data-name="Container">
+    <div className="flex flex-col lg:grid gap-x-[32px] gap-y-[32px] lg:grid-cols-3 relative shrink-0 w-full" data-name="Container">
       <HighCard />
       <WideCard />
       <SmallCard />
@@ -305,10 +305,9 @@ function SectionBentoGridServices() {
 
 function Container14() {
   return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[48px] justify-center leading-[24px] not-italic relative shrink-0 text-[#3d494c] text-[16px] w-[434.48px]">
-        <p className="mb-0">Rejoignez les leaders qui font confiance à Data Conforme</p>
-        <p>pour leur stratégie de conformité globale.</p>
+    <div className="content-stretch flex flex-col items-center lg:items-start relative shrink-0 w-full" data-name="Container">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-auto py-2 justify-center leading-[24px] not-italic relative shrink-0 text-[#3d494c] text-[16px] w-full lg:w-[434.48px] text-center lg:text-left">
+        <p className="mb-0">Rejoignez les leaders qui font confiance à Data Conforme pour leur stratégie de conformité globale.</p>
       </div>
     </div>
   );
@@ -316,9 +315,9 @@ function Container14() {
 
 function Heading6() {
   return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[32px] justify-center leading-[0] not-italic relative shrink-0 text-[#0A192F] text-[32px]">
-        <p className="leading-[32px] whitespace-nowrap">Prêt pour la mutation digitale ?</p>
+    <div className="content-stretch flex flex-col items-center lg:items-start relative shrink-0 w-full" data-name="Heading 6">
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-auto justify-center leading-tight not-italic relative shrink-0 text-[#0A192F] text-[28px] md:text-[32px] text-center lg:text-left">
+        <p>Prêt pour la mutation digitale ?</p>
       </div>
     </div>
   );
@@ -336,8 +335,8 @@ function Container13() {
 function Button1() {
   return (
     /* Tertiary blue CTA button */
-    <div className="bg-[#0047BA] content-stretch flex flex-col items-center justify-center px-[40px] py-[16px] relative rounded-[8px] shrink-0" data-name="Button">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[18px] text-center text-white w-[210.64px]">
+    <div className="bg-[#0047BA] content-stretch flex flex-col items-center justify-center px-[32px] md:px-[40px] py-[16px] relative rounded-[8px] shrink-0 w-full sm:w-auto" data-name="Button">
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[16px] md:text-[18px] text-center text-white w-full sm:w-[210.64px]">
         <p className="leading-[28px]">Commencer Maintenant</p>
       </div>
     </div>
@@ -354,7 +353,7 @@ function Container15() {
 
 function SectionCtAsSocialProof() {
   return (
-    <div className="relative content-stretch flex items-center justify-between w-full max-w-[1280px] mx-auto px-[24px] py-[48px]" data-name="Section - CTAs / Social Proof">
+    <div className="relative content-stretch flex flex-col lg:flex-row items-center justify-between w-full max-w-[1280px] mx-auto px-[20px] md:px-[24px] py-[48px] gap-8" data-name="Section - CTAs / Social Proof">
       <Container13 />
       <Container15 />
     </div>
@@ -402,7 +401,7 @@ function BackgroundBorder() {
 function Heading() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 1">
-      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] justify-center leading-[72px] not-italic relative shrink-0 text-white text-[72px] tracking-[-1.8px] w-full">
+      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] justify-center leading-[42px] md:leading-[72px] not-italic relative shrink-0 text-white text-[36px] md:text-[72px] tracking-[-1.8px] w-full">
         <p>Protégez vos données et valeurs</p>
       </div>
     </div>
@@ -411,10 +410,9 @@ function Heading() {
 
 function Container20() {
   return (
-    <div className="content-stretch flex flex-col items-start max-w-[576px] relative shrink-0 w-[576px]" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[130px] justify-center leading-[32.5px] not-italic relative shrink-0 text-white/90 text-[20px] w-[574.69px]">
-        <p className="mb-0">Data Conforme sécurise vos actifs numériques et aide votre</p>
-        <p className="mb-0">organisation à progresser en maturité cyber.</p>
+    <div className="content-stretch flex flex-col items-start max-w-full lg:max-w-[576px] relative shrink-0 w-full lg:w-[576px]" data-name="Container">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-auto py-2 md:h-[130px] justify-center leading-[26px] md:leading-[32.5px] not-italic relative shrink-0 text-white/90 text-[16px] md:text-[20px] w-full lg:w-[574.69px]">
+        <p className="mb-0">Data Conforme sécurise vos actifs numériques et aide votre organisation à progresser en maturité cyber.</p>
       </div>
     </div>
   );
@@ -425,10 +423,10 @@ function Button2() {
     /* Secondary (#82E600) CTA button to match IA page */
     <a
       href="#offres-pricing"
-      className="bg-[#82E600] content-stretch flex flex-col items-center justify-center px-[32px] py-[18px] relative rounded-[8px] shrink-0 hover:opacity-90 transition-opacity cursor-pointer no-underline"
+      className="bg-[#82E600] content-stretch flex flex-col items-center justify-center px-[32px] py-[18px] relative rounded-[8px] shrink-0 hover:opacity-90 transition-opacity cursor-pointer no-underline w-full sm:w-auto"
       data-name="Button"
     >
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[#082100] text-[18px] text-center w-[208.48px]">
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[#082100] text-[18px] text-center w-full sm:w-[208.48px]">
         <p className="leading-[28px]">Notre accompagnement</p>
       </div>
     </a>
@@ -441,11 +439,11 @@ function Button3() {
       href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
       target="_blank"
       rel="noopener noreferrer"
-      className="content-stretch flex flex-col items-center justify-center px-[34px] py-[18px] relative rounded-[8px] shrink-0 hover:bg-white/10 transition-colors cursor-pointer no-underline" 
+      className="content-stretch flex flex-col items-center justify-center px-[34px] py-[18px] relative rounded-[8px] shrink-0 hover:bg-white/10 transition-colors cursor-pointer no-underline w-full sm:w-auto" 
       data-name="Button"
     >
       <div aria-hidden="true" className="absolute border-2 border-white/30 border-solid inset-0 pointer-events-none rounded-[8px]" />
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-white text-[18px] text-center w-[160px]">
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-white text-[18px] text-center w-full sm:w-[160px]">
         <p className="leading-[28px]">Prendre un RDV</p>
       </div>
     </a>
@@ -454,7 +452,7 @@ function Button3() {
 
 function Container21() {
   return (
-    <div className="content-stretch flex gap-[16px] items-start pt-[16px] relative shrink-0 w-full" data-name="Container">
+    <div className="content-stretch flex flex-col sm:flex-row gap-[16px] items-start pt-[16px] relative shrink-0 w-full" data-name="Container">
       <Button2 />
       <Button3 />
     </div>
@@ -547,12 +545,11 @@ function Background() {
 
 function BackgroundBorder1WithTeam() {
   return (
-    <div className="col-2 justify-self-stretch relative row-1 self-center shrink-0 overflow-visible" data-name="Hero Illustration">
+    <div className="col-span-1 justify-self-stretch relative row-span-1 self-center shrink-0 lg:overflow-visible mt-8 lg:mt-0" data-name="Hero Illustration">
       <img
         alt="Équipe Data Conforme - conformité et sécurité des données"
         src={heroIllustration}
-        className="absolute w-[115%] max-w-none h-auto object-contain"
-        style={{ top: "50%", left: "-8%", transform: "translateY(-50%)" }}
+        className="lg:absolute w-full lg:w-[115%] max-w-none h-auto object-contain lg:top-1/2 lg:-translate-y-1/2 lg:-left-[8%]"
       />
     </div>
   );
@@ -561,7 +558,7 @@ function BackgroundBorder1WithTeam() {
 function Container17() {
   return (
     <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
-      <div className="gap-x-[64px] gap-y-[64px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[_484px] max-w-[inherit] px-[24px] relative w-full">
+      <div className="flex flex-col lg:grid lg:grid-cols-2 gap-x-[64px] gap-y-[32px] lg:gap-y-[64px] max-w-[inherit] px-[20px] md:px-[24px] relative w-full">
         <Container18 />
         <BackgroundBorder1WithTeam />
       </div>
@@ -572,7 +569,7 @@ function Container17() {
 function HeroSection() {
   return (
     <div 
-      className="relative content-stretch flex flex-col items-center w-full overflow-clip pb-[48px] pt-[140px]" 
+      className="relative content-stretch flex flex-col items-center w-full overflow-clip pb-[48px] pt-[120px] md:pt-[140px]" 
       data-name="Hero Section"
       style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}
     >
@@ -615,30 +612,30 @@ function SectionStats() {
       <div className="max-w-[1200px] mx-auto px-[24px]">
         
         {/* Main Stats Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[48px] items-center mb-[48px]">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-[32px] lg:gap-[48px] items-center mb-[48px]">
           {/* Left: Intro Text */}
-          <div className="lg:col-span-5">
-            <h3 className="font-['Manrope:Bold',sans-serif] text-[24px] text-[#0A192F] mb-[20px] leading-tight">
+          <div className="lg:col-span-5 text-center lg:text-left">
+            <h3 className="font-['Manrope:Bold',sans-serif] text-[20px] md:text-[24px] text-[#0A192F] mb-[16px] md:mb-[20px] leading-tight">
               Une exigence marché en pleine mutation
             </h3>
-            <p className="font-['Inter:Regular',sans-serif] text-[16px] leading-[26px] text-[#5A6A7A]">
+            <p className="font-['Inter:Regular',sans-serif] text-[15px] md:text-[16px] leading-[24px] md:leading-[26px] text-[#5A6A7A]">
               Vos clients sont plus exigeants. Vos partenaires scrutent vos pratiques : l'IA Act et le RGPD imposent des due diligences strictes sur toute la chaîne de valeur. La pression "privacy" est réelle : 94% des entreprises déclarent que leurs clients n'achèteraient pas si les données n'étaient pas protégées.
             </p>
           </div>
 
           {/* Right: Stats Grid */}
-          <div className="lg:col-span-7 grid grid-cols-3 gap-[24px]">
-            <div className="flex flex-col gap-[8px]">
-              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[42px] text-[#0047BA] leading-none">76%</span>
-              <p className="text-[13px] leading-[18px] text-[#5A6A7A]">Rupture de confiance si données non protégées</p>
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-[24px] w-full">
+            <div className="flex flex-col items-center lg:items-start gap-[8px]">
+              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[36px] md:text-[42px] text-[#0047BA] leading-none">76%</span>
+              <p className="text-[13px] leading-[18px] text-[#5A6A7A] text-center lg:text-left">Rupture de confiance si données non protégées</p>
             </div>
-            <div className="flex flex-col gap-[8px]">
-              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[42px] text-[#00A9C1] leading-none">72%</span>
-              <p className="text-[13px] leading-[18px] text-[#5A6A7A]">Inquiétudes sur la localisation hors UE</p>
+            <div className="flex flex-col items-center lg:items-start gap-[8px]">
+              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[36px] md:text-[42px] text-[#00A9C1] leading-none">72%</span>
+              <p className="text-[13px] leading-[18px] text-[#5A6A7A] text-center lg:text-left">Inquiétudes sur la localisation hors UE</p>
             </div>
-            <div className="flex flex-col gap-[8px]">
-              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[42px] text-[#82E600] leading-none">94%</span>
-              <p className="text-[13px] leading-[18px] text-[#5A6A7A]">Clients perdus sans garantie privacy</p>
+            <div className="flex flex-col items-center lg:items-start gap-[8px]">
+              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[36px] md:text-[42px] text-[#82E600] leading-none">94%</span>
+              <p className="text-[13px] leading-[18px] text-[#5A6A7A] text-center lg:text-left">Clients perdus sans garantie privacy</p>
             </div>
           </div>
         </div>
@@ -710,10 +707,9 @@ function Container29() {
 
 function Heading7() {
   return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 2">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold justify-center leading-[48px] relative shrink-0 text-[48px] text-white w-full">
-        <p className="mb-0">Fabrik01 : Le Cœur de notre</p>
-        <p>Excellence Technique.</p>
+    <div className="content-stretch flex flex-col items-center lg:items-start relative shrink-0 w-full" data-name="Heading 2">
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold justify-center leading-tight md:leading-[48px] relative shrink-0 text-[32px] md:text-[48px] text-white w-full text-center lg:text-left">
+        <p>Fabrik01 : Le Cœur de notre Excellence Technique.</p>
       </div>
     </div>
   );
@@ -721,11 +717,9 @@ function Heading7() {
 
 function Container30() {
   return (
-    <div className="content-stretch flex flex-col items-start pt-[8px] relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[29.25px] not-italic relative shrink-0 text-[18px] text-[rgba(236,240,255,0.8)] w-full">
-        <p className="mb-0">{`Chaque solution Data Conforme est propulsée par l'ingénierie de pointe de`}</p>
-        <p className="mb-0">Fabrik01. Ce partenariat garantit une intégration parfaite entre conseil</p>
-        <p>stratégique et exécution technologique de haute précision.</p>
+    <div className="content-stretch flex flex-col items-center lg:items-start pt-[8px] relative shrink-0 w-full" data-name="Container">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[26px] md:leading-[29.25px] not-italic relative shrink-0 text-[16px] md:text-[18px] text-[rgba(236,240,255,0.8)] w-full text-center lg:text-left">
+        <p>Chaque solution Data Conforme est propulsée par l'ingénierie de pointe de Fabrik01. Ce partenariat garantit une intégration parfaite entre conseil stratégique et exécution technologique de haute précision.</p>
       </div>
     </div>
   );
@@ -791,9 +785,9 @@ function Container35() {
 
 function Container31() {
   return (
-    <div className="content-stretch flex gap-[32px] items-center pt-[16px] relative shrink-0 w-full" data-name="Container">
+    <div className="content-stretch flex flex-col sm:flex-row gap-[32px] items-center pt-[16px] relative shrink-0 w-full justify-center lg:justify-start" data-name="Container">
       <Container32 />
-      <div className="bg-[rgba(255,255,255,0.1)] h-[48px] shrink-0 w-px" data-name="Vertical Divider" />
+      <div className="hidden sm:block bg-[rgba(255,255,255,0.1)] h-[48px] shrink-0 w-px" data-name="Vertical Divider" />
       <Container35 />
     </div>
   );

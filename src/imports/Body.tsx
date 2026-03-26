@@ -25,17 +25,17 @@ function Overlay() {
 function Heading() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 1">
-      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[72px] text-white tracking-[-3.6px] w-full">
+      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] justify-center leading-tight not-italic relative shrink-0 text-[36px] md:text-[72px] text-white tracking-[-1px] md:tracking-[-3.6px] w-full">
         <p className="mb-0">
-          <span className="leading-[72px]">{`L'IA `}</span>
-          <span className="bg-clip-text font-['Manrope:Extra_Bold',sans-serif] leading-[72px] not-italic text-[transparent]" style={{ backgroundImage: "linear-gradient(125.075deg, rgb(255, 255, 255) 0%, rgb(144, 205, 254) 100%)" }}>
+          <span>{`L'IA `}</span>
+          <span className="bg-clip-text font-['Manrope:Extra_Bold',sans-serif] not-italic text-[transparent]" style={{ backgroundImage: "linear-gradient(125.075deg, rgb(255, 255, 255) 0%, rgb(144, 205, 254) 100%)" }}>
             sur-mesure
           </span>
-          <span className="leading-[72px]">{` &`}</span>
+          <span>{` &`}</span>
         </p>
-        <p className="leading-[72px] mb-0">souveraine pour</p>
-        <p className="leading-[72px] mb-0">transformer votre</p>
-        <p className="leading-[72px]">organisation.</p>
+        <p className="mb-0">souveraine pour</p>
+        <p className="mb-0">transformer votre</p>
+        <p>organisation.</p>
       </div>
     </div>
   );
@@ -43,8 +43,8 @@ function Heading() {
 
 function Container1() {
   return (
-    <div className="content-stretch flex flex-col items-start max-w-[672px] pt-[8px] relative shrink-0 w-[672px]" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[84px] justify-center leading-[28px] not-italic relative shrink-0 text-[#cbd5e1] text-[20px] w-[667.33px]">
+    <div className="content-stretch flex flex-col items-start max-w-full pt-[8px] relative shrink-0 w-full md:w-[672px]" data-name="Container">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-auto justify-center leading-[1.6] md:leading-[28px] not-italic relative shrink-0 text-[#cbd5e1] text-[16px] md:text-[20px] w-full">
         <p className="mb-0">Déployez des architectures intelligentes conçues pour la performance,</p>
         <p className="mb-0">sans jamais compromettre votre souveraineté numérique ni votre</p>
         <p>conformité RGPD.</p>
@@ -96,7 +96,7 @@ function Button1() {
 
 function Container2() {
   return (
-    <div className="content-stretch flex gap-[16px] items-start pt-[24px] relative shrink-0 w-full" data-name="Container">
+    <div className="content-stretch flex flex-col md:flex-row gap-[16px] items-start pt-[24px] relative shrink-0 w-full" data-name="Container">
       <Button />
       <Button1 />
     </div>
@@ -116,7 +116,7 @@ function Container() {
 
 function HeaderHeroSection() {
   return (
-    <div className="absolute content-stretch flex flex-col items-center left-0 overflow-clip pb-[80px] pl-[32px] pr-[480px] pt-[80px] right-0 top-0" data-name="Header - Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
+    <div className="absolute md:relative content-stretch flex flex-col items-center left-0 overflow-clip pb-[60px] md:pb-[80px] px-6 md:pl-[32px] md:pr-[480px] pt-[80px] right-0 top-0 h-auto min-h-[500px] md:min-h-0" data-name="Header - Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
       <Ab6AXuD98JlvqNfCfyuWXwrVQdrWcvuMh25X5IMy3Qb62ISujdV8FTnffCTn5LsuCy925Y6OZ0Pl0XmTlPzMobzuZsLt76BhIVq3PoAZpXq0XJlVepqSjxKq2SoGo0UNRvMeUghSoDkeAo3Ob151CqvP75TsAdEQJgdGPxneH8W92TBm3R8KjmZ1LlInEVox0PFwKa3WZy2QHHK4Iplu2Q6FKoNnv1S06KmMzvaKl7Gdn6PKdEaVc1EkflCaXtQ87YVaf6Fw0Kfd />
       <Container />
     </div>
@@ -174,9 +174,9 @@ function Background() {
 
 function Heading3() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 right-0 top-[96px]" data-name="Heading 4">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[32px] justify-center leading-[0] relative shrink-0 text-[#001b3c] text-[24px] w-[354.61px]">
-        <p className="leading-[32px]">Développement IA Sur-mesure</p>
+    <div className="relative md:absolute content-stretch flex flex-col items-start left-0 right-0 top-0 md:top-[96px] mt-4 md:mt-0" data-name="Heading 4">
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-auto md:h-[32px] justify-center leading-tight md:leading-[0] relative shrink-0 text-[#001b3c] text-[20px] md:text-[24px] w-full md:w-[354.61px]">
+        <p>Développement IA Sur-mesure</p>
       </div>
     </div>
   );
@@ -184,12 +184,10 @@ function Heading3() {
 
 function Container9() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 max-w-[576px] right-[144px] top-[144px]" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[117px] justify-center leading-[29.25px] not-italic relative shrink-0 text-[#43474f] text-[18px] w-[575.63px]">
-        <p className="mb-0">{`Nous concevons des modèles d'intelligence artificielle propriétaires`}</p>
-        <p className="mb-0">{`adaptés à vos processus métiers. De l'automatisation intelligente à`}</p>
-        <p className="mb-0">{`l'analyse prédictive, nos solutions sont intégrées nativement dans`}</p>
-        <p>votre écosystème.</p>
+    <div className="relative md:absolute content-stretch flex flex-col items-start left-0 max-w-full md:max-w-[576px] right-0 md:right-[144px] top-0 md:top-[144px] mt-4 md:mt-0" data-name="Container">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-auto justify-center leading-relaxed md:leading-[29.25px] not-italic relative shrink-0 text-[#43474f] text-[16px] md:text-[18px] w-full md:w-[575.63px]">
+        <p className="mb-2">Nous concevons des modèles d'intelligence artificielle propriétaires adaptés à vos processus métiers.</p>
+        <p className="mb-2">De l'automatisation intelligente à l'analyse prédictive, nos solutions sont intégrées nativement dans votre écosystème.</p>
       </div>
     </div>
   );
@@ -197,7 +195,7 @@ function Container9() {
 
 function Container7() {
   return (
-    <div className="h-[293px] relative shrink-0 w-full" data-name="Container">
+    <div className="h-auto md:h-[293px] relative shrink-0 w-full mb-6 md:mb-0" data-name="Container">
       <Background />
       <Heading3 />
       <Container9 />
@@ -237,7 +235,7 @@ function Background3() {
 
 function Container10() {
   return (
-    <div className="content-stretch flex gap-[16px] items-center relative shrink-0 w-full" data-name="Container">
+    <div className="content-stretch flex flex-wrap gap-[12px] md:gap-[16px] items-center relative shrink-0 w-full mt-6 md:mt-0" data-name="Container">
       <Background1 />
       <Background2 />
       <Background3 />
@@ -247,8 +245,8 @@ function Container10() {
 
 function MainCard() {
   return (
-    <div className="bg-white col-[1/span_8] justify-self-stretch relative rounded-[8px] row-1 self-start shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0" data-name="Main Card">
-      <div className="content-stretch flex flex-col items-start justify-between p-[40px] relative w-full">
+    <div className="bg-white col-span-1 lg:col-[1/span_8] lg:justify-self-stretch relative rounded-[8px] lg:row-1 lg:self-start shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0" data-name="Main Card">
+      <div className="content-stretch flex flex-col items-start justify-between p-6 md:p-[40px] relative w-full">
         <Container7 />
         <Container10 />
       </div>
@@ -258,10 +256,9 @@ function MainCard() {
 
 function Heading4() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-[40px] right-[40px] top-[112px]" data-name="Heading 4">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[64px] justify-center leading-[32px] relative shrink-0 text-[24px] text-white w-[203.86px]">
-        <p className="mb-0">Souveraineté des</p>
-        <p>Données</p>
+    <div className="relative md:absolute content-stretch flex flex-col items-start left-0 md:left-[40px] right-0 md:right-[40px] top-0 md:top-[112px]" data-name="Heading 4">
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-auto md:h-[64px] justify-center leading-tight md:leading-[32px] relative shrink-0 text-[20px] md:text-[24px] text-white w-full md:w-[203.86px]">
+        <p>Souveraineté des Données</p>
       </div>
     </div>
   );
@@ -269,11 +266,9 @@ function Heading4() {
 
 function Container11() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-[40px] right-[40px] top-[192px]" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[78px] justify-center leading-[26px] not-italic relative shrink-0 text-[#cbd5e1] text-[16px] w-[297.86px]">
-        <p className="mb-0">Garantissez le contrôle total de vos</p>
-        <p className="mb-0">actifs. Hébergement local, isolation des</p>
-        <p>flux et gouvernance stricte.</p>
+    <div className="relative md:absolute content-stretch flex flex-col items-start left-0 md:left-[40px] right-0 md:right-[40px] top-0 md:top-[192px] mt-4 md:mt-0" data-name="Container">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-auto justify-center leading-relaxed md:leading-[26px] not-italic relative shrink-0 text-[#cbd5e1] text-[15px] md:text-[16px] w-full md:w-[297.86px]">
+        <p>Garantissez le contrôle total de vos actifs. Hébergement local, isolation des flux et gouvernance stricte.</p>
       </div>
     </div>
   );
@@ -293,8 +288,8 @@ function Container12() {
 
 function Link() {
   return (
-    <div className="absolute content-stretch flex gap-[4px] items-center left-[40px] top-[294px]" data-name="Link">
-      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[24px] justify-center leading-[0] not-italic relative shrink-0 text-[#22d3ee] text-[16px] w-[107.39px]">
+    <div className="relative md:absolute content-stretch flex gap-[4px] items-center left-0 md:left-[40px] top-0 md:top-[294px] mt-6 md:mt-0" data-name="Link">
+      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[24px] justify-center leading-[0] not-italic relative shrink-0 text-[#22d3ee] text-[16px] w-auto">
         <p className="leading-[24px]">En savoir plus</p>
       </div>
       <Container12 />
@@ -304,8 +299,8 @@ function Link() {
 
 function SideCard() {
   return (
-    <div className="bg-[#001e40] col-[9/span_4] h-[409px] justify-self-stretch relative rounded-[8px] row-1 shrink-0" data-name="Side Card 1">
-      <div className="absolute h-[30px] left-[46px] top-[45px] w-[24px]" data-name="Icon">
+    <div className="bg-[#001e40] col-span-1 lg:col-[9/span_4] h-auto md:h-[409px] lg:justify-self-stretch relative rounded-[8px] lg:row-1 shrink-0 p-10 md:p-0" data-name="Side Card 1">
+      <div className="absolute md:relative h-[30px] left-0 md:left-[46px] top-0 md:top-[45px] w-[24px] mb-6 md:mb-0" data-name="Icon">
         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 30">
           <path d={svgPaths.p314be7a0} fill="var(--fill-0, #22D3EE)" id="Icon" />
         </svg>
@@ -483,7 +478,7 @@ function SideCard2() {
 
 function Container6() {
   return (
-    <div className="gap-x-[32px] gap-y-[32px] grid grid-cols-[repeat(12,minmax(0,1fr))] grid-rows-[__409px_278px] relative shrink-0 w-full" data-name="Container">
+    <div className="gap-8 grid grid-cols-1 md:grid-cols-12 md:grid-rows-[409px_278px] relative shrink-0 w-full" data-name="Container">
       <MainCard />
       <SideCard />
       <SideCard1 />
@@ -505,20 +500,20 @@ function Container4() {
 
 function ExpertiseSectionBentoGrid() {
   return (
-    <div className="absolute bg-white content-stretch flex flex-col items-center left-0 pt-[24px] pb-[96px] right-0 top-[918px]" data-name="Notre Méthode Section">
-      <div className="max-w-[1280px] w-full px-[32px]">
+    <div className="relative md:absolute bg-white flex flex-col items-center left-0 pt-[48px] md:pt-[24px] pb-12 md:pb-[96px] right-0 md:top-[918px]" data-name="Notre Méthode Section">
+      <div className="max-w-[1280px] w-full px-6 md:px-[32px]">
         {/* Section Header */}
-        <div className="text-center mb-[64px]">
-          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[48px] text-[#001b3c] tracking-[-1.2px] leading-tight mb-4">
+        <div className="text-center mb-10 md:mb-[64px]">
+          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[32px] md:text-[48px] text-[#001b3c] tracking-tight md:tracking-[-1.2px] leading-tight mb-4">
             Notre Méthode
           </h2>
-          <p className="font-['Inter:Regular',sans-serif] text-[18px] text-[#64748b] leading-relaxed max-w-[800px] mx-auto">
+          <p className="font-['Inter:Regular',sans-serif] text-[16px] md:text-[18px] text-[#64748b] leading-relaxed max-w-[800px] mx-auto">
             Une approche structurée en 3 étapes pour transformer votre organisation en déployant de l'IA et des automatisations
           </p>
         </div>
 
         {/* Three Cards Grid */}
-        <div className="grid grid-cols-3 gap-[32px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-[32px]">
           {/* Card 1: Diagnostic et cadrage */}
           <div className="bg-white rounded-[16px] shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
             <div className="aspect-[4/3] w-full overflow-hidden">

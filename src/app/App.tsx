@@ -10,7 +10,7 @@ import Body from "../imports/Body";
 import IAConformePage from "./components/IAConformePage";
 import ContactPage from "./components/ContactPage";
 import TarifsPage from "./components/TarifsPage";
-import { BookOpen, Clock, Award, Users, FileCheck, Shield, Download, ChevronRight, Building2, HardDrive, CheckCircle2, GraduationCap, ShieldCheck, ScrollText, Lock, Scale } from "lucide-react";
+import { BookOpen, Clock, Award, Users, FileCheck, Shield, Download, ChevronRight, Building2, HardDrive, CheckCircle2, GraduationCap, ShieldCheck, ScrollText, Lock, Scale, Menu, X, ChevronDown } from "lucide-react";
 import isoLogo from '../assets/iso27001-logo.png';
 import nis2Logo from '../assets/nis2-logo.png';
 import qualiopiLogo from '../assets/qualiopi-logo.png';
@@ -23,98 +23,193 @@ import teamMelvin from '../assets/team-melvin.png';
 import teamRaphael from '../assets/team-raphael.png';
 
 function Navbar({ currentPage, onNavigate }: { currentPage: string; onNavigate: (page: string) => void }) {
-  return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 bg-white/95 backdrop-blur-sm"
-      style={{ height: "96px" }}
-    >
-      {/* Logo */}
-      <button onClick={() => onNavigate("home")} className="flex items-center cursor-pointer">
-        <img
-          src={logoDataConforme}
-          alt="Data Conforme"
-          className="h-[80px] w-auto object-contain"
-        />
-      </button>
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-      {/* Navigation links */}
-      <div className="flex items-center gap-12">
-        <button
-          onClick={() => onNavigate("home")}
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${
-            currentPage === "home" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
-          }`}
-        >
-          Conformité et Opportunités
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleNavigate = (page: string) => {
+    onNavigate(page);
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <>
+      <nav
+        className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-between px-4 md:px-8 bg-white/95 backdrop-blur-sm border-b border-gray-100"
+        style={{ height: "80px" }}
+      >
+        {/* Logo */}
+        <button onClick={() => handleNavigate("home")} className="flex items-center cursor-pointer">
+          <img
+            src={logoDataConforme}
+            alt="Data Conforme"
+            className="h-[50px] md:h-[70px] w-auto object-contain"
+          />
         </button>
-        <button
-          onClick={() => onNavigate("formation")}
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${
-            currentPage === "formation" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
-          }`}
-        >
-          Formation
-        </button>
-        <div className="relative group">
+
+        {/* Desktop Navigation links */}
+        <div className="hidden lg:flex items-center gap-8 xl:gap-12">
           <button
-            onClick={() => onNavigate("ia-conforme")}
-            className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${
-              currentPage === "ia-conforme" || currentPage === "fabrik01" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+            onClick={() => handleNavigate("home")}
+            className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${
+              currentPage === "home" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
             }`}
           >
-            Votre IA Conforme
+            Conformité et Opportunités
           </button>
-          {/* Dropdown submenu */}
-          <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-            <div className="bg-white rounded-lg shadow-lg border border-[rgba(0,71,186,0.1)] py-2 min-w-[200px]">
+          <button
+            onClick={() => handleNavigate("formation")}
+            className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 cursor-pointer ${
+              currentPage === "formation" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+            }`}
+          >
+            Formation
+          </button>
+          <div className="relative group">
+            <button
+              onClick={() => handleNavigate("ia-conforme")}
+              className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer flex items-center gap-1 ${
+                currentPage === "ia-conforme" || currentPage === "fabrik01" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+              }`}
+            >
+              Votre IA Conforme
+              <ChevronDown className="w-4 h-4" />
+            </button>
+            {/* Dropdown submenu */}
+            <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="bg-white rounded-lg shadow-lg border border-[rgba(0,71,186,0.1)] py-2 min-w-[200px]">
+                <button
+                  onClick={() => handleNavigate("fabrik01")}
+                  className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+                >
+                  Fabrik01
+                </button>
+              </div>
+            </div>
+          </div>
+          <button
+            onClick={() => handleNavigate("about")}
+            className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 cursor-pointer ${
+              currentPage === "about" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+            }`}
+          >
+            À propos
+          </button>
+          <button
+            onClick={() => handleNavigate("contact")}
+            className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 cursor-pointer ${
+              currentPage === "contact" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+            }`}
+          >
+            Contact
+          </button>
+        </div>
+
+        {/* CTA Button & Mobile Toggle */}
+        <div className="flex items-center gap-4">
+          <a
+            href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:flex px-4 xl:px-6 py-[8px] xl:py-[10px] rounded-[8px] cursor-pointer shadow-md hover:opacity-90 transition-opacity duration-200 no-underline items-center justify-center"
+            style={{ backgroundImage: "linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)" }}
+          >
+            <span className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[14px] xl:text-[16px]">
+              Démarrer
+            </span>
+          </a>
+
+          {/* Hamburger Menu Icon */}
+          <button 
+            onClick={toggleMenu}
+            className="lg:hidden p-2 text-[#0A192F] hover:bg-gray-100 rounded-lg transition-colors cursor-pointer"
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu Dropdown */}
+      <div 
+        className={`fixed left-0 right-0 z-[55] lg:hidden transition-all duration-300 ease-in-out bg-white border-b border-gray-100 shadow-xl overflow-hidden ${
+          isMenuOpen ? "top-[80px] max-h-[500px] opacity-100" : "top-[60px] max-h-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col p-4 space-y-1">
+          <button
+            onClick={() => handleNavigate("home")}
+            className={`flex items-center w-full px-4 py-4 rounded-lg text-left font-['Manrope:Bold',sans-serif] font-bold text-[18px] ${
+              currentPage === "home" ? "bg-[#ECF0FF] text-[#00A9C1]" : "text-[#0A192F] active:bg-gray-50"
+            }`}
+          >
+            Conformité et Opportunités
+          </button>
+          <button
+            onClick={() => handleNavigate("formation")}
+            className={`flex items-center w-full px-4 py-4 rounded-lg text-left font-['Manrope:Bold',sans-serif] font-bold text-[18px] ${
+              currentPage === "formation" ? "bg-[#ECF0FF] text-[#00A9C1]" : "text-[#0A192F] active:bg-gray-50"
+            }`}
+          >
+            Formation
+          </button>
+          <div className="flex flex-col">
+            <button
+              onClick={() => handleNavigate("ia-conforme")}
+              className={`flex items-center justify-between w-full px-4 py-4 rounded-lg text-left font-['Manrope:Bold',sans-serif] font-bold text-[18px] ${
+                currentPage === "ia-conforme" || currentPage === "fabrik01" ? "bg-[#ECF0FF] text-[#00A9C1]" : "text-[#0A192F] active:bg-gray-50"
+              }`}
+            >
+              Votre IA Conforme
+              <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${currentPage === "ia-conforme" ? "rotate-180" : ""}`} />
+            </button>
+            <div className="ml-4 pl-4 border-l-2 border-[#00A9C1]/20 py-1 space-y-1">
               <button
-                onClick={() => onNavigate("fabrik01")}
-                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+                onClick={() => handleNavigate("fabrik01")}
+                className="flex items-center w-full px-4 py-3 rounded-lg text-left font-['Inter:Medium',sans-serif] font-medium text-[#5A6C7D] text-[16px] active:bg-gray-50"
               >
                 Fabrik01
               </button>
             </div>
           </div>
+          <button
+            onClick={() => handleNavigate("about")}
+            className={`flex items-center w-full px-4 py-4 rounded-lg text-left font-['Manrope:Bold',sans-serif] font-bold text-[18px] ${
+              currentPage === "about" ? "bg-[#ECF0FF] text-[#00A9C1]" : "text-[#0A192F] active:bg-gray-50"
+            }`}
+          >
+            À propos
+          </button>
+          <button
+            onClick={() => handleNavigate("contact")}
+            className={`flex items-center w-full px-4 py-4 rounded-lg text-left font-['Manrope:Bold',sans-serif] font-bold text-[18px] ${
+              currentPage === "contact" ? "bg-[#ECF0FF] text-[#00A9C1]" : "text-[#0A192F] active:bg-gray-50"
+            }`}
+          >
+            Contact
+          </button>
+          
+          <div className="pt-4 pb-2 px-4">
+            <a
+              href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full h-[52px] items-center justify-center rounded-xl font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px] shadow-lg"
+              style={{ backgroundImage: "linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)" }}
+            >
+              Prendre RDV (30min offertes)
+            </a>
+          </div>
         </div>
-        <button
-          onClick={() => onNavigate("about")}
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${
-            currentPage === "about" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
-          }`}
-        >
-          À propos
-        </button>
-        <a
-          href="#"
-          className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[16px] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
-        >
-          News
-        </a>
-        <button
-          onClick={() => onNavigate("contact")}
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${
-            currentPage === "contact" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
-          }`}
-        >
-          Contact
-        </button>
       </div>
 
-      {/* CTA Button */}
-      <div className="flex items-center">
-        <a
-          href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-5 py-[10px] rounded-[8px] cursor-pointer shadow-md hover:opacity-90 transition-opacity duration-200 no-underline flex items-center justify-center"
-          style={{ backgroundImage: "linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)" }}
-        >
-          <span className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px]">
-            Démarrer
-          </span>
-        </a>
-      </div>
-    </nav>
+      {/* Backdrop for mobile menu */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[50] lg:hidden"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
+    </>
   );
 }
 
@@ -134,15 +229,15 @@ function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
         {/* Footer grid */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
           {/* Column 1 - Data Conforme */}
-          <div>
-            <img src={logoDcDegrade} alt="Data Conforme" className="h-[90px] w-auto object-contain mb-6" />
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <img src={logoDcDegrade} alt="Data Conforme" className="h-[70px] md:h-[90px] w-auto object-contain mb-6" />
             <p className="font-['Inter:Regular',sans-serif] font-normal text-white/80 text-[14px] leading-relaxed">
               Votre partenaire en conformité et IA responsable
             </p>
           </div>
 
           {/* Column 2 - Services */}
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[18px] mb-6">
               Services
             </h3>
@@ -183,7 +278,7 @@ function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
           </div>
 
           {/* Column 4 - Légal */}
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[18px] mb-6">
               Confiance & Légal
             </h3>
@@ -192,7 +287,7 @@ function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
                 <a
                   href="#"
                   onClick={(e) => handleNavigation(e, "legal")}
-                  className="font-['Inter:Regular',sans-serif] font-normal text-white/80 text-[14px] hover:text-[#00A9C1] transition-colors duration-200 flex items-center gap-2 cursor-pointer"
+                  className="font-['Inter:Regular',sans-serif] font-normal text-white/80 text-[14px] hover:text-[#00A9C1] transition-colors duration-200 flex items-center gap-2 cursor-pointer justify-center md:justify-start"
                 >
                   <ScrollText className="w-3 h-3" /> Mentions légales
                 </a>
@@ -201,7 +296,7 @@ function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
                 <a
                   href="#"
                   onClick={(e) => handleNavigation(e, "privacy")}
-                  className="font-['Inter:Regular',sans-serif] font-normal text-white/80 text-[14px] hover:text-[#00A9C1] transition-colors duration-200 flex items-center gap-2 cursor-pointer"
+                  className="font-['Inter:Regular',sans-serif] font-normal text-white/80 text-[14px] hover:text-[#00A9C1] transition-colors duration-200 flex items-center gap-2 cursor-pointer justify-center md:justify-start"
                 >
                   <Lock className="w-3 h-3" /> Politique de confidentialité
                 </a>
@@ -210,7 +305,7 @@ function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
                 <a
                   href="#"
                   onClick={(e) => handleNavigation(e, "trust-center")}
-                  className="font-['Inter:Regular',sans-serif] font-normal text-[#82E600] text-[14px] hover:text-white transition-colors duration-200 flex items-center gap-2 cursor-pointer"
+                  className="font-['Inter:Regular',sans-serif] font-normal text-[#82E600] text-[14px] hover:text-white transition-colors duration-200 flex items-center gap-2 cursor-pointer justify-center md:justify-start"
                 >
                   <ShieldCheck className="w-3 h-3" /> Centre de Confiance
                 </a>
@@ -219,7 +314,7 @@ function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
                 <a
                   href="#"
                   onClick={(e) => handleNavigation(e, "cgu")}
-                  className="font-['Inter:Regular',sans-serif] font-normal text-white/80 text-[14px] hover:text-[#00A9C1] transition-colors duration-200 flex items-center gap-2 cursor-pointer"
+                  className="font-['Inter:Regular',sans-serif] font-normal text-white/80 text-[14px] hover:text-[#00A9C1] transition-colors duration-200 flex items-center gap-2 cursor-pointer justify-center md:justify-start"
                 >
                   <Scale className="w-3 h-3" /> Conditions Générales d'Utilisation
                 </a>
@@ -228,10 +323,10 @@ function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
           </div>
 
           {/* Column 5 - Partenaires & Certifications */}
-          <div className="flex flex-col justify-start md:items-end gap-6">
-            <img src={logoFabrik01} alt="Fabrik01" className="h-[80px] w-auto object-contain" />
+          <div className="flex flex-col justify-start items-center md:items-end gap-6">
+            <img src={logoFabrik01} alt="Fabrik01" className="h-[60px] md:h-[80px] w-auto object-contain" />
             <div className="bg-white rounded-lg p-3 inline-flex">
-              <img src={qualiopiLogo} alt="Certifié Qualiopi" className="h-[50px] w-auto object-contain" />
+              <img src={qualiopiLogo} alt="Certifié Qualiopi" className="h-[40px] md:h-[50px] w-auto object-contain" />
             </div>
           </div>
         </div>
@@ -285,31 +380,31 @@ function AboutPage({ onNavigate }: { onNavigate: (page: string) => void }) {
       <Navbar currentPage="about" onNavigate={onNavigate} />
 
       {/* Hero Section */}
-      <section className="relative w-full pt-[140px] pb-[80px] bg-white text-center">
-        <div className="max-w-[1000px] mx-auto px-8 relative z-10">
-          <h1 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[48px] md:text-[56px] leading-[1.1] mb-6">
+      <section className="relative w-full pt-[100px] md:pt-[140px] pb-[60px] md:pb-[80px] bg-white text-center px-6 md:px-8">
+        <div className="max-w-[1000px] mx-auto relative z-10">
+          <h1 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[32px] md:text-[56px] leading-[1.2] md:leading-[1.1] mb-6">
             À propos de <span className="text-[#00A9C1]">Data Conforme</span>
           </h1>
-          <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[20px] leading-relaxed max-w-[800px] mx-auto">
+          <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] md:text-[20px] leading-relaxed max-w-[800px] mx-auto">
             Une équipe pluridisciplinaire d'experts réunissant l'excellence juridique et technologique pour sécuriser et propulser vos projets.
           </p>
         </div>
-        <div className="absolute inset-x-0 bottom-0 h-[200px] bg-gradient-to-t from-[#F8FAFC] to-white/0 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-[100px] md:h-[200px] bg-gradient-to-t from-[#F8FAFC] to-white/0 pointer-events-none" />
       </section>
 
       {/* L'Equipe Section */}
-      <section className="w-full py-20 px-8 bg-[#F8FAFC]">
+      <section className="w-full py-16 md:py-20 px-6 md:px-8 bg-[#F8FAFC]">
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[40px] mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[32px] md:text-[40px] mb-4">
               Notre Équipe
             </h2>
-            <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[18px]">
+            <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] md:text-[18px]">
               L'alliance de l'expertise juridique et technologique
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               { name: "Jérôme Ficat", role: "Fondateur & CEO / Expert RGPD", desc: "DPO externe depuis 2020. Plus de 50 audits RGPD et cyber. Responsable parcours Qualiopi.", image: teamJerome },
               { name: "Matthias de Forni", role: "CTO / Déc. IA & Automatisation", desc: "Expert IA, agents intelligents (n8n, CrewAI). Développe des solutions souveraines sur mesure.", image: teamMatthias },
@@ -317,7 +412,7 @@ function AboutPage({ onNavigate }: { onNavigate: (page: string) => void }) {
               { name: "Melvin Bouyssou", role: "Développeur IA & Automatisation", desc: "Développement web, IA et création d'automatisations complexes.", image: teamMelvin },
               { name: "Raphaël SANTOS", role: "Business Developer", desc: "Développement et lancement des offres de transformation IA pour les organisations.", image: teamRaphael }
             ].map((member, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-[#E5E9F0] hover:shadow-md transition-shadow">
+              <div key={idx} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-[#E5E9F0] hover:shadow-md transition-shadow flex flex-col items-center md:items-start text-center md:text-left">
                 <div className="w-20 h-20 rounded-full bg-[#00A9C1]/10 flex items-center justify-center mb-6 overflow-hidden border-2 border-[#00A9C1]/20">
                   <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                 </div>
@@ -526,17 +621,17 @@ function FormationPage({ onNavigate }: { onNavigate: (page: string) => void }) {
       <Navbar currentPage="formation" onNavigate={onNavigate} />
 
       {/* Hero Section - Centered without image */}
-      <section className="relative w-full pt-[96px] overflow-hidden" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFB 100%)' }}>
-        <div className="max-w-[1000px] mx-auto px-8 py-24 text-center">
-          <h1 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[56px] leading-[1.1] mb-6">
+      <section className="relative w-full pt-[80px] md:pt-[96px] overflow-hidden px-6 md:px-8" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFB 100%)' }}>
+        <div className="max-w-[1000px] mx-auto py-16 md:py-24 text-center">
+          <h1 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[32px] md:text-[56px] leading-[1.2] md:leading-[1.1] mb-6">
             Développez vos compétences en conformité
           </h1>
           
-          <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[20px] leading-[1.6] mb-8 max-w-[800px] mx-auto">
+          <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] md:text-[20px] leading-[1.6] mb-8 max-w-[800px] mx-auto">
             Des formations pratiques et certifiantes pour maîtriser le RGPD, l'IA Act et la cybersécurité, animées par des experts terrain.
           </p>
           
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="px-8 py-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer" style={{ background: 'linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)' }}>
               <span className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px]">
                 Voir nos formations
@@ -559,19 +654,19 @@ function FormationPage({ onNavigate }: { onNavigate: (page: string) => void }) {
       <HorizontalAntiGravityStrip />
 
       {/* Programs Section */}
-      <section className="w-full py-24 px-8 bg-[#F8FAFB]">
+      <section className="w-full py-16 md:py-24 px-6 md:px-8 bg-[#F8FAFB]">
         <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[48px] mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[32px] md:text-[48px] mb-4">
               Nos formations
             </h2>
-            <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[20px] max-w-[700px] mx-auto">
+            <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] md:text-[20px] max-w-[700px] mx-auto">
               Des programmes conçus pour vous accompagner dans votre mise en conformité
             </p>
           </div>
 
           {/* Programs Grid */}
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Program 1: DPO */}
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#E5E9F0]">
               <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)' }}>
@@ -1064,13 +1159,13 @@ function PrivacyPolicyPage({ onNavigate }: { onNavigate: (page: string) => void 
     <div className="relative w-full min-h-screen bg-white">
       <Navbar currentPage="privacy" onNavigate={onNavigate} />
       
-      <section className="relative w-full pt-[140px] pb-24 px-8 border-b border-[#E5E9F0]" style={{ background: 'linear-gradient(180deg, #F8FAFB 0%, #FFFFFF 100%)' }}>
+      <section className="relative w-full pt-[100px] md:pt-[140px] pb-16 md:pb-24 px-6 md:px-8 border-b border-[#E5E9F0]" style={{ background: 'linear-gradient(180deg, #F8FAFB 0%, #FFFFFF 100%)' }}>
         <div className="max-w-[800px] mx-auto text-center">
           <div className="inline-block px-4 py-1.5 rounded-full bg-[rgba(0,169,193,0.1)] text-[#00A9C1] font-['Inter:Semi_Bold',sans-serif] text-[14px] mb-6">
             Protection des données
           </div>
-          <h1 className="font-['Manrope:Extra_Bold',sans-serif] text-[#0A192F] text-[48px] mb-6 leading-tight">Politique de Confidentialité</h1>
-          <p className="font-['Inter:Regular',sans-serif] text-[18px] text-[#5A6C7D]">
+          <h1 className="font-['Manrope:Extra_Bold',sans-serif] text-[#0A192F] text-[32px] md:text-[48px] mb-6 leading-tight">Politique de Confidentialité</h1>
+          <p className="font-['Inter:Regular',sans-serif] text-[16px] md:text-[18px] text-[#5A6C7D]">
             Transparence totale sur la collecte, l'utilisation et la protection de vos données personnelles par Data Conforme.
           </p>
         </div>
@@ -1101,14 +1196,14 @@ function PrivacyPolicyPage({ onNavigate }: { onNavigate: (page: string) => void 
           </div>
 
           {/* II - Quel type d'informations */}
-          <div className="bg-white rounded-2xl p-8 border border-[#E5E9F0] shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white rounded-2xl p-6 md:p-8 border border-[#E5E9F0] shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 rounded-full bg-[#E6F6F9] flex items-center justify-center shrink-0">
                 <Users className="w-6 h-6 text-[#0047BA]" />
               </div>
-              <h2 className="font-['Manrope:Bold',sans-serif] text-[24px] text-[#0A192F]">II – Quel type d’informations collectons nous ?</h2>
+              <h2 className="font-['Manrope:Bold',sans-serif] text-[20px] md:text-[24px] text-[#0A192F]">II – Quel type d’informations collectons nous ?</h2>
             </div>
-            <div className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] leading-relaxed space-y-4">
+            <div className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] leading-relaxed space-y-4 text-[14px] md:text-[16px]">
               <p>Nous recueillons et traitons actuellement les informations suivantes :</p>
               <ul className="list-disc pl-5 space-y-2">
                 <li><strong>Dans le cadre de nos formulaires :</strong> Noms, prénoms, nom de votre société, courriel professionnel, téléphone.</li>
@@ -1229,18 +1324,18 @@ function TrustCenterPage({ onNavigate }: { onNavigate: (page: string) => void })
       <Navbar currentPage="trust-center" onNavigate={onNavigate} />
       
       {/* Premium Hero Section */}
-      <section className="relative w-full pt-[140px] pb-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0A192F 0%, #0047BA 100%)' }}>
+      <section className="relative w-full pt-[120px] md:pt-[140px] pb-24 md:pb-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0A192F 0%, #0047BA 100%)' }}>
         <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top_right,_#00A9C1_0%,_transparent_50%)]"></div>
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_bottom_left,_#82E600_0%,_transparent_50%)]"></div>
         
-        <div className="max-w-[1200px] mx-auto px-8 relative z-10 text-center">
-          <div className="inline-block px-5 py-2 rounded-full bg-[rgba(130,230,0,0.15)] text-[#82E600] font-['Inter:Semi_Bold',sans-serif] text-[14px] mb-8 border border-[#82E600]/30 backdrop-blur-md uppercase tracking-wider shadow-[0_0_15px_rgba(130,230,0,0.2)]">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-8 relative z-10 text-center">
+          <div className="inline-block px-5 py-2 rounded-full bg-[rgba(130,230,0,0.15)] text-[#82E600] font-['Inter:Semi_Bold',sans-serif] text-[12px] md:text-[14px] mb-8 border border-[#82E600]/30 backdrop-blur-md uppercase tracking-wider shadow-[0_0_15px_rgba(130,230,0,0.2)]">
             Engagement de conformité
           </div>
-          <h1 className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[64px] leading-[1.1] mb-8 drop-shadow-lg">
+          <h1 className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[32px] md:text-[64px] leading-[1.2] md:leading-[1.1] mb-8 drop-shadow-lg">
             Centre de Confiance
           </h1>
-          <p className="font-['Inter:Regular',sans-serif] text-[22px] text-white/90 max-w-[800px] mx-auto font-light">
+          <p className="font-['Inter:Regular',sans-serif] text-[18px] md:text-[22px] text-white/90 max-w-[800px] mx-auto font-light">
             La sécurité, la transparence et la protection de vos données sont inscrites dans le code et les processus de Data Conforme.
           </p>
         </div>
@@ -1251,13 +1346,13 @@ function TrustCenterPage({ onNavigate }: { onNavigate: (page: string) => void })
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
              
-             {/* Security By Design */}
-             <div className="bg-white/80 backdrop-blur-xl rounded-[32px] p-10 shadow-2xl border border-white">
+              {/* Security By Design */}
+             <div className="bg-white/80 backdrop-blur-xl rounded-[32px] p-6 md:p-10 shadow-2xl border border-white">
                 <div className="w-16 h-16 rounded-[20px] mb-8 flex items-center justify-center shadow-inner" style={{ background: 'linear-gradient(135deg, rgba(0,71,186,0.1) 0%, rgba(0,169,193,0.1) 100%)' }}>
                   <Shield className="w-8 h-8 text-[#0047BA]" />
                 </div>
-                <h3 className="font-['Manrope:Bold',sans-serif] text-[32px] text-[#0A192F] mb-4">Sécurité par Design</h3>
-                <p className="font-['Inter:Regular',sans-serif] text-[16px] text-[#5A6C7D] leading-relaxed mb-8">
+                <h3 className="font-['Manrope:Bold',sans-serif] text-[28px] md:text-[32px] text-[#0A192F] mb-4">Sécurité par Design</h3>
+                <p className="font-['Inter:Regular',sans-serif] text-[15px] md:text-[16px] text-[#5A6C7D] leading-relaxed mb-8">
                   Nos infrastructures logicielles et nos méthodes d'audit sont développées autour des principes les plus stricts de <em>Privacy By Design</em>, empêchant la compromission des données avant même qu'elle n'arrive.
                 </p>
                 <ul className="space-y-4">
