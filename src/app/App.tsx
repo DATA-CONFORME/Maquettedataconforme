@@ -1315,8 +1315,25 @@ function TrustCenterPage({ onNavigate }: { onNavigate: (page: string) => void })
   );
 }
 
+const VALID_PAGES = ["about", "formation", "ia-conforme", "fabrik01", "legal", "privacy", "trust-center", "contact", "tarifs"];
+
 export default function App() {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get("page");
+    return page && VALID_PAGES.includes(page) ? page : "home";
+  });
+
+  const handleNavigate = (page: string) => {
+    setCurrentPage(page);
+    const url = new URL(window.location.href);
+    if (page === "home") {
+      url.searchParams.delete("page");
+    } else {
+      url.searchParams.set("page", page);
+    }
+    window.history.pushState({}, "", url.toString());
+  };
 
   // Global Scroll Animation Observer
   useEffect(() => {
@@ -1365,24 +1382,24 @@ export default function App() {
   }, [currentPage]);
 
   return currentPage === "about" ? (
-    <AboutPage onNavigate={setCurrentPage} />
+    <AboutPage onNavigate={handleNavigate} />
   ) : currentPage === "formation" ? (
-    <FormationPage onNavigate={setCurrentPage} />
+    <FormationPage onNavigate={handleNavigate} />
   ) : currentPage === "ia-conforme" ? (
-    <IAConformePage onNavigate={setCurrentPage} />
+    <IAConformePage onNavigate={handleNavigate} />
   ) : currentPage === "fabrik01" ? (
-    <Fabrik01Page onNavigate={setCurrentPage} />
+    <Fabrik01Page onNavigate={handleNavigate} />
   ) : currentPage === "legal" ? (
-    <LegalNoticePage onNavigate={setCurrentPage} />
+    <LegalNoticePage onNavigate={handleNavigate} />
   ) : currentPage === "privacy" ? (
-    <PrivacyPolicyPage onNavigate={setCurrentPage} />
+    <PrivacyPolicyPage onNavigate={handleNavigate} />
   ) : currentPage === "trust-center" ? (
-    <TrustCenterPage onNavigate={setCurrentPage} />
+    <TrustCenterPage onNavigate={handleNavigate} />
   ) : currentPage === "contact" ? (
-    <ContactPage onNavigate={setCurrentPage} />
+    <ContactPage onNavigate={handleNavigate} />
   ) : currentPage === "tarifs" ? (
-    <TarifsPage />
+    <TarifsPage onNavigate={handleNavigate} />
   ) : (
-    <HomePage onNavigate={setCurrentPage} />
+    <HomePage onNavigate={handleNavigate} />
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
+import { Navbar } from "../App";
 
 const plans = [
   {
@@ -60,7 +61,7 @@ const plans = [
   },
 ];
 
-export default function TarifsPage() {
+export default function TarifsPage({ onNavigate }: { onNavigate?: (page: string) => void }) {
   const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
 
   return (
@@ -68,8 +69,9 @@ export default function TarifsPage() {
       className="min-h-screen w-full"
       style={{ background: "linear-gradient(135deg, #0A192F 0%, #0E2844 50%, #0A192F 100%)" }}
     >
+      <Navbar currentPage="tarifs" onNavigate={onNavigate || (() => {})} />
       {/* Header */}
-      <div className="text-center pt-20 pb-16 px-8">
+      <div className="text-center pt-[140px] pb-16 px-8">
         {/* Logo / brand badge */}
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full mb-8">
           <div className="w-2 h-2 rounded-full bg-[#82E600]" />
