@@ -10,6 +10,7 @@ export default function ContactPage({ onNavigate }: { onNavigate: (page: string)
     pays: "France",
     tel: "",
     fonction: "",
+    secteur: "",
     motif: "",
     message: "",
     consent: false
@@ -32,6 +33,9 @@ export default function ContactPage({ onNavigate }: { onNavigate: (page: string)
     if (!formData.prenom) newErrors.prenom = "Veuillez remplir ce champ obligatoire.";
     if (!formData.nom) newErrors.nom = "Veuillez remplir ce champ obligatoire.";
     if (!formData.email) newErrors.email = "L'e-mail est obligatoire.";
+    if (!formData.fonction) newErrors.fonction = "Veuillez préciser votre fonction.";
+    if (!formData.secteur) newErrors.secteur = "Veuillez préciser votre secteur d'activité.";
+    if (!formData.motif) newErrors.motif = "Veuillez préciser le motif de votre demande.";
     if (!formData.consent) newErrors.consent = "Vous devez accepter le traitement de vos données.";
     
     setErrors(newErrors);
@@ -153,18 +157,51 @@ export default function ContactPage({ onNavigate }: { onNavigate: (page: string)
                       name="fonction"
                       value={formData.fonction}
                       onChange={handleChange}
-                      className="appearance-none w-full px-5 py-4 rounded-xl bg-[#F8FAFB] border-[1.5px] border-[#E5E9F0] outline-none focus:border-[#00A9C1] font-['Inter:Regular',sans-serif] transition-all cursor-pointer"
+                      className={`appearance-none w-full px-5 py-4 rounded-xl bg-[#F8FAFB] border-[1.5px] outline-none transition-all cursor-pointer font-['Inter:Regular',sans-serif] ${
+                        errors.fonction ? 'border-red-400 focus:border-red-500' : 'border-[#E5E9F0] focus:border-[#00A9C1]'
+                      }`}
                     >
                       <option value="">Veuillez sélectionner</option>
-                      <option value="Dirigeant">Dirigeant / Gérant</option>
-                      <option value="DPO">DPO / Juriste</option>
-                      <option value="IT">DSI / Responsable IT</option>
+                      <option value="CEO / Dirigeant">CEO / Dirigeant / Gérant</option>
+                      <option value="RAF / Compta">Responsable Administratif / Financier / Compta</option>
+                      <option value="DPO / Juriste">DPO / Juriste / Compliance</option>
+                      <option value="DSI / RSSI">DSI / RSSI / Responsable IT</option>
+                      <option value="Manager / Chef de service">Responsable de Département / Manager</option>
                       <option value="Autre">Autre</option>
                     </select>
                     <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#5A6C7D] pointer-events-none" />
                   </div>
+                  {errors.fonction && <p className="text-red-500 text-[12px] font-['Inter:Medium',sans-serif]">{errors.fonction}</p>}
                 </div>
 
+                {/* Secteur d'activité */}
+                <div className="space-y-2">
+                  <label className="font-['Inter:Semi_Bold',sans-serif] text-[#0A192F] text-[14px]">Secteur d'activité*</label>
+                  <div className="relative">
+                    <select
+                      name="secteur"
+                      value={formData.secteur}
+                      onChange={handleChange}
+                      className={`appearance-none w-full px-5 py-4 rounded-xl bg-[#F8FAFB] border-[1.5px] outline-none transition-all cursor-pointer font-['Inter:Regular',sans-serif] ${
+                        errors.secteur ? 'border-red-400 focus:border-red-500' : 'border-[#E5E9F0] focus:border-[#00A9C1]'
+                      }`}
+                    >
+                      <option value="">Veuillez sélectionner</option>
+                      <option value="Services / Conseil">Services / Conseil</option>
+                      <option value="Industrie / Manufacture">Industrie / Manufacture</option>
+                      <option value="Santé / Pharmaceutique">Santé / Pharmaceutique</option>
+                      <option value="Formation / Éducation">Formation / Éducation</option>
+                      <option value="Éditeur / SaaS / ESN">Éditeur de logiciel / SaaS / ESN</option>
+                      <option value="Administration / Public">Administration / Secteur Public</option>
+                      <option value="Autre">Autre</option>
+                    </select>
+                    <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#5A6C7D] pointer-events-none" />
+                  </div>
+                  {errors.secteur && <p className="text-red-500 text-[12px] font-['Inter:Medium',sans-serif]">{errors.secteur}</p>}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Motif */}
                 <div className="space-y-2">
                   <label className="font-['Inter:Semi_Bold',sans-serif] text-[#0A192F] text-[14px]">Motif*</label>
@@ -173,16 +210,20 @@ export default function ContactPage({ onNavigate }: { onNavigate: (page: string)
                       name="motif"
                       value={formData.motif}
                       onChange={handleChange}
-                      className="appearance-none w-full px-5 py-4 rounded-xl bg-[#F8FAFB] border-[1.5px] border-[#E5E9F0] outline-none focus:border-[#00A9C1] font-['Inter:Regular',sans-serif] transition-all cursor-pointer"
+                      className={`appearance-none w-full px-5 py-4 rounded-xl bg-[#F8FAFB] border-[1.5px] outline-none transition-all cursor-pointer font-['Inter:Regular',sans-serif] ${
+                        errors.motif ? 'border-red-400 focus:border-red-500' : 'border-[#E5E9F0] focus:border-[#00A9C1]'
+                      }`}
                     >
                       <option value="">Veuillez sélectionner</option>
                       <option value="Audit">Audit RGPD</option>
                       <option value="IA">Projet IA & Souveraineté</option>
                       <option value="DPO">DPO externe</option>
-                      <option value="Formation">Formation</option>
+                      <option value="Formation">Formation / IA</option>
+                      <option value="Autre">Autre</option>
                     </select>
                     <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#5A6C7D] pointer-events-none" />
                   </div>
+                  {errors.motif && <p className="text-red-500 text-[12px] font-['Inter:Medium',sans-serif]">{errors.motif}</p>}
                 </div>
               </div>
 
