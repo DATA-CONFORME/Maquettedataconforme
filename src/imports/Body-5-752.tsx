@@ -39,9 +39,8 @@ function Container3() {
   return (
     <div className="content-stretch flex flex-col items-start max-w-[576px] relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[32.5px] not-italic relative shrink-0 text-[#cbe6ff] text-[20px] w-full">
-        <p className="mb-0">{`Naviguez sereinement dans l'EU AI Act. Assurez un`}</p>
-        <p className="mb-0">déploiement sécurisé, éthique et conforme de vos systèmes</p>
-        <p>{`d'intelligence artificielle.`}</p>
+        <p className="mb-0">Assurez un déploiement sécurisé, éthique et conforme</p>
+        <p>{`de vos systèmes d'intelligence artificielle.`}</p>
       </div>
     </div>
   );
