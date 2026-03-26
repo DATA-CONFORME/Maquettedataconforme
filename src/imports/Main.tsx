@@ -414,7 +414,7 @@ function Container20() {
     <div className="content-stretch flex flex-col items-start max-w-[576px] relative shrink-0 w-[576px]" data-name="Container">
       <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[130px] justify-center leading-[32.5px] not-italic relative shrink-0 text-white/90 text-[20px] w-[574.69px]">
         <p className="mb-0">Data conforme sécurise vos actifs numériques et aide votre</p>
-        <p className="mb-0">organisation à progresser en maturiré cyber.</p>
+        <p className="mb-0">organisation à progresser en maturité cyber.</p>
       </div>
     </div>
   );
