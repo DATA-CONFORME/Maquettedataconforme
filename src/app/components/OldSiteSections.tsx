@@ -3,6 +3,8 @@ import { CheckCircle2, ShieldCheck, Search, FileText, UserCheck, HardDrive, Grad
 import isoLogo from "../../assets/iso27001-logo.png";
 import nis2Logo from "../../assets/nis2-logo.png";
 
+const publicUrl = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 export function SectionRGPD() {
   const features = [
     { title: "Une mise aux normes obligatoire", desc: "Le RGPD est obligatoire pour tout type de structure. Nous vous aidons à protéger votre « trésor de guerre » et à limiter les risques.", icon: <ShieldCheck className="w-8 h-8 text-[#00A9C1]" /> },
@@ -185,7 +187,7 @@ export function SectionOffres() {
               >
                 <div className="flex flex-col items-center">
                   <div className="w-14 h-14 rounded-full border-2 border-[#82E600] mb-2 overflow-hidden shadow-lg bg-white/10 ring-4 ring-white/5">
-                    <img src="/jerome-ficat.png" alt="Jérôme Ficat" className="w-full h-full object-cover" />
+                    <img src={publicUrl("jerome-ficat.png")} alt="Jérôme Ficat" className="w-full h-full object-cover" />
                   </div>
                   <h4 className="font-['Manrope:Bold',sans-serif] text-[17px] mb-0.5">DPO externalisé</h4>
                   <p className="font-['Inter:Medium',sans-serif] text-[10px] text-[#82E600]/80 uppercase tracking-widest">Accompagnement Expert</p>
@@ -327,8 +329,8 @@ export function SectionEcosystem() {
                     playsInline 
                     className="w-full h-full object-cover"
                   >
-                    <source src="/app-demo.mov" type="video/quicktime" />
-                    <source src="/app-demo.mov" type="video/mp4" />
+                    <source src={publicUrl("app-demo.mov")} type="video/quicktime" />
+                    <source src={publicUrl("app-demo.mov")} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                   

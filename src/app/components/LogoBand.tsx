@@ -1,18 +1,20 @@
 import React from "react";
 
+const base = import.meta.env.BASE_URL;
+
 const logos = [
-  "/logos-clients/client-logo-1.png",
-  "/logos-clients/client-logo-2.png",
-  "/logos-clients/client-logo-3.png",
-  "/logos-clients/client-logo-4.png",
-  "/logos-clients/client-logo-5.png",
-  "/logos-clients/client-logo-6.png",
-  "/logos-clients/client-logo-7.png",
-  "/logos-clients/client-logo-8.png",
-  "/logos-clients/client-logo-9.png",
-  "/logos-clients/client-logo-10.png",
-  "/logos-clients/client-logo-11.png",
-  "/logos-clients/client-logo-12.png",
+  `${base}logos-clients/client-logo-1.png`,
+  `${base}logos-clients/client-logo-2.png`,
+  `${base}logos-clients/client-logo-3.png`,
+  `${base}logos-clients/client-logo-4.png`,
+  `${base}logos-clients/client-logo-5.png`,
+  `${base}logos-clients/client-logo-6.png`,
+  `${base}logos-clients/client-logo-7.png`,
+  `${base}logos-clients/client-logo-8.png`,
+  `${base}logos-clients/client-logo-9.png`,
+  `${base}logos-clients/client-logo-10.png`,
+  `${base}logos-clients/client-logo-11.png`,
+  `${base}logos-clients/client-logo-12.png`,
 ];
 
 export function LogoBand() {
