@@ -1180,12 +1180,12 @@ function Container27() {
             <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" fill="#1D638F" />
           </svg>
         }
-        title="Livrables & preuves (audit-ready)"
-        description="Une démarche de conformité est utile si elle est étayée par des preuves. Nous produisons des livrables exploitables en interne et documentés"
+        title="Livrables et preuves (préparation d'audit)"
+        description="Une démarche de conformité n’a de valeur que si elle repose sur des éléments concrets et vérifiables. Nous fournissons donc des documents clairs, utilisables en interne et correctement structurés, permettant de démontrer cette conformité :"
         features={[
-          "Cartographie IA + registres associés",
-          "Rapport d'analyse de risques + plan d'actions",
-          "Politiques & procédures opérationnelles"
+          "Une cartographie des systèmes d’IA accompagnée de leurs registres",
+          "Un rapport d’analyse des risques, complété par un plan d’actions",
+          "Des politiques internes et des procédures opérationnelles"
         ]}
       />
       <ServiceCard

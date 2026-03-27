@@ -303,8 +303,9 @@ function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
               </li>
               <li>
                 <a
-                  href="#"
-                  onClick={(e) => handleNavigation(e, "trust-center")}
+                  href="https://application-rgpd.dataconforme.com/public/widget/7989b1c2-4d1a-4862-bb02-eba23a09526a"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-['Inter:Regular',sans-serif] font-normal text-[#82E600] text-[14px] hover:text-white transition-colors duration-200 flex items-center gap-2 cursor-pointer justify-center md:justify-start"
                 >
                   <ShieldCheck className="w-3 h-3" /> Centre de Confiance
@@ -587,7 +588,7 @@ function AboutPage({ onNavigate }: { onNavigate: (page: string) => void }) {
 function HorizontalAntiGravityStrip() {
   const stats = [
     { value: "+200", label: "Professionnels formés" },
-    { value: "100%", label: "Taux de satisfaction" },
+    { value: "80,5%", label: "Taux de satisfaction" },
     { value: "+6 ans", label: "Années d'expérience" },
     { value: "100%", label: "Certifié Qualiopi" },
   ];
@@ -778,7 +779,7 @@ function FormationPage({ onNavigate }: { onNavigate: (page: string) => void }) {
               </div>
               
               <h3 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[28px] mb-4">
-                IA Act & Conformité
+                IA : Cadre juridique et bonnes pratiques
               </h3>
               
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] leading-[1.6] mb-6">
@@ -791,7 +792,7 @@ function FormationPage({ onNavigate }: { onNavigate: (page: string) => void }) {
                     <Clock className="w-4 h-4 text-[#00A9C1]" />
                   </div>
                   <span className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px]">
-                    3 jours (21 heures)
+                    1 jour (7 heures)
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -922,7 +923,7 @@ function FormationPage({ onNavigate }: { onNavigate: (page: string) => void }) {
                 Certifications reconnues
               </h3>
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] leading-[1.6]">
-                Organisme certifié Qualiopi. Votre formation peut être financée jusqu'à 50% par votre OPCO et donne accès à des certifications professionnelles valorisantes.
+                Organisme certifié Qualiopi. Votre formation peut être financée potentiellement par votre OPCO.
               </p>
             </div>
 
@@ -958,12 +959,6 @@ function FormationPage({ onNavigate }: { onNavigate: (page: string) => void }) {
             >
               <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#0047BA] text-[16px]">
                 Nous contacter
-              </span>
-            </button>
-            
-            <button className="px-8 py-4 bg-transparent border-2 border-white hover:bg-white/10 rounded-lg transition-colors duration-200 cursor-pointer">
-              <span className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px]">
-                Télécharger le catalogue
               </span>
             </button>
           </div>
