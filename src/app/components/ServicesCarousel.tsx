@@ -189,7 +189,7 @@ export default function ServicesCarousel({ onNavigate }: ServicesCarouselProps) 
           {/* Left Arrow (Outside Carousel) */}
           <button 
             onClick={prev}
-            className={`absolute -left-16 w-11 h-11 rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,0.15)] flex items-center justify-center transition-all duration-200 z-10 
+            className={`absolute -left-16 w-11 h-11 rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,0.15)] hidden md:flex items-center justify-center transition-all duration-200 z-10 
               ${currentIndex === 0 ? 'text-[#D1D5DB] pointer-events-none' : 'text-[#1A2340] hover:scale-110 cursor-pointer'}`}
           >
             <ChevronLeft size={24} strokeWidth={2.5} />
@@ -314,7 +314,7 @@ export default function ServicesCarousel({ onNavigate }: ServicesCarouselProps) 
           {/* Right Arrow (Outside Carousel) */}
           <button 
             onClick={next}
-            className={`absolute -right-16 w-11 h-11 rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,0.15)] flex items-center justify-center transition-all duration-200 z-10 
+            className={`absolute -right-16 w-11 h-11 rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,0.15)] hidden md:flex items-center justify-center transition-all duration-200 z-10 
               ${currentIndex >= totalSlides ? 'text-[#D1D5DB] pointer-events-none' : 'text-[#1A2340] hover:scale-110 cursor-pointer'}`}
           >
             <ChevronRight size={24} strokeWidth={2.5} />

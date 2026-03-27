@@ -211,7 +211,7 @@ function Container10() {
 
 function Container8() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start max-w-[448px] relative shrink-0 w-[448px]" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[16px] items-start max-w-full md:max-w-[448px] relative shrink-0 w-full" data-name="Container">
       <Heading3 />
       <Container9 />
     </div>
@@ -325,7 +325,7 @@ function Heading6() {
 
 function Container13() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start max-w-[448px] relative shrink-0 w-[447.5px]" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[16px] items-start max-w-full md:max-w-[448px] relative shrink-0 w-full" data-name="Container">
       <Heading6 />
       <Container14 />
     </div>
@@ -378,8 +378,8 @@ function Container19() {
   return (
     <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative">
-        <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[24px] justify-center leading-[0] not-italic relative shrink-0 text-[#0A192F] text-[16px] tracking-[1.6px] uppercase w-[309.41px]">
-          <p className="leading-[24px]">Sécurité de Données Premium</p>
+        <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-auto py-1 justify-center leading-tight not-italic relative shrink-0 text-[#0A192F] text-[16px] tracking-[1.6px] uppercase w-full md:w-[309.41px]">
+          <p>Sécurité de Données Premium</p>
         </div>
       </div>
     </div>
@@ -426,8 +426,8 @@ function Button2() {
       className="bg-[#82E600] content-stretch flex flex-col items-center justify-center px-[32px] py-[18px] relative rounded-[8px] shrink-0 hover:opacity-90 transition-opacity cursor-pointer no-underline w-full sm:w-auto"
       data-name="Button"
     >
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[#082100] text-[18px] text-center w-full sm:w-[208.48px]">
-        <p className="leading-[28px]">Notre accompagnement</p>
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-auto py-2 justify-center leading-tight relative shrink-0 text-[#082100] text-[18px] text-center w-full sm:w-[208.48px]">
+        <p>Notre accompagnement</p>
       </div>
     </a>
   );
@@ -496,8 +496,8 @@ function Container23() {
 function Container25() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[24px] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white w-[140.03px]">
-        <p className="leading-[24px]">100% Compliance</p>
+      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-auto py-1 justify-center leading-tight not-italic relative shrink-0 text-[16px] text-white w-full md:w-[140.03px]">
+        <p>100% Compliance</p>
       </div>
     </div>
   );
@@ -795,7 +795,7 @@ function Container31() {
 
 function Container28() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start max-w-[672px] relative shrink-0 w-[672px]" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[24px] items-start max-w-full md:max-w-[672px] relative shrink-0 w-full" data-name="Container">
       <Container29 />
       <Heading7 />
       <Container30 />

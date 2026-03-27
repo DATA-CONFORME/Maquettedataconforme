@@ -27,13 +27,13 @@ export function LogoBand() {
         Ils nous font confiance
       </p>
       <div className="relative flex w-full">
-        <div className="flex animate-scroll whitespace-nowrap gap-28 items-center">
+        <div className="flex animate-scroll whitespace-nowrap gap-12 md:gap-28 items-center">
           {doubledLogos.map((logo, index) => (
             <div key={index} className="flex-shrink-0 p-4">
               <img
                 src={logo}
                 alt={`Client Logo ${index + 1}`}
-                className="h-28 w-auto object-contain max-w-[280px] transition-all duration-500 hover:scale-105"
+                className="h-16 md:h-28 w-auto object-contain max-w-[200px] md:max-w-[280px] transition-all duration-500 hover:scale-105"
                 style={{ mixBlendMode: 'multiply' }}
               />
             </div>

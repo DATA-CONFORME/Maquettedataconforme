@@ -6,8 +6,8 @@ import { ServiceCard } from "./ServiceCard";
 
 function Container() {
   return (
-    <div className="absolute inset-0 opacity-10" data-name="Container">
-      <div className="absolute bg-size-[512px_512px] bg-top-left h-[791.5px] left-0 top-0 w-[1280px]" data-name="Image" style={{ backgroundImage: `url('${imgImage}')` }} />
+    <div className="absolute inset-0 opacity-10 overflow-hidden" data-name="Container">
+      <div className="absolute bg-size-[512px_512px] bg-top-left h-[791.5px] left-0 top-0 w-full md:w-[1280px]" data-name="Image" style={{ backgroundImage: `url('${imgImage}')` }} />
     </div>
   );
 }
@@ -110,8 +110,8 @@ function Container2() {
 function Container7() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[24px] justify-center leading-[0] relative shrink-0 text-[#001e40] text-[16px] w-[213.14px]">
-        <p className="leading-[24px]">Score de Conformité Global</p>
+      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-auto py-1 justify-center leading-tight relative shrink-0 text-[#001e40] text-[16px] w-full">
+        <p>Score de Conformité Global</p>
       </div>
     </div>
   );
@@ -430,8 +430,8 @@ function SectionCoreMessagingAsymmetricBentoGrid() {
 function Container25() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[20px] justify-center leading-[0] not-italic relative shrink-0 text-[#1d638f] text-[14px] tracking-[2.8px] uppercase w-[136.05px]">
-        <p className="leading-[20px]">Nos Services</p>
+      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-auto py-1 justify-center leading-tight not-italic relative shrink-0 text-[#1d638f] text-[14px] tracking-[2.8px] uppercase w-full">
+        <p>Nos Services</p>
       </div>
     </div>
   );
@@ -487,8 +487,8 @@ function Background8() {
 function Heading5() {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-[32px] right-[32px] top-[120px]" data-name="Heading 4">
-      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] h-[28px] justify-center leading-[0] not-italic relative shrink-0 text-[#001e40] text-[20px] w-[223.48px]">
-        <p className="leading-[28px]">Audit de Conformité IA</p>
+      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] h-auto py-1 justify-center leading-tight not-italic relative shrink-0 text-[#001e40] text-[20px] w-full">
+        <p>Audit de Conformité IA</p>
       </div>
     </div>
   );
@@ -497,7 +497,7 @@ function Heading5() {
 function Container29() {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-[32px] right-[32px] top-[164px]" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[78px] justify-center leading-[26px] not-italic relative shrink-0 text-[#43474f] text-[16px] w-[318.5px]">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-auto py-2 justify-center leading-[26px] not-italic relative shrink-0 text-[#43474f] text-[16px] w-full">
         <p className="mb-0">{`Évaluation complète de vos systèmes d'IA`}</p>
         <p className="mb-0">{`selon les critères de l'AI Act et les`}</p>
         <p>standards ISO/IEC 42001.</p>
@@ -650,8 +650,8 @@ function Background9() {
 function Heading6() {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-[32px] right-[32px] top-[120px]" data-name="Heading 4">
-      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] h-[28px] justify-center leading-[0] not-italic relative shrink-0 text-[#001e40] text-[20px] w-[262.91px]">
-        <p className="leading-[28px]">Gouvernance des Données</p>
+      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] h-auto py-1 justify-center leading-tight not-italic relative shrink-0 text-[#001e40] text-[20px] w-full md:w-[262.91px]">
+        <p>Gouvernance des Données</p>
       </div>
     </div>
   );
@@ -733,21 +733,21 @@ function Card1() {
   const [isExpanded, setIsExpanded] = useState(false);
   
   return (
-    <div className={`bg-white relative rounded-[24px] shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0 flex flex-col transition-all duration-300 ${isExpanded ? 'h-[480px]' : 'h-[200px]'}`}>
-      <div className="absolute bg-[#dee8ff] flex items-center justify-center left-[32px] rounded-[16px] size-[56px] top-[32px]">
-        <svg className="size-[24px]" fill="none" viewBox="0 0 24 24">
+    <div className={`bg-white relative rounded-[24px] shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0 flex flex-col transition-all duration-300 ${isExpanded ? 'h-auto min-h-[480px] pb-10' : 'h-[200px]'}`}>
+      <div className="absolute bg-[#dee8ff] flex items-center justify-center left-[24px] md:left-[32px] rounded-[16px] size-[48px] md:size-[56px] top-[24px] md:top-[32px]">
+        <svg className="size-[20px] md:size-[24px]" fill="none" viewBox="0 0 24 24">
           <path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 16H4V8h16v12z" fill="#1D638F" />
         </svg>
       </div>
-      <div className="absolute left-[32px] right-[80px] top-1/2 -translate-y-1/2">
-        <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[#001e40] text-[20px] leading-[28px]">
+      <div className={`absolute left-[24px] md:left-[32px] right-[80px] transition-all duration-300 ${isExpanded ? 'top-[100px] md:top-[120px] translate-y-0' : 'top-1/2 -translate-y-1/2'}`}>
+        <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[#001e40] text-[18px] md:text-[20px] leading-[24px] md:leading-[28px]">
           Gouvernance IA & préparation IA Act
         </h3>
       </div>
       
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors cursor-pointer"
+        className={`absolute right-[24px] md:right-[32px] w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-all duration-300 cursor-pointer ${isExpanded ? 'top-[32px] translate-y-0' : 'top-1/2 -translate-y-1/2'}`}
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg 
@@ -761,44 +761,24 @@ function Card1() {
         </svg>
       </button>
       
-      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className="absolute left-[32px] right-[32px] top-[164px]">
-          <p className="font-['Inter:Regular',sans-serif] font-normal text-[#43474f] text-[16px] leading-[24px]">
-            Mettre en place une gouvernance claire, traçable et alignée avec vos exigences RGPD et vos futures obligations IA Act.
-          </p>
-        </div>
-        <div className="absolute border-[rgba(195,198,209,0.2)] border-solid border-t h-px left-[32px] right-[32px] top-[290px]" />
-        <div className="absolute flex flex-col gap-[10px] left-[32px] right-[32px] top-[320px]">
-          <div className="flex gap-[12px] items-start">
-            <div className="relative shrink-0 size-[15px]">
-              <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15 15">
-                <g><path d={svgPaths.p1041200} fill="var(--fill-0, #72DF36)" /></g>
-              </svg>
+      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'opacity-100 mt-[160px] md:mt-[180px] px-[24px] md:px-[32px]' : 'opacity-0 pointer-events-none h-0'}`}>
+        <p className="font-['Inter:Regular',sans-serif] font-normal text-[#43474f] text-[15px] md:text-[16px] leading-[24px] mb-[24px]">
+          Mettre en place une gouvernance claire, traçable et alignée avec vos exigences RGPD et vos futures obligations IA Act.
+        </p>
+        <div className="border-[rgba(195,198,209,0.2)] border-solid border-t h-px mb-[24px]" />
+        <div className="flex flex-col gap-[12px]">
+          {[
+            "Rôles & responsabilités, circuit de validation",
+            "Politiques d'usage & supervision humaine",
+            "Documentation & traçabilité complète"
+          ].map((item, idx) => (
+            <div key={idx} className="flex gap-[12px] items-start">
+              <ServiceCheckIcon />
+              <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
+                {item}
+              </span>
             </div>
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Rôles & responsabilités, circuit de validation
-            </span>
-          </div>
-          <div className="flex gap-[12px] items-start">
-            <div className="relative shrink-0 size-[15px]">
-              <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15 15">
-                <g><path d={svgPaths.p1041200} fill="var(--fill-0, #72DF36)" /></g>
-              </svg>
-            </div>
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Politiques d'usage & supervision humaine
-            </span>
-          </div>
-          <div className="flex gap-[12px] items-start">
-            <div className="relative shrink-0 size-[15px]">
-              <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15 15">
-                <g><path d={svgPaths.p1041200} fill="var(--fill-0, #72DF36)" /></g>
-              </svg>
-            </div>
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Documentation & traçabilité complète
-            </span>
-          </div>
+          ))}
         </div>
       </div>
     </div>
@@ -911,21 +891,21 @@ function Card2() {
   const [isExpanded, setIsExpanded] = useState(false);
   
   return (
-    <div className={`bg-white relative rounded-[24px] shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0 flex flex-col transition-all duration-300 ${isExpanded ? 'h-[480px]' : 'h-[200px]'}`}>
-      <div className="absolute bg-[#dee8ff] flex items-center justify-center left-[32px] rounded-[16px] size-[56px] top-[32px]">
-        <svg className="size-[24px]" fill="none" viewBox="0 0 24 24">
+    <div className={`bg-white relative rounded-[24px] shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0 flex flex-col transition-all duration-300 ${isExpanded ? 'h-auto min-h-[480px] pb-10' : 'h-[200px]'}`}>
+      <div className="absolute bg-[#dee8ff] flex items-center justify-center left-[24px] md:left-[32px] rounded-[16px] size-[48px] md:size-[56px] top-[24px] md:top-[32px]">
+        <svg className="size-[20px] md:size-[24px]" fill="none" viewBox="0 0 24 24">
           <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" fill="#1D638F" />
         </svg>
       </div>
-      <div className="absolute left-[32px] right-[80px] top-1/2 -translate-y-1/2">
-        <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[#001e40] text-[20px] leading-[28px]">
+      <div className={`absolute left-[24px] md:left-[32px] right-[80px] transition-all duration-300 ${isExpanded ? 'top-[100px] md:top-[120px] translate-y-0' : 'top-1/2 -translate-y-1/2'}`}>
+        <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[#001e40] text-[18px] md:text-[20px] leading-[24px] md:leading-[28px]">
           Formations : usage sécurisé & responsable des IA
         </h3>
       </div>
       
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors cursor-pointer"
+        className={`absolute right-[24px] md:right-[32px] w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-all duration-300 cursor-pointer ${isExpanded ? 'top-[32px] translate-y-0' : 'top-1/2 -translate-y-1/2'}`}
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg 
@@ -939,44 +919,24 @@ function Card2() {
         </svg>
       </button>
       
-      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className="absolute left-[32px] right-[32px] top-[164px]">
-          <p className="font-['Inter:Regular',sans-serif] font-normal text-[#43474f] text-[16px] leading-[24px]">
-            Former pour gagner en efficacité, sans compromettre vos données, votre conformité ou vos secrets d'affaires.
-          </p>
-        </div>
-        <div className="absolute border-[rgba(195,198,209,0.2)] border-solid border-t h-px left-[32px] right-[32px] top-[290px]" />
-        <div className="absolute flex flex-col gap-[10px] left-[32px] right-[32px] top-[320px]">
-          <div className="flex gap-[12px] items-start">
-            <div className="relative shrink-0 size-[15px]">
-              <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15 15">
-                <g><path d={svgPaths.p1041200} fill="var(--fill-0, #72DF36)" /></g>
-              </svg>
+      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'opacity-100 mt-[160px] md:mt-[180px] px-[24px] md:px-[32px]' : 'opacity-0 pointer-events-none h-0'}`}>
+        <p className="font-['Inter:Regular',sans-serif] font-normal text-[#43474f] text-[15px] md:text-[16px] leading-[24px] mb-[24px]">
+          Former pour gagner en efficacité, sans compromettre vos données, votre conformité ou vos secrets d'affaires.
+        </p>
+        <div className="border-[rgba(195,198,209,0.2)] border-solid border-t h-px mb-[24px]" />
+        <div className="flex flex-col gap-[12px]">
+          {[
+            "Hygiène IA : prompts & confidentialité",
+            "Sécurité : prévention des fuites",
+            "RGPD & charte d'usage opérationnelle"
+          ].map((item, idx) => (
+            <div key={idx} className="flex gap-[12px] items-start">
+              <ServiceCheckIcon />
+              <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
+                {item}
+              </span>
             </div>
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Hygiène IA : prompts & confidentialité
-            </span>
-          </div>
-          <div className="flex gap-[12px] items-start">
-            <div className="relative shrink-0 size-[15px]">
-              <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15 15">
-                <g><path d={svgPaths.p1041200} fill="var(--fill-0, #72DF36)" /></g>
-              </svg>
-            </div>
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Sécurité : prévention des fuites
-            </span>
-          </div>
-          <div className="flex gap-[12px] items-start">
-            <div className="relative shrink-0 size-[15px]">
-              <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15 15">
-                <g><path d={svgPaths.p1041200} fill="var(--fill-0, #72DF36)" /></g>
-              </svg>
-            </div>
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              RGPD & charte d'usage opérationnelle
-            </span>
-          </div>
+          ))}
         </div>
       </div>
     </div>
@@ -1003,21 +963,21 @@ function Card3() {
   const [isExpanded, setIsExpanded] = useState(false);
   
   return (
-    <div className={`bg-white relative rounded-[24px] shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0 flex flex-col transition-all duration-300 ${isExpanded ? 'h-[480px]' : 'h-[200px]'}`}>
-      <div className="absolute bg-[#dee8ff] flex items-center justify-center left-[32px] rounded-[16px] size-[56px] top-[32px]">
-        <svg className="size-[24px]" fill="none" viewBox="0 0 24 24">
+    <div className={`bg-white relative rounded-[24px] shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0 flex flex-col transition-all duration-300 ${isExpanded ? 'h-auto min-h-[480px] pb-10' : 'h-[200px]'}`}>
+      <div className="absolute bg-[#dee8ff] flex items-center justify-center left-[24px] md:left-[32px] rounded-[16px] size-[48px] md:size-[56px] top-[24px] md:top-[32px]">
+        <svg className="size-[20px] md:size-[24px]" fill="none" viewBox="0 0 24 24">
           <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" fill="#1D638F" />
         </svg>
       </div>
-      <div className="absolute left-[32px] right-[80px] top-1/2 -translate-y-1/2">
-        <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[#001e40] text-[20px] leading-[28px]">
+      <div className={`absolute left-[24px] md:left-[32px] right-[80px] transition-all duration-300 ${isExpanded ? 'top-[100px] md:top-[120px] translate-y-0' : 'top-1/2 -translate-y-1/2'}`}>
+        <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[#001e40] text-[18px] md:text-[20px] leading-[24px] md:leading-[28px]">
           Livrables & preuves (audit-ready)
         </h3>
       </div>
       
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors cursor-pointer"
+        className={`absolute right-[24px] md:right-[32px] w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-all duration-300 cursor-pointer ${isExpanded ? 'top-[32px] translate-y-0' : 'top-1/2 -translate-y-1/2'}`}
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg 
@@ -1031,32 +991,24 @@ function Card3() {
         </svg>
       </button>
       
-      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className="absolute left-[32px] right-[32px] top-[164px]">
-          <p className="font-['Inter:Regular',sans-serif] font-normal text-[#43474f] text-[16px] leading-[24px]">
-            Une démarche de conformité est utile si elle est étayée par des preuves. Nous produisons des livrables exploitables en interne et documentés
-          </p>
-        </div>
-        <div className="absolute border-[rgba(195,198,209,0.2)] border-solid border-t h-px left-[32px] right-[32px] top-[290px]" />
-        <div className="absolute flex flex-col gap-[10px] left-[32px] right-[32px] top-[320px]">
-          <div className="flex gap-[12px] items-start">
-            <ServiceCheckIcon />
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Cartographie IA + registres associés
-            </span>
-          </div>
-          <div className="flex gap-[12px] items-start">
-            <ServiceCheckIcon />
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Rapport d'analyse de risques + plan d'actions
-            </span>
-          </div>
-          <div className="flex gap-[12px] items-start">
-            <ServiceCheckIcon />
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Politiques & procédures opérationnelles
-            </span>
-          </div>
+      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'opacity-100 mt-[160px] md:mt-[180px] px-[24px] md:px-[32px]' : 'opacity-0 pointer-events-none h-0'}`}>
+        <p className="font-['Inter:Regular',sans-serif] font-normal text-[#43474f] text-[15px] md:text-[16px] leading-[24px] mb-[24px]">
+          Une démarche de conformité est utile si elle est étayée par des preuves. Nous produisons des livrables exploitables en interne et documentés
+        </p>
+        <div className="border-[rgba(195,198,209,0.2)] border-solid border-t h-px mb-[24px]" />
+        <div className="flex flex-col gap-[12px]">
+          {[
+            "Cartographie IA + registres associés",
+            "Rapport d'analyse de risques + plan d'actions",
+            "Politiques & procédures opérationnelles"
+          ].map((item, idx) => (
+            <div key={idx} className="flex gap-[12px] items-start">
+              <ServiceCheckIcon />
+              <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
+                {item}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -1068,21 +1020,21 @@ function Card4() {
   const [isExpanded, setIsExpanded] = useState(false);
   
   return (
-    <div className={`bg-white relative rounded-[24px] shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0 flex flex-col transition-all duration-300 ${isExpanded ? 'h-[480px]' : 'h-[200px]'}`}>
-      <div className="absolute bg-[#dee8ff] flex items-center justify-center left-[32px] rounded-[16px] size-[56px] top-[32px]">
-        <svg className="size-[24px]" fill="none" viewBox="0 0 24 24">
+    <div className={`bg-white relative rounded-[24px] shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0 flex flex-col transition-all duration-300 ${isExpanded ? 'h-auto min-h-[480px] pb-10' : 'h-[200px]'}`}>
+      <div className="absolute bg-[#dee8ff] flex items-center justify-center left-[24px] md:left-[32px] rounded-[16px] size-[48px] md:size-[56px] top-[24px] md:top-[32px]">
+        <svg className="size-[20px] md:size-[24px]" fill="none" viewBox="0 0 24 24">
           <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="#1D638F" />
         </svg>
       </div>
-      <div className="absolute left-[32px] right-[80px] top-1/2 -translate-y-1/2">
-        <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[#001e40] text-[20px] leading-[28px]">
+      <div className={`absolute left-[24px] md:left-[32px] right-[80px] transition-all duration-300 ${isExpanded ? 'top-[100px] md:top-[120px] translate-y-0' : 'top-1/2 -translate-y-1/2'}`}>
+        <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[#001e40] text-[18px] md:text-[20px] leading-[24px] md:leading-[28px]">
           Analyse des IA comme sous-traitants (approche DPO)
         </h3>
       </div>
       
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors cursor-pointer"
+        className={`absolute right-[24px] md:right-[32px] w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-all duration-300 cursor-pointer ${isExpanded ? 'top-[32px] translate-y-0' : 'top-1/2 -translate-y-1/2'}`}
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg 
@@ -1096,32 +1048,24 @@ function Card4() {
         </svg>
       </button>
       
-      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className="absolute left-[32px] right-[32px] top-[164px]">
-          <p className="font-['Inter:Regular',sans-serif] font-normal text-[#43474f] text-[16px] leading-[24px]">
-            Les outils d'IA agissent souvent comme sous-traitants : contrats, flux, localisation, transferts et responsabilités doivent être maîtrisés.
-          </p>
-        </div>
-        <div className="absolute border-[rgba(195,198,209,0.2)] border-solid border-t h-px left-[32px] right-[32px] top-[290px]" />
-        <div className="absolute flex flex-col gap-[10px] left-[32px] right-[32px] top-[320px]">
-          <div className="flex gap-[12px] items-start">
-            <ServiceCheckIcon />
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Analyse contractuelle fournisseurs
-            </span>
-          </div>
-          <div className="flex gap-[12px] items-start">
-            <ServiceCheckIcon />
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Évaluation des flux & localisation
-            </span>
-          </div>
-          <div className="flex gap-[12px] items-start">
-            <ServiceCheckIcon />
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Recommandations d'encadrement
-            </span>
-          </div>
+      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'opacity-100 mt-[160px] md:mt-[180px] px-[24px] md:px-[32px]' : 'opacity-0 pointer-events-none h-0'}`}>
+        <p className="font-['Inter:Regular',sans-serif] font-normal text-[#43474f] text-[15px] md:text-[16px] leading-[24px] mb-[24px]">
+          Les outils d'IA agissent souvent comme sous-traitants : contrats, flux, localisation, transferts et responsabilités doivent être maîtrisés.
+        </p>
+        <div className="border-[rgba(195,198,209,0.2)] border-solid border-t h-px mb-[24px]" />
+        <div className="flex flex-col gap-[12px]">
+          {[
+            "Analyse contractuelle fournisseurs",
+            "Évaluation des flux & localisation",
+            "Recommandations d'encadrement"
+          ].map((item, idx) => (
+            <div key={idx} className="flex gap-[12px] items-start">
+              <ServiceCheckIcon />
+              <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
+                {item}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -1133,21 +1077,21 @@ function Card5() {
   const [isExpanded, setIsExpanded] = useState(false);
   
   return (
-    <div className={`bg-white relative rounded-[24px] shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0 flex flex-col transition-all duration-300 ${isExpanded ? 'h-[480px]' : 'h-[200px]'}`}>
-      <div className="absolute bg-[#dee8ff] flex items-center justify-center left-[32px] rounded-[16px] size-[56px] top-[32px]">
-        <svg className="size-[24px]" fill="none" viewBox="0 0 24 24">
+    <div className={`bg-white relative rounded-[24px] shadow-[0px_12px_32px_0px_rgba(0,27,60,0.06)] shrink-0 flex flex-col transition-all duration-300 ${isExpanded ? 'h-auto min-h-[480px] pb-10' : 'h-[200px]'}`}>
+      <div className="absolute bg-[#dee8ff] flex items-center justify-center left-[24px] md:left-[32px] rounded-[16px] size-[48px] md:size-[56px] top-[24px] md:top-[32px]">
+        <svg className="size-[20px] md:size-[24px]" fill="none" viewBox="0 0 24 24">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="#1D638F" />
         </svg>
       </div>
-      <div className="absolute left-[32px] right-[80px] top-1/2 -translate-y-1/2">
-        <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[#001e40] text-[20px] leading-[28px]">
+      <div className={`absolute left-[24px] md:left-[32px] right-[80px] transition-all duration-300 ${isExpanded ? 'top-[100px] md:top-[120px] translate-y-0' : 'top-1/2 -translate-y-1/2'}`}>
+        <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[#001e40] text-[18px] md:text-[20px] leading-[24px] md:leading-[28px]">
           Sensibilisation des équipes
         </h3>
       </div>
       
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-colors cursor-pointer"
+        className={`absolute right-[24px] md:right-[32px] w-[40px] h-[40px] flex items-center justify-center rounded-full hover:bg-[#f0f3ff] transition-all duration-300 cursor-pointer ${isExpanded ? 'top-[32px] translate-y-0' : 'top-1/2 -translate-y-1/2'}`}
         aria-label={isExpanded ? "Réduire" : "Développer"}
       >
         <svg 
@@ -1161,32 +1105,24 @@ function Card5() {
         </svg>
       </button>
       
-      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className="absolute left-[32px] right-[32px] top-[164px]">
-          <p className="font-['Inter:Regular',sans-serif] font-normal text-[#43474f] text-[16px] leading-[24px]">
-            La conformité IA repose sur les usages humains. Acculturer les équipes permet d'éviter les dérives sans freiner l'innovation.
-          </p>
-        </div>
-        <div className="absolute border-[rgba(195,198,209,0.2)] border-solid border-t h-px left-[32px] right-[32px] top-[290px]" />
-        <div className="absolute flex flex-col gap-[10px] left-[32px] right-[32px] top-[320px]">
-          <div className="flex gap-[12px] items-start">
-            <ServiceCheckIcon />
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Ateliers adaptés aux profils
-            </span>
-          </div>
-          <div className="flex gap-[12px] items-start">
-            <ServiceCheckIcon />
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Comprendre les risques IA
-            </span>
-          </div>
-          <div className="flex gap-[12px] items-start">
-            <ServiceCheckIcon />
-            <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
-              Cas concrets & règles prêtes à déployer
-            </span>
-          </div>
+      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'opacity-100 mt-[160px] md:mt-[180px] px-[24px] md:px-[32px]' : 'opacity-0 pointer-events-none h-0'}`}>
+        <p className="font-['Inter:Regular',sans-serif] font-normal text-[#43474f] text-[15px] md:text-[16px] leading-[24px] mb-[24px]">
+          La conformité IA repose sur les usages humains. Acculturer les équipes permet d'éviter les dérives sans freiner l'innovation.
+        </p>
+        <div className="border-[rgba(195,198,209,0.2)] border-solid border-t h-px mb-[24px]" />
+        <div className="flex flex-col gap-[12px]">
+          {[
+            "Ateliers adaptés aux profils",
+            "Comprendre les risques IA",
+            "Cas concrets & règles prêtes à déployer"
+          ].map((item, idx) => (
+            <div key={idx} className="flex gap-[12px] items-start">
+              <ServiceCheckIcon />
+              <span className="font-['Inter:Regular',sans-serif] text-[#001b3c] text-[14px] leading-[20px] flex-1">
+                {item}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -1195,7 +1131,7 @@ function Card5() {
 
 function Container27() {
   return (
-    <div className="gap-x-[32px] gap-y-[32px] grid grid-cols-[repeat(3,minmax(0,1fr))] grid-rows-[repeat(2,auto)] relative shrink-0 w-full" data-name="Container">
+    <div className="gap-x-[32px] gap-y-[32px] grid grid-cols-1 md:grid-cols-3 relative shrink-0 w-full" data-name="Container">
       <ServiceCard
         icon={
           <svg className="size-[24px]" fill="none" viewBox="0 0 24 24">

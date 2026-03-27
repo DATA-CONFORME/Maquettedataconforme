@@ -597,7 +597,7 @@ function HorizontalAntiGravityStrip() {
       <div className="flex animate-horizontal-scroll whitespace-nowrap">
         {/* Two sets of items for seamless loop */}
         {[...stats, ...stats, ...stats, ...stats].map((stat, i) => (
-          <div key={i} className="flex flex-col items-center justify-center min-w-[350px] px-12">
+          <div key={i} className="flex flex-col items-center justify-center min-w-[250px] md:min-w-[350px] px-6 md:px-12">
             <div className="text-[52px] font-['Manrope:Extra_Bold',sans-serif] text-[#0047BA] leading-none mb-2 drop-shadow-[0_0_15px_rgba(0,71,186,0.15)]">
               {stat.value}
             </div>

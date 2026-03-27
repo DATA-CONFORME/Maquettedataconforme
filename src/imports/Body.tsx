@@ -609,14 +609,14 @@ function Ab6AXuACvmAb4CuwAcLo9C3IiniJfObBnRu9FaSbrEl6WrWpp5PCqx1Ex3EkdQ32X73XAoU
 
 function Background4() {
   return (
-    <div className="absolute bg-[#8dfd52] bottom-[-24px] content-stretch flex flex-col gap-[7.5px] items-start max-w-[200px] pl-[24px] pr-[65.56px] py-[24px] right-[-24px] rounded-[8px]" data-name="Background">
-      <div className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[8px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]" data-name="Overlay+Shadow" />
+    <div className="absolute md:relative bg-[#8dfd52] bottom-0 md:bottom-[-24px] content-stretch flex flex-col gap-[7.5px] items-start max-w-[200px] pl-[16px] md:pl-[24px] pr-[16px] md:pr-[65.56px] py-[16px] md:py-[24px] right-0 md:right-[-24px] rounded-tl-[8px] md:rounded-[8px]" data-name="Background">
+      <div className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[inherit] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]" data-name="Overlay+Shadow" />
       <div className="h-[28.5px] relative shrink-0 w-[27px]" data-name="Icon">
         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 27 28.5">
           <path d={svgPaths.p189245c0} fill="var(--fill-0, #082100)" id="Icon" />
         </svg>
       </div>
-      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[60px] justify-center leading-[20px] not-italic relative shrink-0 text-[#082100] text-[14px] w-[110.44px]">
+      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-auto py-1 justify-center leading-tight not-italic relative shrink-0 text-[#082100] text-[14px] w-full md:w-[110.44px]">
         <p className="mb-0">Excellence</p>
         <p className="mb-0">{`Réglementaire &`}</p>
         <p>RGPD</p>
@@ -687,7 +687,7 @@ function Heading8() {
 function Container30() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[48px] justify-center leading-[24px] not-italic relative shrink-0 text-[#43474f] text-[16px] w-[491.94px]">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-auto py-2 justify-center leading-[24px] not-italic relative shrink-0 text-[#43474f] text-[16px] w-full md:w-[491.94px]">
         <p className="mb-0">Structuration et nettoyage de vos datasets pour une IA sans biais</p>
         <p>et performante dès le premier jour.</p>
       </div>
@@ -746,7 +746,7 @@ function Heading9() {
 function Container34() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[48px] justify-center leading-[24px] not-italic relative shrink-0 text-[#43474f] text-[16px] w-[492.17px]">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-auto py-2 justify-center leading-[24px] not-italic relative shrink-0 text-[#43474f] text-[16px] w-full md:w-[492.17px]">
         <p className="mb-0">{`Protocoles d'anonymisation et de pseudonymisation garantissant`}</p>
         <p>{`l'exploitation des données en toute sécurité.`}</p>
       </div>
